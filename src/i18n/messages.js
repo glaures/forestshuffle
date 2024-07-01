@@ -20,6 +20,7 @@ export default {
         bats: "Bats",
         deer: "Deer",
         clovenHoofedAnimal: "Cloven-Hoofed Animal",
+        deerAndCloven: "Deer and cloven-Hoofed Animals",
         // cards
         beech: "Beech",
         birch: "Birch",
@@ -79,6 +80,10 @@ export default {
         roeDeerHorseChestnut: "Roe Deer (Horse Chestnut, orange)",
         roeDeerLinden: "Roe Deer (Linden, yellow)",
         roeDeerSilverFir: "Roe Deer (Silver Fir, dark blue)",
+        squeaker: "Squeaker",
+        wildBoar: "Wild Boar",
+        beechMarten: "Beech Marten",
+        fullyOccupiedTrees: "fully occupied trees"
     },
     de: {
         // general strings
@@ -160,6 +165,10 @@ export default {
         roeDeerHorseChestnut: "Reh (Kastanie, orange)",
         roeDeerLinden: "Reh (Linde, gelb)",
         roeDeerSilverFir: "Reh (Tanne, dunkelblau)",
-
+        squeaker: "Frischling",
+        deerAndCloven: "Rotwild und Huftiere",
+        wildBoar: "Wildschwein",
+        beechMarten: "Steinmarder",
+        fullyOccupiedTrees: "voll besetzte Bäume"
     }
 }

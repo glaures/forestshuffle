@@ -61,4 +61,25 @@ export const roeDeerSilverFir = {
     }
 }
 
-export const allDeersInBaseGame = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch]
+export const squeaker = {
+    name: 'squeaker',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal'],
+    recalculatePoints(forest) {
+        this.points = this.count
+    }
+}
+
+export const wildBoar = {
+    name: 'wildBoar',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal'],
+    recalculatePoints(forest) {
+        if(forest.countByName('squeaker') > 0)
+            this.points = this.count * 10
+        else
+            this.points = 0
+    }
+}
+
+export const allDeersInBaseGame = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, wildBoar]

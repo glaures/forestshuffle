@@ -16,4 +16,19 @@ export const mole = {
     }
 }
 
-export const allPawedInBaseGame = [hedgehog, mole]
+export const beechMarten = {
+    name: 'beechMarten',
+    position: 'side',
+    symbols: ['pawedAnimal'],
+    params: [{
+        name: 'fullyOccupiedTrees',
+        type: 'number',
+        value: 0,
+        unrestricted: true
+    }],
+    recalculatePoints(forest) {
+        this.points = this.count * 5 * this.params[0].value
+    }
+}
+
+export const allPawedInBaseGame = [hedgehog, mole, beechMarten]

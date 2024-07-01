@@ -55,11 +55,16 @@
     <CardAmountEditorList :cards="bats"
                           :forest="forest">
     </CardAmountEditorList>
-    <div class="h4">{{ $t("deer") }}</div>
-    <CardAmountEditorList :cards="deer"
+    <div class="h4">{{ $t("deerAndCloven") }}</div>
+    <CardAmountEditorList :cards="deerAndCloven"
                           :forest="forest">
     </CardAmountEditorList>
     <SymbolAmountEditor class="mt-3" :player-name="playerName" v-if="roeDeerPresent"/>
+    <div class="h4">{{ $t("pawedAnimals") }}</div>
+    <CardAmountEditorList :cards="pawedSide"
+                          :forest="forest">
+    </CardAmountEditorList>
+
   </div>
 </template>
 
@@ -117,11 +122,14 @@ export default {
     bats(){
       return this.cards.filter(c => c.symbols.indexOf('bat') >= 0)
     },
-    deer(){
-      return this.cards.filter(c => c.symbols.indexOf('deer') >= 0)
+    deerAndCloven(){
+      return this.cards.filter(c => (c.symbols.indexOf('deer') >= 0 || c.symbols.indexOf('clovenHoofedAnimal') >= 0))
     },
     roeDeerPresent(){
       return this.forest.roeDeerPresent()
+    },
+    pawedSide(){
+      return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'side')
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points

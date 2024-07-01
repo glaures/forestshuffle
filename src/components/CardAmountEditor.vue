@@ -48,7 +48,7 @@ export default {
       {{ $t(card.name, 'en') }}
     </div>
     <div class="col-2">
-      <span v-if="card.count > 0 && card.symbols.indexOf['butterfly'] >= 0">{{ card.points }}</span>
+      <span v-if="card.count > 0 && card.symbols.indexOf('butterfly') < 0 ">{{ card.points }}</span>
     </div>
   </div>
   <div class="row mt-1" v-if="card.param">

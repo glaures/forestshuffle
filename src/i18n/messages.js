@@ -10,6 +10,7 @@ export default {
         trees: "Trees",
         birds: "Birds",
         butterflies: "Butterflies",
+        others: "Others",
         // cards
         beech: "Beech",
         birch: "Birch",
@@ -32,7 +33,9 @@ export default {
         peacockButterfly: "Peacock Butterfly",
         silverWashedFritillary: "Silver-Washed Fritillary",
         purpleEmperor: "Purple Emperor",
-        largeTortoiseshell: "Large Tortoiseshell"
+        largeTortoiseshell: "Large Tortoiseshell",
+        redSquirrel: "Red Squirrel",
+        redSquirrelsAtopAnOak: "atop an oak"
     },
     de: {
         // general strings
@@ -43,6 +46,7 @@ export default {
         trees: "Bäume",
         birds: "Vögel",
         butterflies: "Schmetterlinge",
+        others: "Weitere",
         // cards
         beech: "Buche",
         birch: "Birke",
@@ -65,6 +69,8 @@ export default {
         peacockButterfly: "Tagpfauenauge",
         silverWashedFritillary: "Kaisermantel",
         purpleEmperor: "Schillerfalter",
-        largeTortoiseshell: "Großer Fuchs"
+        largeTortoiseshell: "Großer Fuchs",
+        redSquirrel: "Eichhörnchen",
+        redSquirrelsAtopAnOak: "auf einer Eiche"
     }
 }

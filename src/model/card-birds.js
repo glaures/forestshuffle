@@ -1,5 +1,6 @@
 export const bullfinch = {
     name: 'bullfinch',
+    position: 'top',
     type: 'douglasFir',
     symbols: ['bird'],
     recalculatePoints(forest) {
@@ -9,6 +10,7 @@ export const bullfinch = {
 
 export const chaffinch = {
     name: 'chaffinch',
+    position: 'top',
     type: 'sycamore',
     symbols: ['bird'],
     param: {
@@ -23,6 +25,7 @@ export const chaffinch = {
 
 export const eurasianJay = {
     name: 'eurasianJay',
+    position: 'top',
     type: 'birch',
     symbols: ['bird'],
     recalculatePoints(forest) {
@@ -32,6 +35,7 @@ export const eurasianJay = {
 
 export const goshawk = {
     name: 'goshawk',
+    position: 'top',
     type: 'silverFir',
     symbols: ['bird'],
     recalculatePoints(forest) {
@@ -41,6 +45,7 @@ export const goshawk = {
 
 export const greatSpottedWoodpecker = {
     name: 'greatSpottedWoodpecker',
+    position: 'top',
     type: 'linden',
     symbols: ['bird'],
     recalculatePoints(forest) {
@@ -52,6 +57,7 @@ export const greatSpottedWoodpecker = {
 
 export const tawnyOwl = {
     name: 'tawnyOwl',
+    position: 'top',
     type: 'beech',
     symbols: ['bird'],
     recalculatePoints(forest) {

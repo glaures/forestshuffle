@@ -51,7 +51,7 @@ export class Forest {
 
     addParam(cardName) {
         const card = this.findCard(cardName)
-        card.param.value = card.param.value + 1
+        card.param.value = Math.min(card.count, card.param.value + 1)
     }
 
     subParam(cardName) {

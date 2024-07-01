@@ -20,6 +20,10 @@
     <CardAmountEditorList :cards="butterflies"
                           :forest="forest">
     </CardAmountEditorList>
+    <div class="h4 mt-3">{{ $t("others") }}</div>
+    <CardAmountEditorList :cards="others"
+                          :forest="forest">
+    </CardAmountEditorList>
   </div>
 </template>
 
@@ -51,6 +55,9 @@ export default {
     },
     butterflyPoints() {
       return this.forest.butterflyPoints
+    },
+    others(){
+      return this.forest.cards.filter(c => c.name === 'redSquirrel')
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points

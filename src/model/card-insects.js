@@ -1,4 +1,4 @@
-export const gnat= {
+export const gnat = {
     name: 'gnat',
     position: 'side',
     symbols: ['insect'],
@@ -7,7 +7,7 @@ export const gnat= {
     }
 }
 
-export const fireflies= {
+export const fireflies = {
     name: 'fireflies',
     position: 'bottom',
     symbols: ['insect'],
@@ -16,7 +16,7 @@ export const fireflies= {
     }
 }
 
-export const woodAnt= {
+export const woodAnt = {
     name: 'woodAnt',
     position: 'bottom',
     symbols: ['insect'],
@@ -38,10 +38,27 @@ export const violetCarpenterBee = {
     name: 'violetCarpenterBee',
     position: 'side',
     symbols: ['insect'],
+    params: [
+        {
+            name: 'onABeech',
+            type: 'number',
+            value: 0
+        },
+        {
+            name: 'onAHorseChestnut',
+            type: 'number',
+            value: 0
+        },
+        {
+            name: 'onALinden',
+            type: 'number',
+            value: 0
+        }
+    ],
     recalculatePoints(forest) {
     }
 }
 
 
-export const allInsectsInBaseGame = [gnat, fireflies, woodAnt, stagBeetle]
+export const allInsectsInBaseGame = [gnat, fireflies, woodAnt, stagBeetle, violetCarpenterBee]
 

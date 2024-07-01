@@ -6,7 +6,9 @@ export const beech = {
     symbols: ['tree'],
     recalculatePoints(forest) {
         const count = forest.countByName('beech')
-        if (count >= 4)
+        const violetCarpenterBee = forest.cards.find(c => c.name === 'violetCarpenterBee')
+        const addCount = violetCarpenterBee.params[0].value
+        if (count + addCount >= 4)
             this.points = count * 5
         else
             this.points = 0
@@ -36,7 +38,9 @@ export const horseChestnut = {
     type: 'horseChestnut',
     symbols: ['tree'],
     recalculatePoints(forest) {
-        const count = Math.min(forest.countByName('horseChestnut'), 7)
+        let count = Math.min(forest.countByName('horseChestnut'), 7)
+        const violetCarpenterBee = forest.cards.find(c => c.name === 'violetCarpenterBee')
+        count += violetCarpenterBee.params[1].value
         this.points = count * count
     }
 }

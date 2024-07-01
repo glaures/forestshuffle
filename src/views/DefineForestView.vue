@@ -46,6 +46,11 @@
     <CardAmountEditorList :cards="pawedBottom"
                           :forest="forest">
     </CardAmountEditorList>
+    <div class="h1">{{ $t("sides") }}</div>
+    <div class="h4">{{ $t("insects") }}</div>
+    <CardAmountEditorList :cards="insectsSide"
+                          :forest="forest">
+    </CardAmountEditorList>
   </div>
 </template>
 
@@ -95,6 +100,9 @@ export default {
     },
     pawedBottom(){
       return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'bottom')
+    },
+    insectsSide(){
+      return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'side')
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points

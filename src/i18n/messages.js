@@ -12,6 +12,7 @@ export default {
         trees: "Trees",
         tops: "Tops",
         bottoms: "Bottoms",
+        sides: "Left/Right",
         birds: "Birds",
         butterflies: "Butterflies",
         others: "Others",
@@ -63,7 +64,11 @@ export default {
         hedgehog: "Igel",
         mole: "Mole",
         stagBeetle: "Stag Beetle",
-        violetCarpenterBee: "Violet Carpenter Bee"
+        violetCarpenterBee: "Violet Carpenter Bee",
+        onABeech: "on a beech",
+        onAHorseChestnut: "on a horse chestnut",
+        onALinden: "on a linden",
+        gnat: "Gnat"
     },
     de: {
         // general strings
@@ -74,6 +79,7 @@ export default {
         trees: "Bäume",
         tops: "Oben",
         bottoms: "Unten",
+        sides: "Links/Rechts",
         birds: "Vögel",
         butterflies: "Schmetterlinge",
         others: "Weitere",
@@ -125,6 +131,10 @@ export default {
         hedgehog: "Igel",
         mole: "Maulwurf",
         stagBeetle: "Hirschkäfer",
-        violetCarpenterBee: "Holzbiene"
+        violetCarpenterBee: "Holzbiene",
+        onABeech: "auf einer Buche",
+        onAHorseChestnut: "auf einer Kastanie",
+        onALinden: "auf einer Linde",
+        gnat: "Stechmücke"
     }
 }

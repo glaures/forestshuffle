@@ -72,12 +72,22 @@ export class Forest {
     }
 
     countByName(cardName) {
-        return this.cards.find(c => c.name === cardName).count
+        let count = this.cards.find(c => c.name === cardName).count
+        if (cardName === 'linden') {
+            count += this.cards.find(c => c.name === 'violetCarpenterBee').params[2].value
+        }
+        return count
     }
 
     countBySymbol(symbolName) {
-        return this.cards.filter(c => c.symbols.filter(s => s === symbolName).length > 0)
+        let count = this.cards.filter(c => c.symbols.filter(s => s === symbolName).length > 0)
             .reduce((sum, c) => sum += c.count, 0)
+        if (symbolName === 'tree') {
+            const violetCarpenterBee = this.cards.find(c => c.name === 'violetCarpenterBee')
+            for (let param of violetCarpenterBee.params)
+                count += param.value
+        }
+        return count
     }
 
     countByPosition(position) {
@@ -103,11 +113,12 @@ export class Forest {
     }
 
     hasMostOfSymbol(symbolName) {
-        const inThisForest = this.countBySymbol(symbolName)
+        let inThisForest = this.countBySymbol(symbolName)
         let noOtherForestHasMore = true
         const otherForests = this.allForrests.filter(f => f.playerName !== this.playerName)
         for (let otherForest of otherForests) {
-            if (otherForest.countBySymbol(symbolName) > inThisForest)
+            let inOtherForest = otherForest.countBySymbol(symbolName)
+            if (inOtherForest > inThisForest)
                 noOtherForestHasMore = false
         }
         return noOtherForestHasMore

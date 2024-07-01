@@ -34,6 +34,18 @@
     <CardAmountEditorList :cards="mushrooms"
                           :forest="forest">
     </CardAmountEditorList>
+    <div class="h4">{{ $t("amphibians") }}</div>
+    <CardAmountEditorList :cards="amphibians"
+                          :forest="forest">
+    </CardAmountEditorList>
+    <div class="h4">{{ $t("insects") }}</div>
+    <CardAmountEditorList :cards="insectsBottom"
+                          :forest="forest">
+    </CardAmountEditorList>
+    <div class="h4">{{ $t("pawedAnimals") }}</div>
+    <CardAmountEditorList :cards="pawedBottom"
+                          :forest="forest">
+    </CardAmountEditorList>
   </div>
 </template>
 
@@ -74,6 +86,15 @@ export default {
     },
     mushrooms(){
       return this.cards.filter(c => c.symbols.indexOf('mushroom') >= 0)
+    },
+    amphibians(){
+      return this.cards.filter(c => c.symbols.indexOf('amphibian') >= 0)
+    },
+    insectsBottom(){
+      return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'bottom')
+    },
+    pawedBottom(){
+      return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'bottom')
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points

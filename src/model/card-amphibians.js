@@ -1,0 +1,43 @@
+export const commonToad= {
+    name: 'commonToad',
+    position: 'bottom',
+    symbols: ['amphibian'],
+    param: {
+        name: 'sharingACardSlot',
+        type: 'number',
+        value: 0
+    },
+    recalculatePoints(forest) {
+        this.points = this.param.value * 5
+    }
+}
+
+export const pondTurtle= {
+    name: 'pondTurtle',
+    position: 'bottom',
+    symbols: ['amphibian'],
+    recalculatePoints(forest) {
+        this.points = this.count * 5
+    }
+}
+
+export const treeFrog= {
+    name: 'treeFrog',
+    position: 'bottom',
+    symbols: ['amphibian'],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countByName("gnat") * 5
+    }
+}
+
+export const fireSalamander= {
+    name: 'fireSalamander',
+    position: 'bottom',
+    symbols: ['amphibian'],
+    recalculatePoints(forest) {
+        this.points = [0, 5, 15, 25][Math.min(3, this.count)]
+    }
+}
+
+export const allAmphibiansInBaseGame = [commonToad, pondTurtle, treeFrog, fireSalamander]
+

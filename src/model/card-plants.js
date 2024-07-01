@@ -1,7 +1,6 @@
 export const blackberries = {
     name: 'blackberries',
     position: 'bottom',
-    type: 'beech',
     symbols: ['plant'],
     recalculatePoints(forest) {
         this.points = forest.countByName('blackberries') * forest.countBySymbol('plant') * 2
@@ -11,7 +10,6 @@ export const blackberries = {
 export const moss = {
     name: 'moss',
     position: 'bottom',
-    type: 'linden',
     symbols: ['plant'],
     recalculatePoints(forest) {
         if(forest.countBySymbol('tree') >= 10)
@@ -24,7 +22,6 @@ export const moss = {
 export const treeFerns = {
     name: 'treeFerns',
     position: 'bottom',
-    type: 'silverFir',
     symbols: ['plant'],
     recalculatePoints(forest) {
         this.points = forest.countByName('treeFerns') * forest.countBySymbol('amphibian') * 6
@@ -34,7 +31,6 @@ export const treeFerns = {
 export const wildStrawberries = {
     name: 'wildStrawberries',
     position: 'bottom',
-    type: 'sycamore',
     symbols: ['plant'],
     recalculatePoints(forest) {
         const differentTreeTypes = forest.cards.filter(c => c.symbols.indexOf('tree') >= 0 && c.name !== 'treeSaplings' && c.count > 0).length

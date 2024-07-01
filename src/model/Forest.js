@@ -78,6 +78,11 @@ export class Forest {
             .reduce((sum, c) => sum += c.count, 0)
     }
 
+    countByPosition(position) {
+        return this.cards.filter(c => c.position === position)
+            .reduce((sum, c) => sum += c.count, 0)
+    }
+
     countDistinctBySymbol(symbolName) {
         return this.cards.filter(c => c.symbols.filter(s => s === symbolName).length > 0)
             .filter(c => c.count > 0)

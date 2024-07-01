@@ -1,4 +1,6 @@
 import {bullfinch, chaffinch, eurasianJay} from "@/model/card-birds.js";
+import {treeFrog} from "@/model/card-amphibians.js";
+import {hedgehog} from "@/model/card-pawed-animals.js";
 
 export default {
     en: {
@@ -15,6 +17,9 @@ export default {
         others: "Others",
         plants: "Plants",
         mushrooms: "Mushrooms",
+        amphibians: "Amphibians",
+        insects: "Insects",
+        pawedAnimals: "Pawed Animals",
         // cards
         beech: "Beech",
         birch: "Birch",
@@ -47,7 +52,17 @@ export default {
         parasolMushroom: "Parasol Mushroom",
         pennyBun: "Penny Bun",
         treeFerns: "Tree Ferns",
-        wildStrawberries: "Wild Strawberries"
+        wildStrawberries: "Wild Strawberries",
+        commonToad: "Common Toad",
+        sharingACardSlot: "sharing a card slot",
+        pondTurtle: "Pond Turtle",
+        treeFrog: "Tree Frog",
+        fireSalamander: "Fire Salamander",
+        fireflies: "Fireflies",
+        woodAnt: "Wood Ant",
+        hedgehog: "Igel",
+        mole: "Mole",
+        stagBeetle: "Stag Beetle"
     },
     de: {
         // general strings
@@ -63,6 +78,9 @@ export default {
         others: "Weitere",
         plants: "Pflanzen",
         mushrooms: "Pilze",
+        amphibians: "Amphibien",
+        insects: "Insekten",
+        pawedAnimals: "Pfotentiere",
         // cards
         beech: "Buche",
         birch: "Birke",
@@ -95,6 +113,16 @@ export default {
         parasolMushroom: "Parasol",
         pennyBun: "Steinpilz",
         treeFerns: "Baumfarn",
-        wildStrawberries: "Walderdeeren"
+        wildStrawberries: "Walderdbeeren",
+        commonToad: "Erdkröte",
+        sharingACardSlot: "teilen sich den Platz",
+        pondTurtle: "Sumpfschildkröte",
+        treeFrog: "Laubfrosch",
+        fireSalamander: "Feuersalamander",
+        fireflies: "Glühwürmchen",
+        woodAnt: "Waldameise",
+        hedgehog: "Igel",
+        mole: "Maulwurf",
+        stagBeetle: "Hirschkäfer"
     }
 }

@@ -17,7 +17,6 @@ export function calculateButterflyPoints(forest) {
 export const camberwellBeauty = {
     name: 'camberwellBeauty',
     position: 'top',
-    type: 'sycamore',
     symbols: ['butterfly', 'insect'],
     recalculatePoints(forest) {
     }
@@ -26,7 +25,6 @@ export const camberwellBeauty = {
 export const peacockButterfly = {
     name: 'peacockButterfly',
     position: 'top',
-    type: 'silverFir',
     symbols: ['butterfly', 'insect'],
     recalculatePoints(forest) {
     }
@@ -35,7 +33,6 @@ export const peacockButterfly = {
 export const silverWashedFritillary = {
     name: 'silverWashedFritillary',
     position: 'top',
-    type: 'oak',
     symbols: ['butterfly', 'insect'],
     recalculatePoints(forest) {
     }
@@ -44,7 +41,6 @@ export const silverWashedFritillary = {
 export const purpleEmperor = {
     name: 'purpleEmperor',
     position: 'top',
-    type: 'horseChestnut',
     symbols: ['butterfly', 'insect'],
     recalculatePoints(forest) {
     }
@@ -53,7 +49,6 @@ export const purpleEmperor = {
 export const largeTortoiseshell = {
     name: 'largeTortoiseshell',
     position: 'top',
-    type: 'silverFir',
     symbols: ['butterfly', 'insect'],
     recalculatePoints(forest) {
     }

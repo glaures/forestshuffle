@@ -2,8 +2,14 @@ import {bullfinch, chaffinch, eurasianJay} from "@/model/card-birds.js";
 
 export default {
     en: {
+        // general strings
+        points: 'Points',
         // error messages
         "error.nameTaken": "The name {0} is already taken.",
+        // symbols
+        trees: "Trees",
+        birds: "Birds",
+        butterflies: "Butterflies",
         // cards
         beech: "Beech",
         birch: "Birch",
@@ -21,9 +27,23 @@ export default {
         eurasianJay: "Eurasian Jay",
         goshawk: "Goshawk",
         greatSpottedWoodpecker: "Great Spotted Woodpecker",
-        tawnyOwl: "Tawny Owl"
+        tawnyOwl: "Tawny Owl",
+        camberwellBeauty: "Camberwell Beauty",
+        peacockButterfly: "Peacock Butterfly",
+        silverWashedFritillary: "Silver-Washed Fritillary",
+        purpleEmperor: "Purple Emperor",
+        largeTortoiseshell: "Large Tortoiseshell"
     },
     de: {
+        // general strings
+        points: 'Punkte',
+        // error messages
+        "error.nameTaken": "Der Name {0} ist bereits vergeben.",
+        // symbols
+        trees: "Bäume",
+        birds: "Vögel",
+        butterflies: "Schmetterlinge",
+        // cards
         beech: "Buche",
         birch: "Birke",
         douglasFir: "Douglasie",
@@ -40,6 +60,11 @@ export default {
         eurasianJay: "Eichelhäher,",
         goshawk: "Habicht",
         greatSpottedWoodpecker: "Buntspecht",
-        tawnyOwl: "Waldkauz"
+        tawnyOwl: "Waldkauz",
+        camberwellBeauty: "Trauermantel",
+        peacockButterfly: "Tagpfauenauge",
+        silverWashedFritillary: "Kaisermantel",
+        purpleEmperor: "Schillerfalter",
+        largeTortoiseshell: "Großer Fuchs"
     }
 }

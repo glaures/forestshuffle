@@ -1,19 +1,11 @@
-import {
-    beech,
-    birch,
-    douglasFir,
-    horseChestnut,
-    linden,
-    silverFir,
-    oak,
-    sycamore,
-    treeSaplings
-} from "@/model/card-trees.js";
-import {allBirdsBase} from "@/model/card-birds.js";
+import {allTreesInBaseGame} from "@/model/card-trees.js";
+import {allBirdsInBaseGame} from "@/model/card-birds.js";
+import {allButterfliesInBaseGame} from "@/model/card-butterflies.js";
 
 const cards = [
-    beech, birch, douglasFir, horseChestnut, linden, oak, silverFir, sycamore, treeSaplings,
-    ...allBirdsBase
+    ...allTreesInBaseGame,
+    ...allBirdsInBaseGame,
+    ...allButterfliesInBaseGame
 ]
 
 export default cards

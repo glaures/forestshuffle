@@ -11,15 +11,13 @@ export const chaffinch = {
     name: 'chaffinch',
     type: 'sycamore',
     symbols: ['bird'],
-    params: [
-        {
-            name: 'chaffinchesAtopABeech',
-            type: 'number',
-            value: 0
-        }
-    ],
+    param: {
+        name: 'chaffinchesAtopABeech',
+        type: 'number',
+        value: 0
+    },
     recalculatePoints(forest) {
-        this.points = this.params[0].value * 5
+        this.points = this.param.value * 5
     }
 }
 
@@ -61,5 +59,5 @@ export const tawnyOwl = {
     }
 }
 
-export const allBirdsBase = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl]
+export const allBirdsInBaseGame = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl]
 

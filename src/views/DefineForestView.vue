@@ -1,30 +1,35 @@
 <template>
   <div class="container">
-    <div class="h1">{{ playerName }}</div>
-    <div>Points: {{ points }}</div>
-    <div class="mt-5 list-group">
-      <div class="list-group-item">
-        <CardAmountEditor v-for="card in cards"
-                          :key="card.name"
-                          :card-name="card.name"
-                          :params="card.params ? card.params : null"
-                          :count="forest.findCard(card.name).count"
-                          :points="card.points"
-                          @add="addCard(card.name)"
-                          @remove="removeCard(card.name)"
-                          @param-add="paramAdd(card.name, $event)">
-        </CardAmountEditor>
-      </div>
+    <div class="position-fixed z-1 bg-white w-100 pb-3">
+      <div class="h1">{{ playerName }}</div>
+      <div>Points: {{ points }}</div>
     </div>
+    <div class="distance-keeper position-relative"></div>
+    <div class="h4 mt-2">{{ $t("trees") }}</div>
+    <CardAmountEditorList :cards="trees"
+                          :forest="forest">
+    </CardAmountEditorList>
+    <div class="h4 mt-3">{{ $t("birds") }}</div>
+    <CardAmountEditorList :cards="birds"
+                          :forest="forest">
+    </CardAmountEditorList>
+    <div class="h4 mt-3 d-flex justify-content-between">
+      <div>{{ $t("butterflies") }}</div>
+      <div>{{$t('points')}}: {{butterflyPoints}}</div>
+    </div>
+    <CardAmountEditorList :cards="butterflies"
+                          :forest="forest">
+    </CardAmountEditorList>
   </div>
 </template>
 
 <script>
 import CardAmountEditor from "@/components/CardAmountEditor.vue";
 import {useForestsStore} from "@/stores/forests-store.js";
+import CardAmountEditorList from "@/components/CardAmountEditorList.vue";
 
 export default {
-  components: {CardAmountEditor},
+  components: {CardAmountEditorList, CardAmountEditor},
   props: {
     playerName: String
   },
@@ -35,24 +40,27 @@ export default {
     cards() {
       return useForestsStore().getForestByPlayerName(this.playerName).cards
     },
+    trees() {
+      return this.cards.filter(c => c.symbols.indexOf('tree') >= 0)
+    },
+    birds() {
+      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0)
+    },
+    butterflies() {
+      return this.cards.filter(c => c.symbols.indexOf('butterfly') >= 0)
+    },
+    butterflyPoints() {
+      return this.forest.butterflyPoints
+    },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points
-    }
-  },
-  methods: {
-    addCard(cardName) {
-      useForestsStore().addCard(this.playerName, cardName)
-    },
-    removeCard(cardName) {
-      useForestsStore().removeCard(this.playerName, cardName)
-    },
-    paramAdd(cardName, paramName) {
-      useForestsStore().addParam(this.playerName, cardName, paramName)
     }
   }
 }
 </script>
 
 <style scoped>
-
+.distance-keeper {
+  min-height: 13vh;
+}
 </style>

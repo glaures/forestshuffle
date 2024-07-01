@@ -1,53 +1,70 @@
 <script>
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import {useForestsStore} from "@/stores/forests-store.js";
 
 export default {
   name: "CardAmountEditor",
   components: {FontAwesomeIcon},
-  emits: ['add', 'remove', 'paramAdd'],
   props: {
-    cardName: String,
-    count: Number,
-    points: Number,
-    params: Object
+    card: Object,
+    forest: Object,
   },
+  computed: {
+    playerName() {
+      return this.forest.playerName
+    }
+  },
+  methods: {
+    addCard() {
+      useForestsStore().addCard(this.playerName, this.card.name)
+    },
+    removeCard() {
+      useForestsStore().removeCard(this.playerName, this.card.name)
+    },
+    paramAdd() {
+      useForestsStore().addParam(this.playerName, this.card.name)
+    },
+    paramSub() {
+      useForestsStore().subParam(this.playerName, this.card.name)
+    }
+  }
 }
 </script>
 
 <template>
   <div class="row mt-1">
     <div class="col-2 text-nowrap">
-      <div @click="$emit('add')" class="btn btn-outline-primary btn-sm cursor-pointer">
+      <div @click="addCard" class="btn btn-outline-primary btn-sm cursor-pointer">
         <font-awesome-icon icon="circle-plus"/>
       </div>
-      <div @click="$emit('remove')" class="ms-1 btn btn-outline-danger btn-sm cursor-pointer">
+      <div @click="removeCard" class="ms-1 btn btn-outline-danger btn-sm cursor-pointer">
         <font-awesome-icon icon="circle-minus"/>
       </div>
     </div>
     <div class="col-1 fw-bold">
-      {{ count }}&times;
+      <span v-if="card.count > 0">{{ card.count }}&times;</span>
     </div>
     <div class="col-7">
-      {{ $t(cardName, 'en') }}
+      {{ $t(card.name, 'en') }}
     </div>
     <div class="col-2">
-      {{ points }}
+      <span v-if="card.count > 0 && card.symbols.indexOf['butterfly'] >= 0">{{ card.points }}</span>
     </div>
   </div>
-  <div class="row mt-1" v-for="param in params" :key="param.name">
-    <div v-if="param.type === 'number'" class="col-2 offset-1 text-nowrap">
-      <div @click="$emit('paramAdd', param.name)"
+  <div class="row mt-1" v-if="card.param">
+    <div v-if="card.param.type === 'number'" class="col-2 offset-1 text-nowrap">
+      <div @click="paramAdd"
            class="btn btn-outline-primary btn-sm cursor-pointer">
         <font-awesome-icon icon="circle-plus"/>
       </div>
-      <div @click="$emit('remove')" class="ms-1 btn btn-outline-danger btn-sm cursor-pointer">
+      <div @click="paramSub" class="ms-1 btn btn-outline-danger btn-sm cursor-pointer">
         <font-awesome-icon icon="circle-minus"/>
       </div>
     </div>
     <div class="col-1">
-      {{ param.value }}
+      {{ card.param.value }}
     </div>
-    <div class="col-8">{{ $t(param.name) }}</div>
+    <div class="col-8">{{ $t(card.param.name) }}</div>
   </div>
 </template>
 

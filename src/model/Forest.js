@@ -17,12 +17,14 @@
  * }
  */
 import cards from "@/model/cards.js";
+import {calculateButterflyPoints} from "@/model/card-butterflies.js";
 
 export class Forest {
 
     constructor(playerName, allForests) {
         this.playerName = playerName
         this.allForrests = allForests
+        this.butterflyPoints = 0
         this.points = 0
         this.cards = []
         for (let card of cards) {
@@ -47,10 +49,14 @@ export class Forest {
         c.count = Math.max(0, --c.count)
     }
 
-    addParam(cardName, paramName){
+    addParam(cardName) {
         const card = this.findCard(cardName)
-        const param = card.params.find(p => p.name === paramName)
-        param.value = param.value + 1
+        card.param.value = card.param.value + 1
+    }
+
+    subParam(cardName) {
+        const card = this.findCard(cardName)
+        card.param.value = Math.max(0, card.param.value - 1)
     }
 
     updatePoints() {
@@ -59,7 +65,8 @@ export class Forest {
             card.recalculatePoints(this)
             points += card.points
         }
-        this.points = points
+        this.butterflyPoints = calculateButterflyPoints(this)
+        this.points = points + this.butterflyPoints
     }
 
     countByName(cardName) {
@@ -71,7 +78,13 @@ export class Forest {
             .reduce((sum, c) => sum += c.count, 0)
     }
 
-    hasMostOfName(cardName){
+    countDistinctBySymbol(symbolName) {
+        return this.cards.filter(c => c.symbols.filter(s => s === symbolName).length > 0)
+            .filter(c => c.count > 0)
+            .length
+    }
+
+    hasMostOfName(cardName) {
         const inThisForest = this.countByName(cardName)
         let noOtherForestHasMore = true
         const otherForests = this.allForrests.filter(f => f.playerName !== this.playerName)
@@ -82,7 +95,7 @@ export class Forest {
         return noOtherForestHasMore
     }
 
-    hasMostOfSymbol(symbolName){
+    hasMostOfSymbol(symbolName) {
         const inThisForest = this.countBySymbol(symbolName)
         let noOtherForestHasMore = true
         const otherForests = this.allForrests.filter(f => f.playerName !== this.playerName)

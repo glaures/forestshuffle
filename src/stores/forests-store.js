@@ -26,8 +26,12 @@ export const useForestsStore = defineStore('forests', {
             this.getForestByPlayerName(playerName).removeCard(cardName)
             this.updatePointsInAllForests()
         },
-        addParam(playerName, cardName, paramName){
-            this.getForestByPlayerName(playerName).addParam(cardName, paramName)
+        addParam(playerName, cardName){
+            this.getForestByPlayerName(playerName).addParam(cardName)
+            this.updatePointsInAllForests()
+        },
+        subParam(playerName, cardName){
+            this.getForestByPlayerName(playerName).subParam(cardName)
             this.updatePointsInAllForests()
         },
         updatePointsInAllForests(){

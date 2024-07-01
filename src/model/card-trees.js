@@ -1,3 +1,5 @@
+import {bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl} from "@/model/card-birds.js";
+
 export const beech = {
     name: 'beech',
     type: 'beech',
@@ -54,7 +56,7 @@ export const oak = {
     type: 'oak',
     symbols: ['tree'],
     recalculatePoints(forest) {
-        const differentTreeTypes = forest.cards.filter(c => c.type === 'tree' && c.name !== 'treeSaplings' && c.count > 0).length
+        const differentTreeTypes = forest.cards.filter(c => c.symbols.indexOf('tree') >= 0 && c.name !== 'treeSaplings' && c.count > 0).length
         if (differentTreeTypes === 8)
             this.points = forest.countByName('oak') * 10
         else this.points = 0
@@ -65,15 +67,13 @@ export const silverFir = {
     name: 'silverFir',
     type: 'silverFir',
     symbols: ['tree'],
-    params: [
-        {
-            name: 'cardsAttachedToSilverFirs',
-            type: 'number',
-            value: 0
-        }
-    ],
+    param: {
+        name: 'cardsAttachedToSilverFirs',
+        type: 'number',
+        value: 0
+    },
     recalculatePoints(forest) {
-        this.points = this.params[0].value * 2
+        this.points = this.param.value * 2
     }
 }
 
@@ -94,6 +94,7 @@ export const treeSaplings = {
     }
 }
 
+export const allTreesInBaseGame = [beech, birch, douglasFir, horseChestnut, linden, oak, silverFir, sycamore, treeSaplings]
 
 
 

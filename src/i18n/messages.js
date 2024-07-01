@@ -62,7 +62,8 @@ export default {
         woodAnt: "Wood Ant",
         hedgehog: "Igel",
         mole: "Mole",
-        stagBeetle: "Stag Beetle"
+        stagBeetle: "Stag Beetle",
+        violetCarpenterBee: "Violet Carpenter Bee"
     },
     de: {
         // general strings
@@ -123,6 +124,7 @@ export default {
         woodAnt: "Waldameise",
         hedgehog: "Igel",
         mole: "Maulwurf",
-        stagBeetle: "Hirschkäfer"
+        stagBeetle: "Hirschkäfer",
+        violetCarpenterBee: "Holzbiene"
     }
 }

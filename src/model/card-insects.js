@@ -3,6 +3,7 @@ export const gnat= {
     position: 'side',
     symbols: ['insect'],
     recalculatePoints(forest) {
+        this.points = forest.countByName('gnat') * forest.countBySymbol('bat')
     }
 }
 
@@ -30,6 +31,14 @@ export const stagBeetle = {
     symbols: ['insect'],
     recalculatePoints(forest) {
         this.points = this.count * forest.countBySymbol('pawedAnimal')
+    }
+}
+
+export const violetCarpenterBee = {
+    name: 'violetCarpenterBee',
+    position: 'side',
+    symbols: ['insect'],
+    recalculatePoints(forest) {
     }
 }
 

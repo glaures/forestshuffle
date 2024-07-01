@@ -16,5 +16,4 @@ export const mole = {
     }
 }
 
-
 export const allPawedInBaseGame = [hedgehog, mole]

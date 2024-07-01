@@ -1,6 +1,7 @@
 import {bullfinch, chaffinch, eurasianJay} from "@/model/card-birds.js";
 import {treeFrog} from "@/model/card-amphibians.js";
 import {hedgehog} from "@/model/card-pawed-animals.js";
+import {barbastelleBat} from "@/model/card-bats.js";
 
 export default {
     en: {
@@ -21,6 +22,7 @@ export default {
         amphibians: "Amphibians",
         insects: "Insects",
         pawedAnimals: "Pawed Animals",
+        bats: "Bats",
         // cards
         beech: "Beech",
         birch: "Birch",
@@ -68,7 +70,11 @@ export default {
         onABeech: "on a beech",
         onAHorseChestnut: "on a horse chestnut",
         onALinden: "on a linden",
-        gnat: "Gnat"
+        gnat: "Gnat",
+        barbastelleBat: "Barbastelle Bat",
+        bechsteinsBat: "Bechstein's Bat",
+        brownLongEaredBat: "Brown Long-Eared Bat",
+        greaterHorseshoeBat: "Greater Horseshoe Bat"
     },
     de: {
         // general strings
@@ -88,6 +94,7 @@ export default {
         amphibians: "Amphibien",
         insects: "Insekten",
         pawedAnimals: "Pfotentiere",
+        bats: "Fledermäuse",
         // cards
         beech: "Buche",
         birch: "Birke",
@@ -135,6 +142,10 @@ export default {
         onABeech: "auf einer Buche",
         onAHorseChestnut: "auf einer Kastanie",
         onALinden: "auf einer Linde",
-        gnat: "Stechmücke"
+        gnat: "Stechmücke",
+        barbastelleBat: "Mops-Fledermaus",
+        bechsteinsBat: "Bechstein-Fledermaus",
+        brownLongEaredBat: "Braunes Langohr",
+        greaterHorseshoeBat:"Hufeisennase"
     }
 }

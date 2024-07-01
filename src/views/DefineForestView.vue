@@ -51,6 +51,10 @@
     <CardAmountEditorList :cards="insectsSide"
                           :forest="forest">
     </CardAmountEditorList>
+    <div class="h4">{{ $t("bats") }}</div>
+    <CardAmountEditorList :cards="bats"
+                          :forest="forest">
+    </CardAmountEditorList>
   </div>
 </template>
 
@@ -103,6 +107,9 @@ export default {
     },
     insectsSide(){
       return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'side')
+    },
+    bats(){
+      return this.cards.filter(c => c.symbols.indexOf('bat') >= 0)
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points

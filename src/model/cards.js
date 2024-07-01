@@ -8,6 +8,7 @@ import {allAmphibiansInBaseGame} from "@/model/card-amphibians.js";
 import {allInsectsInBaseGame} from "@/model/card-insects.js";
 import {allPawedInBaseGame} from "@/model/card-pawed-animals.js";
 import {allBatsInBaseGame} from "@/model/card-bats.js";
+import {allDeersInBaseGame} from "@/model/card-deer.js";
 
 const cards = [
     ...allTreesInBaseGame,
@@ -19,7 +20,8 @@ const cards = [
     ...allAmphibiansInBaseGame,
     ...allInsectsInBaseGame,
     ...allPawedInBaseGame,
-    ...allBatsInBaseGame
+    ...allBatsInBaseGame,
+    ...allDeersInBaseGame
 ]
 
 export default cards

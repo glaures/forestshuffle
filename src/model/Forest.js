@@ -25,6 +25,11 @@ export class Forest {
         this.playerName = playerName
         this.allForrests = allForests
         this.butterflyPoints = 0
+        this.silverFirCount = 0
+        this.lindenCount = 0
+        this.horseChestnutCount = 0
+        this.birchCount = 0
+        this.beechCount = 0
         this.points = 0
         this.cards = []
         for (let card of cards) {
@@ -34,6 +39,11 @@ export class Forest {
                 points: 0
             })
         }
+    }
+
+    setSymbolCount(symbol, count){
+        this[symbol + 'Count'] = count
+        this.updatePoints()
     }
 
     findCard(cardName) {
@@ -52,7 +62,7 @@ export class Forest {
     addParam(cardName, paramName) {
         const card = this.findCard(cardName)
         const param = card.params.find(p => p.name === paramName)
-        param.value = Math.min(card.count, param.value + 1)
+        param.value = Math.min(param.unrestricted ? 99 : card.count, param.value + 1)
     }
 
     subParam(cardName, paramName) {
@@ -124,4 +134,12 @@ export class Forest {
         return noOtherForestHasMore
     }
 
+    roeDeerPresent() {
+        return this.countByName('roeDeerBeech')
+            + this.countByName('roeDeerBirch')
+            + this.countByName('roeDeerHorseChestnut')
+            + this.countByName('roeDeerLinden')
+            + this.countByName('roeDeerSilverFir')
+            > 0
+    }
 }

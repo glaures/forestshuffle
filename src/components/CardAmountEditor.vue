@@ -33,18 +33,18 @@ export default {
 
 <template>
   <div class="row mt-1">
-    <div class="col-2 text-nowrap">
-      <div @click="addCard" class="btn btn-outline-primary btn-sm cursor-pointer">
-        <font-awesome-icon icon="circle-plus"/>
+    <div class="col-2 text-nowrap d-flex">
+      <div @click="addCard" class="cursor-pointer text-primary">
+        <font-awesome-icon icon="circle-plus" size="lg"/>
       </div>
-      <div @click="removeCard" class="ms-1 btn btn-outline-danger btn-sm cursor-pointer">
-        <font-awesome-icon icon="circle-minus"/>
+      <div @click="removeCard" class="ms-1 cursor-pointer text-danger">
+        <font-awesome-icon icon="circle-minus" size="lg"/>
       </div>
     </div>
     <div class="col-1 fw-bold">
       <span v-if="card.count > 0">{{ card.count }}&times;</span>
     </div>
-    <div class="col-7">
+    <div class="col-6">
       {{ $t(card.name, 'en') }}
     </div>
     <div class="col-2">
@@ -52,13 +52,13 @@ export default {
     </div>
   </div>
   <div class="row mt-1" v-for="param in card.params" :key="param.name">
-    <div v-if="param.type === 'number'" class="col-2 offset-1 text-nowrap">
+    <div v-if="param.type === 'number'" class="col-2 offset-1 text-nowrap d-flex">
       <div @click="paramAdd(param.name)"
-           class="btn btn-outline-primary btn-sm cursor-pointer">
-        <font-awesome-icon icon="circle-plus"/>
+           class="text-primary cursor-pointer">
+        <font-awesome-icon icon="circle-plus" size="lg"/>
       </div>
-      <div @click="paramSub(param.name)" class="ms-1 btn btn-outline-danger btn-sm cursor-pointer">
-        <font-awesome-icon icon="circle-minus"/>
+      <div @click="paramSub(param.name)" class="ms-1 text-danger cursor-pointer">
+        <font-awesome-icon icon="circle-minus" size="lg"/>
       </div>
     </div>
     <div class="col-1">

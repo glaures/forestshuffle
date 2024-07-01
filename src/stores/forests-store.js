@@ -34,6 +34,11 @@ export const useForestsStore = defineStore('forests', {
             this.getForestByPlayerName(playerName).subParam(cardName, paramName)
             this.updatePointsInAllForests()
         },
+        setSymbolCount(playerName, symbol, count){
+            const forest = this.getForestByPlayerName(playerName)
+            forest.setSymbolCount(symbol, count)
+            this.updatePointsInAllForests()
+        },
         updatePointsInAllForests(){
             for(let forest of this.forests)
                 forest.updatePoints()

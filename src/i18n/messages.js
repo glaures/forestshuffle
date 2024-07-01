@@ -1,8 +1,3 @@
-import {bullfinch, chaffinch, eurasianJay} from "@/model/card-birds.js";
-import {treeFrog} from "@/model/card-amphibians.js";
-import {hedgehog} from "@/model/card-pawed-animals.js";
-import {barbastelleBat} from "@/model/card-bats.js";
-
 export default {
     en: {
         // general strings
@@ -23,6 +18,8 @@ export default {
         insects: "Insects",
         pawedAnimals: "Pawed Animals",
         bats: "Bats",
+        deer: "Deer",
+        clovenHoofedAnimal: "Cloven-Hoofed Animal",
         // cards
         beech: "Beech",
         birch: "Birch",
@@ -74,7 +71,14 @@ export default {
         barbastelleBat: "Barbastelle Bat",
         bechsteinsBat: "Bechstein's Bat",
         brownLongEaredBat: "Brown Long-Eared Bat",
-        greaterHorseshoeBat: "Greater Horseshoe Bat"
+        greaterHorseshoeBat: "Greater Horseshoe Bat",
+        fallowDeer: "Fallow Deer",
+        redDeer: "Red Deer",
+        roeDeerBeech: "Roe Deer (Beech, dark green)",
+        roeDeerBirch: "Roe Deer (Birch, light green)",
+        roeDeerHorseChestnut: "Roe Deer (Horse Chestnut, orange)",
+        roeDeerLinden: "Roe Deer (Linden, yellow)",
+        roeDeerSilverFir: "Roe Deer (Silver Fir, dark blue)",
     },
     de: {
         // general strings
@@ -95,6 +99,8 @@ export default {
         insects: "Insekten",
         pawedAnimals: "Pfotentiere",
         bats: "Fledermäuse",
+        deer: "Hirsch",
+        clovenHoofedAnimal: "Paarhufer",
         // cards
         beech: "Buche",
         birch: "Birke",
@@ -146,6 +152,14 @@ export default {
         barbastelleBat: "Mops-Fledermaus",
         bechsteinsBat: "Bechstein-Fledermaus",
         brownLongEaredBat: "Braunes Langohr",
-        greaterHorseshoeBat:"Hufeisennase"
+        greaterHorseshoeBat:"Hufeisennase",
+        fallowDeer: "Damhirsch",
+        redDeer: "Rothirsch",
+        roeDeerBeech: "Reh (Buche, dunkelgrün)",
+        roeDeerBirch: "Reh (Birke, hellgrün)",
+        roeDeerHorseChestnut: "Reh (Kastanie, orange)",
+        roeDeerLinden: "Reh (Linde, gelb)",
+        roeDeerSilverFir: "Reh (Tanne, dunkelblau)",
+
     }
 }

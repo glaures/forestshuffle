@@ -55,6 +55,11 @@
     <CardAmountEditorList :cards="bats"
                           :forest="forest">
     </CardAmountEditorList>
+    <div class="h4">{{ $t("deer") }}</div>
+    <CardAmountEditorList :cards="deer"
+                          :forest="forest">
+    </CardAmountEditorList>
+    <SymbolAmountEditor class="mt-3" :player-name="playerName" v-if="roeDeerPresent"/>
   </div>
 </template>
 
@@ -62,9 +67,10 @@
 import CardAmountEditor from "@/components/CardAmountEditor.vue";
 import {useForestsStore} from "@/stores/forests-store.js";
 import CardAmountEditorList from "@/components/CardAmountEditorList.vue";
+import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
 
 export default {
-  components: {CardAmountEditorList, CardAmountEditor},
+  components: {SymbolAmountEditor, CardAmountEditorList, CardAmountEditor},
   props: {
     playerName: String
   },
@@ -110,6 +116,12 @@ export default {
     },
     bats(){
       return this.cards.filter(c => c.symbols.indexOf('bat') >= 0)
+    },
+    deer(){
+      return this.cards.filter(c => c.symbols.indexOf('deer') >= 0)
+    },
+    roeDeerPresent(){
+      return this.forest.roeDeerPresent()
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points

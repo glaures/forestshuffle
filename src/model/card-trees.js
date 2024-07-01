@@ -67,13 +67,13 @@ export const silverFir = {
     name: 'silverFir',
     type: 'silverFir',
     symbols: ['tree'],
-    param: {
+    params: [{
         name: 'cardsAttachedToSilverFirs',
         type: 'number',
         value: 0
-    },
+    }],
     recalculatePoints(forest) {
-        this.points = this.param.value * 2
+        this.points = this.params[0].value * 2
     }
 }
 

@@ -49,14 +49,16 @@ export class Forest {
         c.count = Math.max(0, --c.count)
     }
 
-    addParam(cardName) {
+    addParam(cardName, paramName) {
         const card = this.findCard(cardName)
-        card.param.value = Math.min(card.count, card.param.value + 1)
+        const param = card.params.find(p => p.name === paramName)
+        param.value = Math.min(card.count, param.value + 1)
     }
 
-    subParam(cardName) {
+    subParam(cardName, paramName) {
         const card = this.findCard(cardName)
-        card.param.value = Math.max(0, card.param.value - 1)
+        const param = card.params.find(p => p.name === paramName)
+        param.value = Math.max(0, param.value - 1)
     }
 
     updatePoints() {

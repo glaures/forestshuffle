@@ -21,11 +21,11 @@ export default {
     removeCard() {
       useForestsStore().removeCard(this.playerName, this.card.name)
     },
-    paramAdd() {
-      useForestsStore().addParam(this.playerName, this.card.name)
+    paramAdd(paramName) {
+      useForestsStore().addParam(this.playerName, this.card.name, paramName)
     },
-    paramSub() {
-      useForestsStore().subParam(this.playerName, this.card.name)
+    paramSub(paramName) {
+      useForestsStore().subParam(this.playerName, this.card.name, paramName)
     }
   }
 }
@@ -51,20 +51,20 @@ export default {
       <span v-if="card.count > 0 && card.symbols.indexOf('butterfly') < 0 ">{{ card.points }}</span>
     </div>
   </div>
-  <div class="row mt-1" v-if="card.param">
-    <div v-if="card.param.type === 'number'" class="col-2 offset-1 text-nowrap">
-      <div @click="paramAdd"
+  <div class="row mt-1" v-for="param in card.params" :key="param.name">
+    <div v-if="param.type === 'number'" class="col-2 offset-1 text-nowrap">
+      <div @click="paramAdd(param.name)"
            class="btn btn-outline-primary btn-sm cursor-pointer">
         <font-awesome-icon icon="circle-plus"/>
       </div>
-      <div @click="paramSub" class="ms-1 btn btn-outline-danger btn-sm cursor-pointer">
+      <div @click="paramSub(param.name)" class="ms-1 btn btn-outline-danger btn-sm cursor-pointer">
         <font-awesome-icon icon="circle-minus"/>
       </div>
     </div>
     <div class="col-1">
-      {{ card.param.value }}
+      {{ param.value }}
     </div>
-    <div class="col-8">{{ $t(card.param.name) }}</div>
+    <div class="col-8">{{ $t(param.name) }}</div>
   </div>
 </template>
 

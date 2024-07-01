@@ -11,13 +11,13 @@ export const chaffinch = {
     name: 'chaffinch',
     position: 'top',
     symbols: ['bird'],
-    param: {
+    params: [{
         name: 'chaffinchesAtopABeech',
         type: 'number',
         value: 0
-    },
+    }],
     recalculatePoints(forest) {
-        this.points = this.param.value * 5
+        this.points = this.params[0].value * 5
     }
 }
 

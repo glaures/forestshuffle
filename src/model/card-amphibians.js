@@ -2,13 +2,13 @@ export const commonToad= {
     name: 'commonToad',
     position: 'bottom',
     symbols: ['amphibian'],
-    param: {
+    params: [{
         name: 'sharingACardSlot',
         type: 'number',
         value: 0
-    },
+    }],
     recalculatePoints(forest) {
-        this.points = this.param.value * 5
+        this.points = this.params[0].value * 5
     }
 }
 

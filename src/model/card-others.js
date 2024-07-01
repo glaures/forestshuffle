@@ -2,13 +2,13 @@ export const redSquirrel = {
     name: 'redSquirrel',
     position: 'top',
     symbols: ['pawed'],
-    param: {
+    params: [{
         name: 'redSquirrelsAtopAnOak',
         type: 'number',
         value: 0
-    },
+    }],
     recalculatePoints(forest) {
-        this.points = this.param.value * 5
+        this.points = this.params[0].value * 5
     }
 }
 

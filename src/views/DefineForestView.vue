@@ -5,23 +5,33 @@
       <div>Points: {{ points }}</div>
     </div>
     <div class="distance-keeper position-relative"></div>
-    <div class="h4 mt-2">{{ $t("trees") }}</div>
+    <div class="h1">{{ $t("trees") }}</div>
     <CardAmountEditorList :cards="trees"
                           :forest="forest">
     </CardAmountEditorList>
-    <div class="h4 mt-3">{{ $t("birds") }}</div>
+    <div class="h1">{{ $t("tops") }}</div>
+    <div class="h4">{{ $t("birds") }}</div>
     <CardAmountEditorList :cards="birds"
                           :forest="forest">
     </CardAmountEditorList>
-    <div class="h4 mt-3 d-flex justify-content-between">
+    <div class="h4 d-flex justify-content-between">
       <div>{{ $t("butterflies") }}</div>
       <div>{{$t('points')}}: {{butterflyPoints}}</div>
     </div>
     <CardAmountEditorList :cards="butterflies"
                           :forest="forest">
     </CardAmountEditorList>
-    <div class="h4 mt-3">{{ $t("others") }}</div>
+    <div class="h4">{{ $t("others") }}</div>
     <CardAmountEditorList :cards="others"
+                          :forest="forest">
+    </CardAmountEditorList>
+    <div class="h1">{{ $t("bottoms") }}</div>
+    <div class="h4">{{ $t("plants") }}</div>
+    <CardAmountEditorList :cards="plants"
+                          :forest="forest">
+    </CardAmountEditorList>
+    <div class="h4">{{ $t("mushrooms") }}</div>
+    <CardAmountEditorList :cards="mushrooms"
                           :forest="forest">
     </CardAmountEditorList>
   </div>
@@ -58,6 +68,12 @@ export default {
     },
     others(){
       return this.forest.cards.filter(c => c.name === 'redSquirrel')
+    },
+    plants(){
+      return this.cards.filter(c => c.symbols.indexOf('plant') >= 0)
+    },
+    mushrooms(){
+      return this.cards.filter(c => c.symbols.indexOf('mushroom') >= 0)
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points

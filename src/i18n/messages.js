@@ -8,9 +8,13 @@ export default {
         "error.nameTaken": "The name {0} is already taken.",
         // symbols
         trees: "Trees",
+        tops: "Tops",
+        bottoms: "Bottoms",
         birds: "Birds",
         butterflies: "Butterflies",
         others: "Others",
+        plants: "Plants",
+        mushrooms: "Mushrooms",
         // cards
         beech: "Beech",
         birch: "Birch",
@@ -35,7 +39,15 @@ export default {
         purpleEmperor: "Purple Emperor",
         largeTortoiseshell: "Large Tortoiseshell",
         redSquirrel: "Red Squirrel",
-        redSquirrelsAtopAnOak: "atop an oak"
+        redSquirrelsAtopAnOak: "atop an oak",
+        blackberries: "Blackberries",
+        chanterelle: "Chanterelle",
+        flyagaric: "Fly Agaric",
+        moss: "Moss",
+        parasolMushroom: "Parasol Mushroom",
+        pennyBun: "Penny Bun",
+        treeFerns: "Tree Ferns",
+        wildStrawberries: "Wild Strawberries"
     },
     de: {
         // general strings
@@ -44,9 +56,13 @@ export default {
         "error.nameTaken": "Der Name {0} ist bereits vergeben.",
         // symbols
         trees: "Bäume",
+        tops: "Oben",
+        bottoms: "Unten",
         birds: "Vögel",
         butterflies: "Schmetterlinge",
         others: "Weitere",
+        plants: "Pflanzen",
+        mushrooms: "Pilze",
         // cards
         beech: "Buche",
         birch: "Birke",
@@ -71,6 +87,14 @@ export default {
         purpleEmperor: "Schillerfalter",
         largeTortoiseshell: "Großer Fuchs",
         redSquirrel: "Eichhörnchen",
-        redSquirrelsAtopAnOak: "auf einer Eiche"
+        redSquirrelsAtopAnOak: "auf einer Eiche",
+        blackberries: "Brombeeren",
+        chanterelle: "Pfifferling",
+        flyagaric: "Fliegenpilz",
+        moss: "Moos",
+        parasolMushroom: "Parasol",
+        pennyBun: "Steinpilz",
+        treeFerns: "Baumfarn",
+        wildStrawberries: "Walderdeeren"
     }
 }

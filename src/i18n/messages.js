@@ -1,7 +1,23 @@
 export default {
     en: {
+        "cookies": {
+            "intro": "This site uses Cookies - for more information on this check our data privacy policy. Click on \"Accept all\", to accept all cookies or fine tune your cookie settings by clicking here",
+            "settings": "Cookie settings",
+            "acceptAll": "Accept all",
+            "acceptSelection": "Accept selection",
+            "technical": "Store relevant data to run this site",
+            "tracking": "Store data for anonymous analytics of user interactions with this website",
+            "social": "Store data for social media integrations on this website",
+            "consentRequired": "Please consent to cookies first"
+        },
+        forrestShuffle: "Forest Shuffle",
+        scoringApp: "Scoring App",
+        letsGo: "Let's go",
+        imprint: "Imprint",
+        dataProtection: "Data Security",
         // general strings
         points: 'Points',
+        player: 'Player',
         // error messages
         "error.nameTaken": "The name {0} is already taken.",
         // symbols
@@ -97,8 +113,24 @@ export default {
         cardsInCave: "Cards in cave"
     },
     de: {
+        "cookies": {
+            "intro": "Diese Website verwendet Cookies - nähere Information dazu und zu Deinen Rechten als Benutzer findest Du in unserer Datenschutzerklärung. Klicke auf \"Alle annehmen\", um Cookies zu akzeptieren und direkt unsere Website benutzen zu können, oder verwalte Deine Cookies indem Du hier klickst",
+            "settings": "Cookie Einstellungen",
+            "acceptAll": "Alle annehmen",
+            "acceptSelection": "Auswahl bestätigen",
+            "technical": "Für Speicherung von für die   Funktion der Website essentiellen Daten",
+            "tracking": "Für die anonymisierte Analyse des Nutzerverhalten notwendige Daten speichern",
+            "social": "Social Media auf der Website ermöglichen",
+            "consentRequired": "Please consent to cookies first"
+        },
         // general strings
+        forrestShuffle: "Mischwald",
+        scoringApp: "Wertungs-App",
+        imprint: "Impressum",
+        dataProtection: "Datenschutz",
+        letsGo: "Los geht's",
         points: 'Punkte',
+        player: 'Spieler',
         // error messages
         "error.nameTaken": "Der Name {0} ist bereits vergeben.",
         // symbols
@@ -168,7 +200,7 @@ export default {
         barbastelleBat: "Mops-Fledermaus",
         bechsteinsBat: "Bechstein-Fledermaus",
         brownLongEaredBat: "Braunes Langohr",
-        greaterHorseshoeBat:"Hufeisennase",
+        greaterHorseshoeBat: "Hufeisennase",
         fallowDeer: "Damhirsch",
         redDeer: "Rothirsch",
         roeDeerBeech: "Reh (Buche, dunkelgrün)",

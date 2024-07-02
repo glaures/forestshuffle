@@ -12,9 +12,10 @@ import App from './App.vue'
 import router from './router'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {faCircleMinus, faCirclePlus} from '@fortawesome/free-solid-svg-icons'
+import {faCircleMinus, faCirclePlus, faWindowClose} from '@fortawesome/free-solid-svg-icons'
 library.add(faCircleMinus)
 library.add(faCirclePlus)
+library.add(faWindowClose)
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 const app = createApp(App)

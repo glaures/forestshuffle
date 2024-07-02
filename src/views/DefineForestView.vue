@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-if="forest" class="container">
     <div class="position-fixed z-1 bg-white w-100 pb-3">
       <div class="h1">{{ playerName }}</div>
       <div>Points: {{ points }}</div>
@@ -16,7 +16,7 @@
     </CardAmountEditorList>
     <div class="h4 d-flex justify-content-between">
       <div>{{ $t("butterflies") }}</div>
-      <div>{{$t('points')}}: {{butterflyPoints}}</div>
+      <div>{{ $t('points') }}: {{ butterflyPoints }}</div>
     </div>
     <CardAmountEditorList :cards="butterflies"
                           :forest="forest">
@@ -66,8 +66,9 @@
     </CardAmountEditorList>
     <div class="h4">{{ $t("cave") }}</div>
     <div class="input-group">
-      <label for="#caveInput">{{$t('cardsInCave')}}</label>
-      <input :value="forest.caveCount" @input="setCaveCount(Number($event.target.value))" class="form-control" type="number" min="0">
+      <label for="#caveInput">{{ $t('cardsInCave') }}</label>
+      <input :value="forest.caveCount" @input="setCaveCount(Number($event.target.value))" class="form-control"
+             type="number" min="0">
     </div>
   </div>
 </template>
@@ -77,11 +78,14 @@ import CardAmountEditor from "@/components/CardAmountEditor.vue";
 import {useForestsStore} from "@/stores/forests-store.js";
 import CardAmountEditorList from "@/components/CardAmountEditorList.vue";
 import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
+import {useGameStore} from "@/stores/game-store.js";
 
 export default {
   components: {SymbolAmountEditor, CardAmountEditorList, CardAmountEditor},
-  props: {
-    playerName: String
+  data() {
+    return {
+      playerName: null
+    }
   },
   computed: {
     forest() {
@@ -102,37 +106,37 @@ export default {
     butterflyPoints() {
       return this.forest.butterflyPoints
     },
-    others(){
+    others() {
       return this.forest.cards.filter(c => c.name === 'redSquirrel')
     },
-    plants(){
+    plants() {
       return this.cards.filter(c => c.symbols.indexOf('plant') >= 0)
     },
-    mushrooms(){
+    mushrooms() {
       return this.cards.filter(c => c.symbols.indexOf('mushroom') >= 0)
     },
-    amphibians(){
+    amphibians() {
       return this.cards.filter(c => c.symbols.indexOf('amphibian') >= 0)
     },
-    insectsBottom(){
+    insectsBottom() {
       return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'bottom')
     },
-    pawedBottom(){
+    pawedBottom() {
       return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'bottom')
     },
-    insectsSide(){
+    insectsSide() {
       return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'side')
     },
-    bats(){
+    bats() {
       return this.cards.filter(c => c.symbols.indexOf('bat') >= 0)
     },
-    deerAndCloven(){
+    deerAndCloven() {
       return this.cards.filter(c => (c.symbols.indexOf('deer') >= 0 || c.symbols.indexOf('clovenHoofedAnimal') >= 0))
     },
-    roeDeerPresent(){
+    roeDeerPresent() {
       return this.forest.roeDeerPresent()
     },
-    pawedSide(){
+    pawedSide() {
       return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'side')
     },
     points() {
@@ -140,8 +144,27 @@ export default {
     }
   },
   methods: {
-    setCaveCount(caveCount){
+    setCaveCount(caveCount) {
       useForestsStore().setCaveCount(this.playerName, caveCount)
+    }
+  },
+  watch: {
+    playerName: {
+      handler(newVal) {
+        if(!newVal){
+          const gameStore = useGameStore()
+          if(gameStore.players.length === 0) {
+            const playerName = this.$t('player') + ' 1'
+            gameStore.addPlayer(playerName)
+            useForestsStore().addForest(playerName)
+            gameStore.selectPlayer(playerName)
+          } else {
+            gameStore.selectPlayer(gameStore.players[0].name)
+          }
+          this.playerName = gameStore.currentPlayer.name
+        }
+      },
+      immediate: true
     }
   }
 }

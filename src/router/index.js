@@ -10,10 +10,16 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/define-forest/:playerName',
+      path: '/define-forest/:playerName?',
       name: 'defineForest',
       props: true,
       component: () => import('../views/DefineForestView.vue')
+    },
+    {
+      path: '/imprint',
+      name: 'imprint',
+      props: true,
+      component: () => import('../views/ImprintView.vue')
     }
   ]
 })

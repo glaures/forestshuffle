@@ -74,7 +74,7 @@ export class Forest {
 
     updatePoints() {
         let points = 0
-        for (let card of this.cards) {
+        for (let card of this.cards.filter(c => c.count > 0)) {
             card.recalculatePoints(this)
             points += card.points
         }

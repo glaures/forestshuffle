@@ -1,18 +1,13 @@
 <template>
-  <div class="container">
-    <div v-for="player in players"
-         :key="'player_' + player.name">
-      {{ player.name }}
-      <router-link :to="{name: 'defineForest', params: { playerName: player.name}}">
-        Define Forest
-      </router-link>
-    </div>
-    <div class="h1">Weitere Spieler erstellen</div>
-    <div>
-      <label for="#newPlayerNameInput">Name des neuen Spielers</label>
-      <input id="newPlayerNameInput" class="form-control" v-model="newPlayerName"/>
-      <button @click="addPlayer">Add player</button>
-    </div>
+  <div class="splash col-12 col-md-6 offset-md-3">
+    <img src="/img/splash.png" class="w-100" alt="splash">
+  </div>
+  <div class="container text-center">
+    <div class="mt-5 fs-1 fw-bold">{{ $t('forrestShuffle') }}</div>
+    <div class="fs-5">{{ $t('scoringApp') }}</div>
+    <router-link :to="{name: 'defineForest'}">
+      <button class="mt-3 btn btn-primary btn-sm">{{ $t('letsGo') }}</button>
+    </router-link>
   </div>
 </template>
 
@@ -30,12 +25,12 @@ export default {
     }
   },
   computed: {
-    players(){
+    players() {
       return useGameStore().players
     }
   },
   methods: {
-    addPlayer(){
+    addPlayer() {
       useGameStore().addPlayer(this.newPlayerName)
       useForestsStore().addForest(this.newPlayerName)
       this.newPlayerName = ''
@@ -46,5 +41,9 @@ export default {
 
 
 <style scoped>
-
+.splash {
+  z-index: -1;
+  position: fixed;
+  bottom: 5vh;
+}
 </style>

@@ -64,7 +64,11 @@
     <CardAmountEditorList :cards="pawedSide"
                           :forest="forest">
     </CardAmountEditorList>
-
+    <div class="h4">{{ $t("cave") }}</div>
+    <div class="input-group">
+      <label for="#caveInput">{{$t('cardsInCave')}}</label>
+      <input :value="forest.caveCount" @input="setCaveCount(Number($event.target.value))" class="form-control" type="number" min="0">
+    </div>
   </div>
 </template>
 
@@ -133,6 +137,11 @@ export default {
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points
+    }
+  },
+  methods: {
+    setCaveCount(caveCount){
+      useForestsStore().setCaveCount(this.playerName, caveCount)
     }
   }
 }

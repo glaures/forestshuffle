@@ -45,7 +45,7 @@ export default {
       <span v-if="card.count > 0">{{ card.count }}&times;</span>
     </div>
     <div class="col-6">
-      {{ $t(card.name, 'en') }}
+      {{ $t(card.name) }}
     </div>
     <div class="col-2">
       <span v-if="card.count > 0 && card.symbols.indexOf('butterfly') < 0 ">{{ card.points }}</span>

@@ -30,6 +30,7 @@ export class Forest {
         this.horseChestnutCount = 0
         this.birchCount = 0
         this.beechCount = 0
+        this.caveCount = 0
         this.points = 0
         this.cards = []
         for (let card of cards) {
@@ -78,7 +79,7 @@ export class Forest {
             points += card.points
         }
         this.butterflyPoints = calculateButterflyPoints(this)
-        this.points = points + this.butterflyPoints
+        this.points = points + this.butterflyPoints + this.caveCount
     }
 
     countByName(cardName) {

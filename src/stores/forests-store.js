@@ -39,6 +39,10 @@ export const useForestsStore = defineStore('forests', {
             forest.setSymbolCount(symbol, count)
             this.updatePointsInAllForests()
         },
+        setCaveCount(playerName, caveCount){
+            this.getForestByPlayerName(playerName).caveCount = caveCount
+            this.updatePointsInAllForests()
+        },
         updatePointsInAllForests(){
             for(let forest of this.forests)
                 forest.updatePoints()

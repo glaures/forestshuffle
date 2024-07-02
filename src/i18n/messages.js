@@ -83,7 +83,18 @@ export default {
         squeaker: "Squeaker",
         wildBoar: "Wild Boar",
         beechMarten: "Beech Marten",
-        fullyOccupiedTrees: "fully occupied trees"
+        fullyOccupiedTrees: "fully occupied trees",
+        brownBear: "Brown Bear",
+        europeanBadger: "European Badger",
+        europeanFatDormouse: "European Fat Dormouse",
+        batOnTheOtherSide: "with bat on the opposite",
+        europeanHare: "European Hare",
+        lynx: "Lynx",
+        raccoon: "Raccoon",
+        redFox: "Red Fox",
+        wolf: "Wolf",
+        cave: "Cave",
+        cardsInCave: "Cards in cave"
     },
     de: {
         // general strings
@@ -169,6 +180,17 @@ export default {
         deerAndCloven: "Rotwild und Huftiere",
         wildBoar: "Wildschwein",
         beechMarten: "Steinmarder",
-        fullyOccupiedTrees: "voll besetzte Bäume"
+        fullyOccupiedTrees: "voll besetzte Bäume",
+        brownBear: "Braunbär",
+        europeanBadger: "Dachs",
+        europeanFatDormouse: "Siebenschläfer",
+        batOnTheOtherSide: "mit Fledermaus auf der gegenüberliegenden Seite",
+        europeanHare: "Feldhase",
+        lynx: "Lynx",
+        raccoon: "Waschbär",
+        redFox: "Fuchs",
+        wolf: "Wolf",
+        cave: "Höhle",
+        cardsInCave: "Karten in der Höhle"
     }
 }

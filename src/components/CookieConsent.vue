@@ -1,6 +1,6 @@
 <template>
   <div class="overlay small" v-if="!consent.given">
-    <div class="cookie-consent">
+    <div class="cookie-consent shadow rounded">
       <slot name="banner" v-if="!customizing">
         <div class="d-flex justify-content-around">
           <div class="flex-grow-1">
@@ -90,10 +90,9 @@ export default {
 
 .cookie-consent {
   bottom: 20px;
-  background-color: lightgray;
+  background-color: #E8ECDCAA;
+  border: 1px solid darkolivegreen;
   color: black;
   padding: 1em;
-  border: 2px solid white;
-  border-radius: 10px;
 }
 </style>

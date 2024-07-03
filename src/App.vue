@@ -3,6 +3,7 @@ import {RouterView} from 'vue-router'
 import ErrorCapture from "@/components/ErrorCapture.vue";
 import CookieConsent from "@/components/CookieConsent.vue";
 import Footer from "@/components/Footer.vue";
+import Version from "@/components/Version.vue";
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import Footer from "@/components/Footer.vue";
   </ErrorCapture>
   <Footer v-if="$route.name === 'home'"/>
   <CookieConsent/>
+  <Version/>
 </template>
 
 <style>

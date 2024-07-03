@@ -73,8 +73,8 @@ export default {
 }
 
 .btn-card {
-  min-width: 60%;
-  width: 60%;
+  min-width: 70%;
+  width: 70%;
   text-align: left;
 }
 

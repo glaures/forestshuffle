@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import {bootstrap} from "vue-gtag";
+
 export default {
   name: 'CookieConsent',
   data() {
@@ -61,6 +63,11 @@ export default {
     consentGiven() {
       this.consent.given = true
       localStorage.setItem('cookieConsent', JSON.stringify(this.consent))
+      if(this.consent.technical){
+        bootstrap().then(() => {
+          console.log('Google Analytics tracking turned on.')
+        })
+      }
     },
     acceptAll() {
       this.consent.technical = true
@@ -73,6 +80,7 @@ export default {
     let storedConsentStr = localStorage.getItem('cookieConsent')
     if (storedConsentStr) {
       this.consent = JSON.parse(storedConsentStr)
+      this.consentGiven()
     }
   }
 }

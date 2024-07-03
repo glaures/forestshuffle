@@ -35,7 +35,7 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper text-light ">
+  <div class="wrapper text-light" >
     <div class="player-nav d-flex">
       <div v-for="player in players" class="ms-1 player-nav-item border border-light text-light"
            @click="selectPlayer(player.name)">
@@ -64,7 +64,7 @@ export default {
   height: 120px;
   width: 100%;
   min-width: 100%;
-  background-image: url("./img/top-forest.png");
+  background-image: url("/img/top-forest.png");
   background-size: cover;
   background-repeat: repeat-x;
   background-position: bottom;

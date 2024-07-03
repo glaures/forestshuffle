@@ -35,7 +35,7 @@ export const goshawk = {
     position: 'top',
     symbols: ['bird'],
     recalculatePoints(forest) {
-        this.points = forest.countByName('goshawk') * forest.countBySymbol('bird')
+        this.points = forest.countByName('goshawk') * forest.countBySymbol('bird') * 3
     }
 }
 

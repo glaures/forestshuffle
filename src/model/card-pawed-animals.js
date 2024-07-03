@@ -69,7 +69,7 @@ export const europeanHare = {
     position: 'side',
     symbols: ['pawedAnimal'],
     recalculatePoints(forest) {
-        this.points = this.count * 1
+        this.points = forest.countByName("europeanHare") * this.count
     }
 }
 

@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/forestshuffle/iconx/favicon.ico">
-    <link rel="apple-touch-icon" href="/forestshuffle/iconx/apple-touch-icon.png"/>
-    <link rel="manifest" href="/forestshuffle/manifest-en.json"/>
+    <link rel="icon" href="./iconx/favicon.ico">
+    <link rel="apple-touch-icon" href="./iconx/apple-touch-icon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite App</title>
     <script>
         function loadManifest() {
             const lang = (navigator.language || navigator.userLanguage).split('-')[0];
-            let manifestUrl = '/manifest-en.json';
+            let manifestUrl = './manifest-en.json';
             if (lang === 'de') {
-                manifestUrl = '/manifest-de.json';
+                manifestUrl = './manifest-de.json';
             }
             const link = document.createElement('link');
             link.rel = 'manifest';

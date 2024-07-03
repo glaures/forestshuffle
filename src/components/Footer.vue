@@ -6,9 +6,9 @@ export default {
 
 <template>
   <div class="footer position-fixed text-center w-100">
-    <div>
-      <router-link :to="{name: 'imprint'}">{{ $t('imprint') }}</router-link>&nbsp;|&nbsp;<router-link
-        :to="{name: 'imprint'}">{{ $t('dataProtection') }}
+    <div class="text-primary">
+      <router-link :to="{name: 'imprint'}" class="text-primary">{{ $t('imprint') }}</router-link>&nbsp;|&nbsp;<router-link
+        class="text-primary" :to="{name: 'imprint'}">{{ $t('dataProtection') }}
     </router-link>
     </div>
   </div>

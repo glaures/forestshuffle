@@ -5,70 +5,93 @@
       <div>Points: {{ points }}</div>
     </div>
     <div class="distance-keeper position-relative"></div>
-    <div class="h1">{{ $t("trees") }}</div>
     <CardAmountEditorList :cards="trees"
-                          :forest="forest">
+                          :forest="forest"
+                          symbol="tree"
+                          heading="trees">
     </CardAmountEditorList>
-    <div class="h1">{{ $t("tops") }}</div>
-    <div class="h4">{{ $t("birds") }}</div>
-    <CardAmountEditorList :cards="birds"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4 d-flex justify-content-between">
-      <div>{{ $t("butterflies") }}</div>
-      <div>{{ $t('points') }}: {{ butterflyPoints }}</div>
+
+    <div class="mt-4 fs-2 border-primary border-bottom">{{ $t('tops') }}</div>
+    <CardAmountEditorList class="mt-1"
+                          :cards="birds"
+                          :forest="forest"
+                          symbol="bird"
+                          heading="birds"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="butterflies"
+                          :forest="forest"
+                          symbol="butterfly"
+                          heading="butterflies"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="others"
+                          :forest="forest"
+                          symbol="pawedAnimal"
+                          heading="pawedAnimals"/>
+
+    <div class="mt-4 fs-2 border-primary border-bottom">{{ $t('bottoms') }}</div>
+    <CardAmountEditorList class="mt-1"
+                          :cards="plants"
+                          :forest="forest"
+                          symbol="plant"
+                          heading="plants"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="mushrooms"
+                          :forest="forest"
+                          symbol="mushroom"
+                          heading="mushrooms"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="amphibians"
+                          :forest="forest"
+                          symbol="amphibian"
+                          heading="amphibians"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="insectsBottom"
+                          :forest="forest"
+                          symbol="insect"
+                          heading="insects"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="pawedBottom"
+                          :forest="forest"
+                          symbol="pawedAnimal"
+                          heading="pawedAnimals"/>
+
+    <div class="mt-4 fs-2 border-primary border-bottom">{{ $t("sides") }}</div>
+    <CardAmountEditorList class="mt-2"
+                          :cards="insectsSide"
+                          :forest="forest"
+                          symbol="insect"
+                          heading="insects"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="bats"
+                          :forest="forest"
+                          symbol="bat"
+                          heading="bats"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="deerAndCloven"
+                          :forest="forest"
+                          symbol="deer"
+                          symbol2="clovenHoofedAnimal"
+                          heading="deerAndCloven"/>
+    <div class="d-flex justify-content-center align-items-center"
+         v-if="roeDeerPresent">
+      <div class="fs-5 d-none d-md-flex me-md-2">{{ $t('treeTypeCount') }}</div>
+      <SymbolAmountEditor class="mt-2" :player-name="playerName"/>
     </div>
-    <CardAmountEditorList :cards="butterflies"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4">{{ $t("others") }}</div>
-    <CardAmountEditorList :cards="others"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h1">{{ $t("bottoms") }}</div>
-    <div class="h4">{{ $t("plants") }}</div>
-    <CardAmountEditorList :cards="plants"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4">{{ $t("mushrooms") }}</div>
-    <CardAmountEditorList :cards="mushrooms"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4">{{ $t("amphibians") }}</div>
-    <CardAmountEditorList :cards="amphibians"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4">{{ $t("insects") }}</div>
-    <CardAmountEditorList :cards="insectsBottom"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4">{{ $t("pawedAnimals") }}</div>
-    <CardAmountEditorList :cards="pawedBottom"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h1">{{ $t("sides") }}</div>
-    <div class="h4">{{ $t("insects") }}</div>
-    <CardAmountEditorList :cards="insectsSide"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4">{{ $t("bats") }}</div>
-    <CardAmountEditorList :cards="bats"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4">{{ $t("deerAndCloven") }}</div>
-    <CardAmountEditorList :cards="deerAndCloven"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <SymbolAmountEditor class="mt-3" :player-name="playerName" v-if="roeDeerPresent"/>
-    <div class="h4">{{ $t("pawedAnimals") }}</div>
-    <CardAmountEditorList :cards="pawedSide"
-                          :forest="forest">
-    </CardAmountEditorList>
-    <div class="h4">{{ $t("cave") }}</div>
-    <div class="input-group">
-      <label for="#caveInput">{{ $t('cardsInCave') }}</label>
-      <input :value="forest.caveCount" @input="setCaveCount(Number($event.target.value))" class="form-control"
-             type="number" min="0">
+    <CardAmountEditorList class="mt-4"
+                          :cards="pawedSide"
+                          :forest="forest"
+                          symbol="pawedAnimal"
+                          heading="pawedAnimals"/>
+    <div class="d-flex justify-content-center align-items-center mt-4 mb-5">
+      <img :src="'./img/cave.png'" :alt="$t('cave')" @click="setCaveCount(forest.caveCount + 1)"/>
+      <input :value="forest.caveCount"
+             @input="setCaveCount(Number($event.target.value))"
+             type="number"
+             class="form-control flex-grow-0 w-auto fs-5"
+             size="1"
+             min="0"
+             onfocus="this.select();"
+             onclick="this.select();">
     </div>
   </div>
 </template>
@@ -102,9 +125,6 @@ export default {
     },
     butterflies() {
       return this.cards.filter(c => c.symbols.indexOf('butterfly') >= 0)
-    },
-    butterflyPoints() {
-      return this.forest.butterflyPoints
     },
     others() {
       return this.forest.cards.filter(c => c.name === 'redSquirrel')
@@ -151,9 +171,9 @@ export default {
   watch: {
     playerName: {
       handler(newVal) {
-        if(!newVal){
+        if (!newVal) {
           const gameStore = useGameStore()
-          if(gameStore.players.length === 0) {
+          if (gameStore.players.length === 0) {
             const playerName = this.$t('player') + ' 1'
             gameStore.addPlayer(playerName)
             useForestsStore().addForest(playerName)

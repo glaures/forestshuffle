@@ -6,15 +6,29 @@
 
 // Definieren Sie hier Ihre individuellen Variablen
 $theme-colors: (
-        "primary": #ff6347, // Beispiel für eine angepasste Primärfarbe
-        "secondary": #6c757d,
-        "success": #198754,
-        "info": #0dcaf0,
-        "warning": #ffc107,
-        "danger": #dc3545,
+        "primary": #3f5832, // Beispiel für eine angepasste Primärfarbe
+        "secondary": #CBB3BF,
+        "success": #85B79D,
+        "info": #547AA5,
+        "warning": #EC9A29,
+        "danger": #A8201A,
         "light": #E8ECDC,
-        "dark": #212529
+        "dark": #04151F
 );
+
+$body-bg: #E8ECDC;
+
+/* Entfernt die Spinners in Webkit-basierten Browsern (Chrome, Safari, etc.) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Entfernt die Spinners in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 // Importieren Sie die restlichen Bootstrap-Komponenten
 @import "bootstrap/scss/bootstrap";

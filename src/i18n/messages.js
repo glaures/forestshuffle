@@ -18,13 +18,14 @@ export default {
         // general strings
         points: 'Points',
         player: 'Player',
+        treeTypeCount: 'Amounts of tree types',
         // error messages
         "error.nameTaken": "The name {0} is already taken.",
         // symbols
         trees: "Trees",
         tops: "Tops",
         bottoms: "Bottoms",
-        sides: "Left/Right",
+        sides: "Sides",
         birds: "Birds",
         butterflies: "Butterflies",
         others: "Others",
@@ -131,13 +132,14 @@ export default {
         letsGo: "Los geht's",
         points: 'Punkte',
         player: 'Spieler',
+        treeTypeCount: 'Anzahl Baumtypen-Symbole',
         // error messages
         "error.nameTaken": "Der Name {0} ist bereits vergeben.",
         // symbols
         trees: "Bäume",
         tops: "Oben",
         bottoms: "Unten",
-        sides: "Links/Rechts",
+        sides: "Seiten",
         birds: "Vögel",
         butterflies: "Schmetterlinge",
         others: "Weitere",

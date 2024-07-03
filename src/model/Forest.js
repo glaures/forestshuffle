@@ -42,7 +42,11 @@ export class Forest {
         }
     }
 
-    setSymbolCount(symbol, count){
+    getSymbolCount(symbol) {
+        return this[symbol + 'Count']
+    }
+
+    setSymbolCount(symbol, count) {
         this[symbol + 'Count'] = count
         this.updatePoints()
     }

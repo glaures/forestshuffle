@@ -1,7 +1,7 @@
 export const redSquirrel = {
     name: 'redSquirrel',
     position: 'top',
-    symbols: ['pawed'],
+    symbols: ['pawedAnimal'],
     params: [{
         name: 'redSquirrelsAtopAnOak',
         type: 'number',

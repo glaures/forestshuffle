@@ -13,6 +13,6 @@ import Footer from "@/components/Footer.vue";
       <RouterView/>
     </div>
   </ErrorCapture>
-  <Footer v-if="$route.name !== 'imprint'"/>
+  <Footer v-if="$route.name === 'home'"/>
   <CookieConsent/>
 </template>

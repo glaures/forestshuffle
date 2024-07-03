@@ -5,10 +5,15 @@
     <link rel="icon" href="./iconx/favicon.ico">
     <link rel="apple-touch-icon" href="./iconx/apple-touch-icon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
     <script>
+        const lang = (navigator.language || navigator.userLanguage).split('-')[0];
+        function setTitle() {
+            const title = document.createElement('title');
+            title.text = lang === 'de' ? "Mischwald Punkte Rechner - Scoring App" : "Forest Shuffle Scoring App"
+            document.head.appendChild(title);
+        }
+
         function loadManifest() {
-            const lang = (navigator.language || navigator.userLanguage).split('-')[0];
             let manifestUrl = './manifest-en.json';
             if (lang === 'de') {
                 manifestUrl = './manifest-de.json';
@@ -18,6 +23,7 @@
             link.href = manifestUrl;
             document.head.appendChild(link);
         }
+        setTitle();
         loadManifest();
     </script>
   <script type="module" crossorigin src="/forestshuffle/assets/index-CTG3U2QZ.js"></script>

@@ -16,3 +16,6 @@ import Footer from "@/components/Footer.vue";
   <Footer v-if="$route.name === 'home'"/>
   <CookieConsent/>
 </template>
+
+<style>
+</style>

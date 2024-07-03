@@ -1,9 +1,6 @@
 <template>
+  <PlayerNavigation/>
   <div v-if="forest" class="container">
-    <div class="position-fixed z-1 bg-white w-100 pb-3">
-      <div class="h1">{{ playerName }}</div>
-      <div>Points: {{ points }}</div>
-    </div>
     <div class="distance-keeper position-relative"></div>
     <CardAmountEditorList :cards="trees"
                           :forest="forest"
@@ -102,15 +99,14 @@ import {useForestsStore} from "@/stores/forests-store.js";
 import CardAmountEditorList from "@/components/CardAmountEditorList.vue";
 import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
 import {useGameStore} from "@/stores/game-store.js";
+import PlayerNavigation from "@/components/PlayerNavigation.vue";
 
 export default {
-  components: {SymbolAmountEditor, CardAmountEditorList, CardAmountEditor},
-  data() {
-    return {
-      playerName: null
-    }
-  },
+  components: {PlayerNavigation, SymbolAmountEditor, CardAmountEditorList, CardAmountEditor},
   computed: {
+    playerName(){
+      return useGameStore().currentPlayer?.name
+    },
     forest() {
       return useForestsStore().getForestByPlayerName(this.playerName)
     },
@@ -168,23 +164,17 @@ export default {
       useForestsStore().setCaveCount(this.playerName, caveCount)
     }
   },
-  watch: {
-    playerName: {
-      handler(newVal) {
-        if (!newVal) {
-          const gameStore = useGameStore()
-          if (gameStore.players.length === 0) {
-            const playerName = this.$t('player') + ' 1'
-            gameStore.addPlayer(playerName)
-            useForestsStore().addForest(playerName)
-            gameStore.selectPlayer(playerName)
-          } else {
-            gameStore.selectPlayer(gameStore.players[0].name)
-          }
-          this.playerName = gameStore.currentPlayer.name
-        }
-      },
-      immediate: true
+  mounted() {
+    if (!this.playerName) {
+      const gameStore = useGameStore()
+      if (gameStore.players.length === 0) {
+        const playerName = this.$t('player') + ' 1'
+        gameStore.addPlayer(playerName)
+        gameStore.selectPlayer(playerName)
+        useForestsStore().addForest(playerName)
+      } else {
+        gameStore.selectPlayer(gameStore.players[0].name)
+      }
     }
   }
 }

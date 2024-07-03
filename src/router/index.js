@@ -10,7 +10,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/define-forest/:playerName?',
+      path: '/define-forest',
       name: 'defineForest',
       props: true,
       component: () => import('../views/DefineForestView.vue')

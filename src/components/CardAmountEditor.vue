@@ -67,14 +67,14 @@ export default {
 
 <style scoped>
 .card-amount {
-  width: 8vw;
-  min-width: 8vw;
-  max-width: 8vw;
+  width: 8%;
+  min-width: 8%;
+  max-width: 8%;
 }
 
 .btn-card {
-  min-width: 60vw;
-  width: 60vw;
+  min-width: 60%;
+  width: 60%;
   text-align: left;
 }
 

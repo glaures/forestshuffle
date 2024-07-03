@@ -19,6 +19,7 @@ library.add(faCircleMinus)
 library.add(faCirclePlus)
 library.add(faWindowClose)
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import './registerServiceWorker'
 
 const app = createApp(App)
 

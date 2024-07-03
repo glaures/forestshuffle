@@ -1,6 +1,6 @@
 {
   "name": "vue-project",
-  "version": "0.8.0",
+  "version": "0.8.3",
   "private": true,
   "type": "module",
   "scripts": {
@@ -19,6 +19,7 @@
     "bootstrap": "^5.3.3",
     "gh-pages": "^6.1.1",
     "pinia": "^2.1.7",
+    "register-service-worker": "^1.7.2",
     "sass": "^1.77.6",
     "vue": "^3.4.29",
     "vue-gtag": "^2.0.1",

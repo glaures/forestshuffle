@@ -13,7 +13,7 @@
             let newUrl = basePath + 'index.html';
 
             if (currentPath && currentPath !== '/') {
-                newUrl += '?redirect=' + encodeURIComponent(currentSearch);
+                newUrl += '?redirect=' + encodeURIComponent(currentPath + currentSearch);
             }
 
             window.location.replace(newUrl);

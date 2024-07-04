@@ -10,7 +10,7 @@
             const currentPath = window.location.pathname;
             const basePath = currentPath.substring(0, currentPath.lastIndexOf('/')) + '/';
             const currentSearch = window.location.search;
-            let newUrl = basePath + '/index.html';
+            let newUrl = basePath + 'index.html';
 
             if (currentPath && currentPath !== '/') {
                 newUrl += '?redirect=' + encodeURIComponent(currentSearch);

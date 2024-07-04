@@ -27,7 +27,7 @@ export class Forest {
         this.reset()
     }
 
-    reset(){
+    reset() {
         this.butterflyPoints = 0
         this.silverFirCount = 0
         this.lindenCount = 0
@@ -38,8 +38,11 @@ export class Forest {
         this.points = 0
         this.cards = []
         for (let card of cards) {
+            const clonedCard = {...card}
+            if (card.params)
+                clonedCard.params = card.params.map(param => {return {...param}})
             this.cards.push({
-                ...card,
+                ...clonedCard,
                 count: 0,
                 points: 0
             })

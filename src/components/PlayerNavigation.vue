@@ -4,6 +4,11 @@ import {useForestsStore} from "@/stores/forests-store.js";
 
 export default {
   name: "PlayerNavigation",
+  data() {
+    return {
+      editing: false
+    }
+  },
   computed: {
     players() {
       return useGameStore().players.map(p => {
@@ -29,6 +34,13 @@ export default {
     },
     selectPlayer(playerName) {
       useGameStore().selectPlayer(playerName)
+    },
+    updatePlayerName() {
+      this.editing = false
+      const newName = document.getElementById("playerNameInput").value
+      const currentName = useGameStore().currentPlayer.name
+      useForestsStore().getForestByPlayerName(currentName).playerName = newName
+      useGameStore().currentPlayer.name = newName
     }
   }
 }
@@ -47,8 +59,15 @@ export default {
     </div>
     <div v-if="currentPlayer"
          class="current-player d-flex justify-content-between px-3 fs-1 fw-bold position-absolute w-100">
-      <div>
+      <div v-if="!editing"
+           @click="editing = true">
         {{ currentPlayer.name }}
+      </div>
+      <div v-else class="d-flex">
+        <input id="playerNameInput" type="text" :value="currentPlayer.name" class="form-control"
+               onfocus="this.select();"
+               onclick="this.select();"/>
+        <button class="btn btn-outline-light btn-sm ms-1" @click="updatePlayerName">OK</button>
       </div>
       <div>
         {{ points }}

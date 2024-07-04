@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Page Not Found</title>
+    <meta http-equiv="refresh" content="0; url=/index.html">
+    <script type="text/javascript">
+        // Preserve the original path and search query
+        (function () {
+            const currentPath = window.location.pathname;
+            const currentSearch = window.location.search;
+            let newUrl = '/index.html';
+
+            if (currentPath && currentPath !== '/') {
+                newUrl += '?redirect=' + encodeURIComponent(currentPath + currentSearch);
+            }
+
+            window.location.replace(newUrl);
+        })();
+    </script>
 </head>
 <body>
-404 Test
+<p>Redirecting...</p>
 </body>
 </html>

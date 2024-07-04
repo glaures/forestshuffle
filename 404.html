@@ -8,12 +8,13 @@
         // Preserve the original path and search query
         (function () {
             const currentPath = window.location.pathname;
+            const routerPath = currentPath.substring(currentPath.lastIndexOf('/'));
             const basePath = currentPath.substring(0, currentPath.lastIndexOf('/')) + '/';
             const currentSearch = window.location.search;
             let newUrl = basePath + 'index.html';
 
             if (currentPath && currentPath !== '/') {
-                newUrl += '?redirect=' + encodeURIComponent(currentPath + currentSearch);
+                newUrl += '?redirect=' + encodeURIComponent(routerPath + currentSearch);
             }
 
             window.location.replace(newUrl);

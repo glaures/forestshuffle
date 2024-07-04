@@ -1,7 +1,7 @@
 <template>
-  <div class="position-fixed bottom-0 d-flex justify-content-center w-100 z-9999 " role="button"
-       data-bs-toggle="offcanvas" data-bs-target="#navigation" aria-controls="offcanvasExample">
-    <font-awesome-icon class="text-info aligned-bottom" icon="caret-up" size="4x"/>
+  <div class="position-fixed bottom-0 d-flex justify-content-center w-100 z-9999 bottom-nav">
+    <font-awesome-icon class="text-info aligned-bottom" icon="caret-up" size="5x" role="button"
+                       data-bs-toggle="offcanvas" data-bs-target="#navigation" aria-controls="offcanvasExample"/>
   </div>
   <div id="navigation" class="offcanvas offcanvas-bottom z-9999" tabindex="-1">
     <div class="offcanvas-header">
@@ -9,8 +9,8 @@
     </div>
     <div class="offcanvas-body">
       <div class="d-flex justify-content-center">
-        <div class="btn btn-primary" @click="startNewGame">{{$t('startNewGame')}}</div>
-        <div class="ms-2 btn btn-warning" @click="resetPlayers">{{$t('resetPlayers')}}</div>
+        <div class="btn btn-primary" @click="startNewGame">{{ $t('startNewGame') }}</div>
+        <div class="ms-2 btn btn-warning" @click="resetPlayers">{{ $t('resetPlayers') }}</div>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@ export default {
   name: "Navigation",
   components: {FontAwesomeIcon},
   methods: {
-    startNewGame(){
+    startNewGame() {
       useForestsStore().reset()
     },
     resetPlayers() {
@@ -39,7 +39,7 @@ export default {
 <style scoped>
 .aligned-bottom {
   position: absolute;
-  bottom: -30px;
+  bottom: -35px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;

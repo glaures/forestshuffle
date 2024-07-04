@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <div class="version text-secondary">{{version}}</div>
+  <div class="version text-info">{{version}}</div>
 </template>
 
 <style scoped>
@@ -19,7 +19,7 @@ export default {
   font-size: 8px;
   position: fixed;
   bottom: 1vh;
-  min-width: 100vw;
+  right: 0;
   text-align: right;
   padding-right: 5vw;
 }

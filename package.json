@@ -1,11 +1,12 @@
 {
   "name": "vue-project",
-  "version": "0.8.3",
+  "version": "0.9.1",
   "private": true,
   "type": "module",
   "scripts": {
+    "bump-version": "node bump-version.js",
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run bump-version && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",

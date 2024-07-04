@@ -19,6 +19,8 @@ export default {
         points: 'Points',
         player: 'Player',
         treeTypeCount: 'Amounts of tree types',
+        startNewGame: 'Start new game',
+        resetPlayers: 'Reset players',
         // error messages
         "error.nameTaken": "The name {0} is already taken.",
         // symbols
@@ -78,7 +80,7 @@ export default {
         fireSalamander: "Fire Salamander",
         fireflies: "Fireflies",
         woodAnt: "Wood Ant",
-        hedgehog: "Igel",
+        hedgehog: "Hedgehog",
         mole: "Mole",
         stagBeetle: "Stag Beetle",
         violetCarpenterBee: "Violet Carpenter Bee",
@@ -133,6 +135,8 @@ export default {
         points: 'Punkte',
         player: 'Spieler',
         treeTypeCount: 'Anzahl Baumtypen-Symbole',
+        startNewGame: 'Neues Spiel starten',
+        resetPlayers: 'Spieler zurücksetzen',
         // error messages
         "error.nameTaken": "Der Name {0} ist bereits vergeben.",
         // symbols
@@ -246,6 +250,8 @@ export default {
         "points": "Points",
         "player": "Joueur",
         "treeTypeCount": "Nombre de types d'arbres",
+        "startNewGame": "Commencer une nouvelle partie",
+        "resetPlayers": "Réinitialiser les joueurs",
         "error.nameTaken": "Le nom {0} est déjà pris.",
         "trees": "Arbres",
         "tops": "Hauts",

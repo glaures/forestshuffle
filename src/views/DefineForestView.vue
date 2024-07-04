@@ -1,5 +1,6 @@
 <template>
   <PlayerNavigation/>
+  <Navigation/>
   <div v-if="forest" class="container">
     <div class="distance-keeper position-relative"></div>
     <CardAmountEditorList :cards="trees"
@@ -79,16 +80,19 @@
                           :forest="forest"
                           symbol="pawedAnimal"
                           heading="pawedAnimals"/>
-    <div class="d-flex justify-content-center align-items-center mt-4 mb-5">
-      <img :src="'./img/cave.png'" :alt="$t('cave')" @click="setCaveCount(forest.caveCount + 1)"/>
-      <input :value="forest.caveCount"
-             @input="setCaveCount(Number($event.target.value))"
-             type="number"
-             class="form-control flex-grow-0 w-auto fs-5"
-             size="1"
-             min="0"
-             onfocus="this.select();"
-             onclick="this.select();">
+    <div class="mt-4 mb-5">
+      <div class="text-center">
+        <img :src="'./img/cave.png'" :alt="$t('cave')" @click="setCaveCount(forest.caveCount + 1)"/>
+      </div>
+      <div class="text-center">
+        <input :value="forest.caveCount"
+               @input="setCaveCount(Number($event.target.value))"
+               type="number"
+               class="form-control text-center fs-5"
+               min="0"
+               onfocus="this.select();"
+               onclick="this.select();">
+      </div>
     </div>
   </div>
 </template>
@@ -100,11 +104,12 @@ import CardAmountEditorList from "@/components/CardAmountEditorList.vue";
 import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
 import {useGameStore} from "@/stores/game-store.js";
 import PlayerNavigation from "@/components/PlayerNavigation.vue";
+import Navigation from "@/components/Navigation.vue";
 
 export default {
-  components: {PlayerNavigation, SymbolAmountEditor, CardAmountEditorList, CardAmountEditor},
+  components: {Navigation, PlayerNavigation, SymbolAmountEditor, CardAmountEditorList, CardAmountEditor},
   computed: {
-    playerName(){
+    playerName() {
       return useGameStore().currentPlayer?.name
     },
     forest() {
@@ -164,17 +169,22 @@ export default {
       useForestsStore().setCaveCount(this.playerName, caveCount)
     }
   },
-  mounted() {
-    if (!this.playerName) {
-      const gameStore = useGameStore()
-      if (gameStore.players.length === 0) {
-        const playerName = this.$t('player') + ' 1'
-        gameStore.addPlayer(playerName)
-        gameStore.selectPlayer(playerName)
-        useForestsStore().addForest(playerName)
-      } else {
-        gameStore.selectPlayer(gameStore.players[0].name)
-      }
+  watch: {
+    playerName: {
+      handler(newVal) {
+        if (!newVal) {
+          const gameStore = useGameStore()
+          if (gameStore.players.length === 0) {
+            const playerName = this.$t('player') + ' 1'
+            gameStore.addPlayer(playerName)
+            gameStore.selectPlayer(playerName)
+            useForestsStore().addForest(playerName)
+          } else {
+            gameStore.selectPlayer(gameStore.players[0].name)
+          }
+        }
+      },
+      immediate: true
     }
   }
 }
@@ -183,5 +193,10 @@ export default {
 <style scoped>
 .distance-keeper {
   min-height: 13vh;
+}
+
+.narrow-input-wrapper {
+  max-width: 4rem;
+  width: 4rem;
 }
 </style>

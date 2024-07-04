@@ -16,6 +16,10 @@ export const useGameStore = defineStore('game', {
         },
         selectPlayer(name) {
             this.currentPlayer = this.players.find(p => p.name === name)
+        },
+        resetPlayers(){
+            this.players = []
+            this.currentPlayer = null
         }
     }
 })

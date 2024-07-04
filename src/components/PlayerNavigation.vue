@@ -35,12 +35,13 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper text-light" >
+  <div class="wrapper text-light">
     <div class="player-nav d-flex">
-      <div v-for="player in players" class="ms-1 player-nav-item border border-light text-light"
+      <div v-for="(player, idx) in players" class="player-nav-item border-light text-light"
+           :class="{'border-start': idx > 0}"
            @click="selectPlayer(player.name)">
-        <span :class="{underline: player.name === currentPlayer.name}">{{ player.name }}</span><span
-          class="ms-2 fw-bold">{{ player.points }}</span>
+        <span :class="{'text-decoration-underline': player.name === currentPlayer.name}">{{ player.name }}</span>
+        <span class="ms-2 fw-bold text-decoration-none">{{ player.points }}</span>
       </div>
       <button v-if="players.length < 5" class="btn btn-sm btn-light py-0 ms-1 z-99" @click="addPlayer">&plus;</button>
     </div>
@@ -60,20 +61,23 @@ export default {
 .wrapper {
   position: fixed;
   top: 0;
-  min-height: 120px;
-  height: 120px;
-  width: 100%;
-  min-width: 100%;
+  min-height: 100px;
+  height: 100px;
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
   background-image: url("/img/top-forest.png");
-  background-size: cover;
+  background-size: 400px;
   background-repeat: repeat-x;
   background-position: bottom;
-  z-index: 9999;
+  z-index: 999;
 }
+
 
 .current-player {
   position: absolute;
   bottom: 4vh;
+  text-shadow: 3px 3px black;
 }
 
 .player-nav {
@@ -81,7 +85,7 @@ export default {
   min-width: 100%;
   width: 100%;
   justify-content: center;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .player-nav-item {
@@ -92,11 +96,6 @@ export default {
 
 .player-nav-item:hover {
   background-color: #10131500;
-  text-decoration: underline;
-}
-
-.underline {
-  text-decoration: underline;
 }
 
 </style>

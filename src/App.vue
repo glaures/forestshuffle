@@ -19,5 +19,20 @@ import Version from "@/components/Version.vue";
   <Version/>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      currentMode: import.meta.env.MODE
+    }
+  },
+  mounted() {
+    console.log('running in mode ' + this.currentMode)
+    console.log('base url is ' + import.meta.env.VITE_BASE_URL)
+  }
+}
+</script>
+
+
 <style>
 </style>

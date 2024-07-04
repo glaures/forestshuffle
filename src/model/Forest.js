@@ -24,6 +24,10 @@ export class Forest {
     constructor(playerName, allForests) {
         this.playerName = playerName
         this.allForrests = allForests
+        this.reset()
+    }
+
+    reset(){
         this.butterflyPoints = 0
         this.silverFirCount = 0
         this.lindenCount = 0

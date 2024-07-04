@@ -1,5 +1,5 @@
 import {defineStore} from "pinia";
-import { reactive } from 'vue';
+import {reactive} from 'vue';
 import {Forest} from "@/model/Forest.js";
 
 export const useForestsStore = defineStore('forests', {
@@ -12,7 +12,7 @@ export const useForestsStore = defineStore('forests', {
         }
     },
     actions: {
-        addForest(playerName){
+        addForest(playerName) {
             const f = reactive(new Forest(playerName, this.forests))
             this.forests.push(f)
             this.updatePointsInAllForests()
@@ -26,31 +26,34 @@ export const useForestsStore = defineStore('forests', {
             this.getForestByPlayerName(playerName).removeCard(cardName)
             this.updatePointsInAllForests()
         },
-        addParam(playerName, cardName, paramName){
+        addParam(playerName, cardName, paramName) {
             this.getForestByPlayerName(playerName).addParam(cardName, paramName)
             this.updatePointsInAllForests()
         },
-        subParam(playerName, cardName, paramName){
+        subParam(playerName, cardName, paramName) {
             this.getForestByPlayerName(playerName).subParam(cardName, paramName)
             this.updatePointsInAllForests()
         },
-        setSymbolCount(playerName, symbol, count){
+        setSymbolCount(playerName, symbol, count) {
             const forest = this.getForestByPlayerName(playerName)
             forest.setSymbolCount(symbol, count)
             this.updatePointsInAllForests()
         },
-        addSymbolCount(playerName, symbol){
+        addSymbolCount(playerName, symbol) {
             const forest = this.getForestByPlayerName(playerName)
             forest.setSymbolCount(symbol, forest.getSymbolCount(symbol) + 1)
             this.updatePointsInAllForests()
         },
-        setCaveCount(playerName, caveCount){
+        setCaveCount(playerName, caveCount) {
             this.getForestByPlayerName(playerName).caveCount = caveCount
             this.updatePointsInAllForests()
         },
-        updatePointsInAllForests(){
-            for(let forest of this.forests)
+        updatePointsInAllForests() {
+            for (let forest of this.forests)
                 forest.updatePoints()
+        },
+        reset() {
+            this.forests.forEach(f => f.reset())
         }
     }
 })

@@ -3,7 +3,7 @@ export const bullfinch = {
     position: 'top',
     symbols: ['bird'],
     recalculatePoints(forest) {
-        this.points = forest.countByName('douglasFir') * forest.countBySymbol('insect')
+        this.points = this.count * forest.countBySymbol('insect') * 2
     }
 }
 

@@ -1,27 +1,27 @@
-import {allTreesInBaseGame} from "@/model/card-trees.js";
-import {allBirdsInBaseGame} from "@/model/card-birds.js";
-import {allButterfliesInBaseGame} from "@/model/card-butterflies.js";
+import {allTrees} from "@/model/card-trees.js";
+import {allBirds} from "@/model/card-birds.js";
+import {allButterflies} from "@/model/card-butterflies.js";
 import {allOtherTopInBaseGame} from "@/model/card-others.js";
-import {allPlantsInBaseGame} from "@/model/card-plants.js";
-import {allMushroomsInBaseGame} from "@/model/card-mushrooms.js";
-import {allAmphibiansInBaseGame} from "@/model/card-amphibians.js";
-import {allInsectsInBaseGame} from "@/model/card-insects.js";
-import {allPawedInBaseGame} from "@/model/card-pawed-animals.js";
-import {allBatsInBaseGame} from "@/model/card-bats.js";
-import {allDeersInBaseGame} from "@/model/card-deer-cloven.js";
+import {allPlants} from "@/model/card-plants.js";
+import {allMushrooms} from "@/model/card-mushrooms.js";
+import {allAmphibians} from "@/model/card-amphibians.js";
+import {allInsects} from "@/model/card-insects.js";
+import {allPawed} from "@/model/card-pawed-animals.js";
+import {allBats} from "@/model/card-bats.js";
+import {allDeers} from "@/model/card-deer-cloven.js";
 
 const cards = [
-    ...allTreesInBaseGame,
-    ...allBirdsInBaseGame,
-    ...allButterfliesInBaseGame,
+    ...allTrees,
+    ...allBirds,
+    ...allButterflies,
     ...allOtherTopInBaseGame,
-    ...allPlantsInBaseGame,
-    ...allMushroomsInBaseGame,
-    ...allAmphibiansInBaseGame,
-    ...allInsectsInBaseGame,
-    ...allPawedInBaseGame,
-    ...allBatsInBaseGame,
-    ...allDeersInBaseGame
+    ...allPlants,
+    ...allMushrooms,
+    ...allAmphibians,
+    ...allInsects,
+    ...allPawed,
+    ...allBats,
+    ...allDeers
 ]
 
 export default cards

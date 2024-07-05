@@ -47,6 +47,11 @@
             }
         }, {passive: false});
 
+        // prevent dbclick zooming
+        document.addEventListener('dblclick', function(event) {
+            event.preventDefault();
+        });
+
     </script>
 </head>
 <body>

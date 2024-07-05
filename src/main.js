@@ -14,12 +14,20 @@ import router from './router'
 import VueGtag from "vue-gtag";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {faCaretLeft, faCaretUp, faCircleMinus, faCirclePlus, faWindowClose} from '@fortawesome/free-solid-svg-icons'
+import {
+    faBars,
+    faCaretLeft,
+    faCaretUp,
+    faCircleMinus,
+    faCirclePlus,
+    faWindowClose
+} from '@fortawesome/free-solid-svg-icons'
 library.add(faCircleMinus)
 library.add(faCirclePlus)
 library.add(faWindowClose)
 library.add(faCaretUp)
 library.add(faCaretLeft)
+library.add(faBars)
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import './registerServiceWorker'
 

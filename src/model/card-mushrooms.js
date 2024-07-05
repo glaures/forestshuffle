@@ -30,6 +30,14 @@ export const pennyBun = {
     }
 }
 
+export const blackTrumpet = {
+    name: 'blackTrumpet',
+    position: 'bottom',
+    symbols: ['mushroom', 'alps'],
+    recalculatePoints(forest) {
+    }
+}
 
-export const allMushroomsInBaseGame = [chanterelle, flyagaric, parasolMushroom, pennyBun]
+
+export const allMushrooms = [chanterelle, flyagaric, parasolMushroom, pennyBun, blackTrumpet]
 

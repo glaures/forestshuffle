@@ -1,11 +1,10 @@
 <script>
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {useForestsStore} from "@/stores/forests-store.js";
-import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
 
 export default {
   name: "CardAmountEditor",
-  components: {SymbolAmountEditor, FontAwesomeIcon},
+  components: {FontAwesomeIcon},
   props: {
     card: Object,
     forest: Object,
@@ -22,62 +21,64 @@ export default {
     removeCard() {
       useForestsStore().removeCard(this.playerName, this.card.name)
     },
-    paramAdd(paramName) {
-      useForestsStore().addParam(this.playerName, this.card.name, paramName)
+    paramAdd(param) {
+      if (param.type === 'number')
+        useForestsStore().addParam(this.playerName, this.card.name, param.name)
+      else if (param.type === 'type')
+        useForestsStore().addSymbolCount(this.playerName, param.symbol)
     },
-    paramSub(paramName) {
-      useForestsStore().subParam(this.playerName, this.card.name, paramName)
+    paramSub(param) {
+      if (param.type === 'number')
+        useForestsStore().subParam(this.playerName, this.card.name, param.name)
+      else if (param.type === 'type')
+        useForestsStore().subSymbolCount(this.playerName, param.symbol)
     }
   }
 }
 </script>
 
 <template>
-  <div class="d-flex mt-2">
-    <div class="fw-bold card-amount">
+  <div class="row mt-2">
+    <div class="fw-bold col-1">
       <span v-if="card.count > 0">{{ card.count }}&times;</span>
     </div>
-    <div class="flex-grow-1">
-      <button @click="addCard" :class="'btn-' + card.symbols[0]" class="btn btn-primary btn-sm btn-card">
-        <img :src="'./img/symbols/' + card.symbols[0] + '.png'" height="20"/>
+    <div class="col-9 pe-0 text-nowrap overflow-x-hidden">
+      <button @click="addCard" :class="'btn-' + card.symbols[0]" class="w-100 btn btn-primary btn-sm text-start">
+        <img v-for="(symbol, idx) in card.symbols" :src="'./img/symbols/' + symbol + '.png'" height="20"
+             :class="{'ms-1': idx > 0}"/>
+        <img v-if="card.name.startsWith('roe')" :src="'./img/symbols/' + card.type + '.png'" height="20"
+             class="ms-1"/>
         <span class="ms-2">{{ $t(card.name) }}</span>
       </button>
+    </div>
+    <div class="col-1 ps-0">
       <button class="ms-1 btn btn-outline-danger btn-sm" @click="removeCard">&times;</button>
     </div>
-    <div>
+    <div class="col-1 text-start overflow-x-hidden">
       <span v-if="card.count > 0 && card.symbols.indexOf('butterfly') < 0 ">{{ card.points }}</span>
     </div>
   </div>
-  <div class="mt-1 mb-2" v-for="param in card.params" :key="param.name">
-    <div v-if="param.type === 'number'" class="mt-1 mb-3 d-flex align-items-center">
-      <div class="card-amount"/>
-      <div class="fw-bold card-amount">
-        <span v-if="card.count > 0">{{ param.value }}</span>
-      </div>
-      <div class="flex-grow-1">
-        <button @click="paramAdd(param.name)" :class="'btn-' + card.symbols[0]"
-                class="btn btn-sm btn-primary btn-card">
-          <span class="ms-2">{{ $t(param.name) }}</span>
-        </button>
-        <button class="ms-1 btn btn-outline-danger btn-sm" @click="paramSub(param.name)">&times;</button>
-      </div>
+  <div class="mt-1 row" v-for="(param, idx) in card.params" :key="param.name"
+       :class="{'mb-3': card.params.length === idx+1}">
+    <div class="fw-bold offset-1 col-1">
+      <span v-if="card.count > 0 && param.type === 'number'">{{ param.value }}</span>
+      <span v-if="card.count > 0 && param.type === 'type'">{{ forest[param.symbol + 'Count'] }}</span>
+    </div>
+    <div class="col-8 text-nowrap pe-0">
+      <button @click="paramAdd(param)" :class="'btn-' + card.symbols[0]"
+              class="btn btn-sm btn-primary text-start w-100">
+        <img v-if="param.type === 'type'" :src="'./img/symbols/' + param.symbol + '.png'" :alt="$t(param.symbol)"
+             height="20"/>
+        <span class="ps-2">{{ $t(param.name) }}</span>
+      </button>
+    </div>
+    <div class="col-1 ps-0">
+      <button class="ms-1 btn btn-outline-danger btn-sm" @click="paramSub(param)">&times;</button>
     </div>
   </div>
 </template>
 
 <style scoped>
-.card-amount {
-  width: 8%;
-  min-width: 8%;
-  max-width: 8%;
-}
-
-.btn-card {
-  min-width: 70%;
-  width: 70%;
-  text-align: left;
-}
-
 .btn-amphibian {
   background-color: #9d8683;
 }

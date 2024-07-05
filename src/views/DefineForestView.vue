@@ -70,11 +70,6 @@
                           symbol="deer"
                           symbol2="clovenHoofedAnimal"
                           heading="deerAndCloven"/>
-    <div class="d-flex justify-content-center align-items-center"
-         v-if="roeDeerPresent">
-      <div class="fs-5 d-none d-md-flex me-md-2">{{ $t('treeTypeCount') }}</div>
-      <SymbolAmountEditor class="mt-2" :player-name="playerName"/>
-    </div>
     <CardAmountEditorList class="mt-4"
                           :cards="pawedSide"
                           :forest="forest"
@@ -101,13 +96,12 @@
 import CardAmountEditor from "@/components/CardAmountEditor.vue";
 import {useForestsStore} from "@/stores/forests-store.js";
 import CardAmountEditorList from "@/components/CardAmountEditorList.vue";
-import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
 import {useGameStore} from "@/stores/game-store.js";
 import PlayerNavigation from "@/components/PlayerNavigation.vue";
 import Navigation from "@/components/Navigation.vue";
 
 export default {
-  components: {Navigation, PlayerNavigation, SymbolAmountEditor, CardAmountEditorList, CardAmountEditor},
+  components: {Navigation, PlayerNavigation, CardAmountEditorList, CardAmountEditor},
   computed: {
     playerName() {
       return useGameStore().currentPlayer?.name

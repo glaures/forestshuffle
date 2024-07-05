@@ -41,4 +41,13 @@ export const greaterHorseshoeBat = {
     }
 }
 
-export const allBatsInBaseGame = [barbastelleBat, bechsteinsBat, brownLongEaredBat, greaterHorseshoeBat]
+export const savisPipistrelle = {
+    name: 'savisPipistrelle',
+    position: 'side',
+    symbols: ['bat', 'alps'],
+    recalculatePoints(forest) {
+        this.points = defaultBatCalculatePoints(forest, this.name)
+    }
+}
+
+export const allBats = [barbastelleBat, bechsteinsBat, brownLongEaredBat, greaterHorseshoeBat, savisPipistrelle]

@@ -39,5 +39,14 @@ export const fireSalamander= {
     }
 }
 
-export const allAmphibiansInBaseGame = [commonToad, pondTurtle, treeFrog, fireSalamander]
+export const alpineNewt= {
+    name: 'alpineNewt',
+    position: 'bottom',
+    symbols: ['amphibian', 'alps'],
+    recalculatePoints(forest) {
+        this.points = this.count * 2 * forest.countBySymbol('insect')
+    }
+}
+
+export const allAmphibians = [commonToad, pondTurtle, treeFrog, fireSalamander, alpineNewt]
 

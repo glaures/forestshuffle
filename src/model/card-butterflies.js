@@ -54,4 +54,12 @@ export const largeTortoiseshell = {
     }
 }
 
-export const allButterfliesInBaseGame = [camberwellBeauty, peacockButterfly, silverWashedFritillary, purpleEmperor, largeTortoiseshell]
+export const phoebusApollo = {
+    name: 'phoebusApollo',
+    position: 'top',
+    symbols: ['butterfly', 'insect', 'alps'],
+    recalculatePoints(forest) {
+    }
+}
+
+export const allButterflies = [camberwellBeauty, peacockButterfly, silverWashedFritillary, purpleEmperor, largeTortoiseshell, phoebusApollo]

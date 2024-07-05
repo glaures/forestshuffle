@@ -5,7 +5,8 @@ export const useGameStore = defineStore('game', {
     state() {
         return {
             players: [],
-            currentPlayer: null
+            currentPlayer: null,
+            alpineExpansion: true
         }
     },
     actions: {
@@ -20,6 +21,9 @@ export const useGameStore = defineStore('game', {
         resetPlayers(){
             this.players = []
             this.currentPlayer = null
+        },
+        toggleAlpineExpansion(){
+            this.alpineExpansion = !this.alpineExpansion
         }
     }
 })

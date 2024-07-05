@@ -2,6 +2,7 @@
 import CardAmountEditor from "@/components/CardAmountEditor.vue";
 import {Forest} from "@/model/Forest.js";
 import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
+import {useGameStore} from "@/stores/game-store.js";
 
 export default {
   name: "CardAmountEditorList",
@@ -19,6 +20,11 @@ export default {
         return this.forest.butterflyPoints
       return this.cards.map(c => c.points)
           .reduce((p, sum) => sum += p, 0)
+    },
+    filteredCards() {
+      if (!useGameStore().alpineExpansion)
+        return this.cards.filter(c => c.symbols.indexOf('alps') < 0)
+      else return this.cards
     }
   }
 }
@@ -31,7 +37,7 @@ export default {
     <div class="ms-1 fs-5 flex-grow-1">{{ $t(heading) }}</div>
     <div class="fs-5">{{ totalPoints }}</div>
   </div>
-  <div v-for="card in cards"
+  <div v-for="card in filteredCards"
        :key="'cae_' + card.name"
        class="d-block">
     <CardAmountEditor

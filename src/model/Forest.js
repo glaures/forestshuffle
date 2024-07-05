@@ -34,6 +34,11 @@ export class Forest {
         this.horseChestnutCount = 0
         this.birchCount = 0
         this.beechCount = 0
+        this.sycamoreCount = 0
+        this.douglasFirCount = 0
+        this.oakCount = 0
+        this.europeanLarchCount = 0
+        this.stonePineCount = 0
         this.caveCount = 0
         this.points = 0
         this.cards = []
@@ -69,6 +74,9 @@ export class Forest {
     removeCard(cardName) {
         const c = this.findCard(cardName)
         c.count = Math.max(0, --c.count)
+        if(c.count === 0 && c.params){
+            c.params.forEach(p => p.value = 0)
+        }
     }
 
     addParam(cardName, paramName) {

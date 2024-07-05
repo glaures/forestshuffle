@@ -64,12 +64,14 @@ export const europeanFatDormouse = {
     }
 }
 
+export const numberOfHare = (forest) => forest.countByName("europeanHare") + forest.countByName("mountainHare")
+
 export const europeanHare = {
     name: 'europeanHare',
     position: 'side',
     symbols: ['pawedAnimal'],
     recalculatePoints(forest) {
-        this.points = forest.countByName("europeanHare") * this.count
+        this.points = this.count * numberOfHare(forest)
     }
 }
 
@@ -102,7 +104,7 @@ export const redFox = {
     position: 'side',
     symbols: ['pawedAnimal'],
     recalculatePoints(forest) {
-        this.points = this.count * forest.countByName("europeanHare") * 2
+        this.points = this.count * numberOfHare(forest) * 2
     }
 }
 
@@ -115,6 +117,22 @@ export const wolf = {
     }
 }
 
+export const alpineMarmot = {
+    name: 'alpineMarmot',
+    position: 'side',
+    symbols: ['pawedAnimal', 'alps'],
+    recalculatePoints(forest) {
+        this.points = this.count * 3 * forest.countDistinctBySymbol('plant')
+    }
+}
 
+export const mountainHare = {
+    name: 'mountainHare',
+    position: 'side',
+    symbols: ['pawedAnimal', 'alps'],
+    recalculatePoints(forest) {
+        this.points = this.count * numberOfHare(forest)
+    }
+}
 
-export const allPawedInBaseGame = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf]
+export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare]

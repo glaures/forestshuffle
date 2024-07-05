@@ -18,8 +18,16 @@ export const redDeer = {
 
 export const roeDeerBeech = {
     name: 'roeDeerBeech',
+    type: 'beech',
     position: 'side',
     symbols: ['deer', 'clovenHoofedAnimal'],
+    params: [{
+        name: 'beechCount',
+        type: 'type',
+        symbol: 'beech',
+        value: 0,
+        unrestricted: true
+    }],
     recalculatePoints(forest) {
         this.points = this.count * forest.beechCount * 3
     }
@@ -27,8 +35,16 @@ export const roeDeerBeech = {
 
 export const roeDeerBirch = {
     name: 'roeDeerBirch',
+    type: 'birch',
     position: 'side',
     symbols: ['deer', 'clovenHoofedAnimal'],
+    params: [{
+        name: 'birchCount',
+        type: 'type',
+        symbol: 'birch',
+        value: 0,
+        unrestricted: true
+    }],
     recalculatePoints(forest) {
         this.points = this.count * forest.birchCount * 3
     }
@@ -36,8 +52,16 @@ export const roeDeerBirch = {
 
 export const roeDeerHorseChestnut = {
     name: 'roeDeerHorseChestnut',
+    type: 'horseChestnut',
     position: 'side',
     symbols: ['deer', 'clovenHoofedAnimal'],
+    params: [{
+        name: 'horseChestnutCount',
+        type: 'type',
+        symbol: 'horseChestnut',
+        value: 0,
+        unrestricted: true
+    }],
     recalculatePoints(forest) {
         this.points = this.count * forest.horseChestnutCount * 3
     }
@@ -45,8 +69,16 @@ export const roeDeerHorseChestnut = {
 
 export const roeDeerLinden = {
     name: 'roeDeerLinden',
+    type: 'linden',
     position: 'side',
     symbols: ['deer', 'clovenHoofedAnimal'],
+    params: [{
+        name: 'lindenCount',
+        type: 'type',
+        symbol: 'linden',
+        value: 0,
+        unrestricted: true
+    }],
     recalculatePoints(forest) {
         this.points = this.count * forest.lindenCount * 3
     }
@@ -54,8 +86,16 @@ export const roeDeerLinden = {
 
 export const roeDeerSilverFir = {
     name: 'roeDeerSilverFir',
+    type: 'silverFir',
     position: 'side',
     symbols: ['deer', 'clovenHoofedAnimal'],
+    params: [{
+        name: 'silverFirCount',
+        type: 'type',
+        symbol: 'silverFir',
+        value: 0,
+        unrestricted: true
+    }],
     recalculatePoints(forest) {
         this.points = this.count * forest.silverFirCount * 3
     }
@@ -75,11 +115,37 @@ export const wildBoar = {
     position: 'side',
     symbols: ['clovenHoofedAnimal'],
     recalculatePoints(forest) {
-        if(forest.countByName('squeaker') > 0)
+        if (forest.countByName('squeaker') > 0)
             this.points = this.count * 10
         else
             this.points = 0
     }
 }
 
-export const allDeersInBaseGame = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, wildBoar]
+export const chamois = {
+    name: 'chamois',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal', 'alps'],
+    params: [{
+        name: 'stonePineCount',
+        type: 'type',
+        symbol: 'stonePine',
+        value: 0,
+        unrestricted: true
+    }],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.stonePineCount * 3
+    }
+}
+
+export const steinbock = {
+    name: 'steinbock',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal', 'alps'],
+    recalculatePoints(forest) {
+            this.points = this.count * 10
+    }
+}
+
+
+export const allDeers = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, wildBoar, chamois, steinbock]

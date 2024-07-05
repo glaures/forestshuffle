@@ -60,5 +60,5 @@ export const violetCarpenterBee = {
 }
 
 
-export const allInsectsInBaseGame = [gnat, fireflies, woodAnt, stagBeetle, violetCarpenterBee]
+export const allInsects = [gnat, fireflies, woodAnt, stagBeetle, violetCarpenterBee]
 

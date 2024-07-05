@@ -26,7 +26,7 @@ export const eurasianJay = {
     position: 'top',
     symbols: ['bird'],
     recalculatePoints(forest) {
-        this.points = forest.countByName('eurasianJay') * 3
+        this.points = this.count * 3
     }
 }
 
@@ -35,7 +35,7 @@ export const goshawk = {
     position: 'top',
     symbols: ['bird'],
     recalculatePoints(forest) {
-        this.points = forest.countByName('goshawk') * forest.countBySymbol('bird') * 3
+        this.points = this.count * forest.countBySymbol('bird') * 3
     }
 }
 
@@ -45,7 +45,7 @@ export const greatSpottedWoodpecker = {
     symbols: ['bird'],
     recalculatePoints(forest) {
         this.points = forest.hasMostOfSymbol("tree")
-            ? forest.countByName('greatSpottedWoodpecker') * 10
+            ? this.count * 10
             : 0
     }
 }
@@ -55,9 +55,45 @@ export const tawnyOwl = {
     position: 'top',
     symbols: ['bird'],
     recalculatePoints(forest) {
-        this.points = forest.countByName('tawnyOwl') * 5
+        this.points = this.count * 5
     }
 }
 
-export const allBirdsInBaseGame = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl]
+export const capercaillie = {
+    name: 'capercaillie',
+    position: 'top',
+    symbols: ['bird', 'alps'],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('plant')
+    }
+}
+
+export const goldenEagle = {
+    name: 'goldenEagle',
+    position: 'top',
+    symbols: ['bird', 'alps'],
+    recalculatePoints(forest) {
+        this.points = this.count * (forest.countBySymbol('pawedAnimal') + forest.countBySymbol('amphibian'))
+    }
+}
+
+export const beardedVulture = {
+    name: 'beardedVulture',
+    position: 'top',
+    symbols: ['bird', 'alps'],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.caveCount
+    }
+}
+
+export const commonRaven = {
+    name: 'commonRaven',
+    position: 'top',
+    symbols: ['bird', 'alps'],
+    recalculatePoints(forest) {
+        this.points = this.count * 5
+    }
+}
+
+export const allBirds = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl, capercaillie, goldenEagle, beardedVulture, commonRaven]
 

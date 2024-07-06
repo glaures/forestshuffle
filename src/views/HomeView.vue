@@ -15,6 +15,7 @@
 import {useGameStore} from "@/stores/game-store.js";
 import {useForestsStore} from "@/stores/forests-store.js";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import {event} from "vue-gtag";
 
 export default {
   name: "HomeView",
@@ -35,6 +36,9 @@ export default {
       useForestsStore().addForest(this.newPlayerName)
       this.newPlayerName = ''
     }
+  },
+  mounted() {
+    event('initialLanguage', {lang: this.$i18n.locale})
   }
 }
 </script>

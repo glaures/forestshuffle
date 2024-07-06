@@ -1,11 +1,16 @@
 <script>
 import { version } from "@/../package.json"
+import {event} from "vue-gtag";
+
 export default {
   name: "Version",
   data() {
     return {
       version
     }
+  },
+  mounted(){
+    event('version', {version: this.version})
   }
 }
 </script>

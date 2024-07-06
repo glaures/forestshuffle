@@ -21,10 +21,10 @@
         </div>
       </div>
       <div class="d-flex justify-content-center w-100 mt-5">
-        <span class="flag-icon flag-icon-gb-eng cursor-pointer" @click="$i18n.locale = 'en'"/>
-        <span class="ms-2 flag-icon flag-icon-de cursor-pointer" @click="$i18n.locale = 'de'"/>
-        <span class="ms-2 flag-icon flag-icon-fr cursor-pointer" @click="$i18n.locale = 'fr'"/>
-        <span class="ms-2 flag-icon flag-icon-it cursor-pointer" @click="$i18n.locale = 'it'"/>
+        <span class="flag-icon flag-icon-gb-eng cursor-pointer" @click="changeLanguage('en')"/>
+        <span class="ms-2 flag-icon flag-icon-de cursor-pointer" @click="changeLanguage('de')"/>
+        <span class="ms-2 flag-icon flag-icon-fr cursor-pointer" @click="changeLanguage('fr')"/>
+        <span class="ms-2 flag-icon flag-icon-it cursor-pointer" @click="changeLanguage('it')"/>
       </div>
     </div>
   </div>
@@ -63,6 +63,10 @@ export default {
     toggleAlpineExpansion() {
       useGameStore().toggleAlpineExpansion()
       event('alpineExpansionToggled', {newState: this.alpineExpansion})
+    },
+    changeLanguage(newLang) {
+      this.$i18n.locale = newLang
+      event('languageChanged', {language: newLang})
     }
   }
 }

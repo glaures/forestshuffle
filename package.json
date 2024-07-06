@@ -1,18 +1,21 @@
 {
   "name": "vue-project",
-  "version": "1.0.11",
+  "version": "1.0.14",
   "private": true,
   "type": "module",
   "scripts": {
     "bump-version": "node bump-version.js",
     "dev": "vite",
-    "build": "npm run bump-version && vite build",
+    "build": "npm run bump-version && vite build && npx cap copy",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@capacitor/android": "^6.1.0",
+    "@capacitor/cli": "^6.1.0",
+    "@capacitor/core": "^6.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",

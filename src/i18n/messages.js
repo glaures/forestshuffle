@@ -435,7 +435,7 @@ export default {
     },
 	it: {
         cookies: {
-            intro: "Questo sito utilizza i cookie - per maggiori informazioni al riguardo, consultare la nostra informativa sulla privacy. Fare clic su \"Accetta tutti"\ per accettare tutti i cookie o regolare le impostazioni dei cookie facendo clic qui.",
+            intro: "Questo sito utilizza i cookie - per maggiori informazioni al riguardo, consultare la nostra informativa sulla privacy. Fare clic su 'Accetta tutti' per accettare tutti i cookie o regolare le impostazioni dei cookie facendo clic qui.",
             settings: "Impostazioni Cookie",
             acceptAll: "Accetta Tutto",
             acceptSelection: "Accetta la selezione",
@@ -577,6 +577,6 @@ export default {
         goldenEagle: "Aquila Reale",
         beardedVulture: "Gipeto",
         gentian: "Genziana",
-        commonRaven: "Corvo Imperiale",
+        commonRaven: "Corvo Imperiale"
     }
 }

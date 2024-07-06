@@ -12,7 +12,6 @@ export const mole = {
     position: 'bottom',
     symbols: ['pawedAnimal'],
     recalculatePoints(forest) {
-        this.points = this.count * forest.countBySymbol('pawedAnimal') * 2
     }
 }
 

@@ -437,7 +437,7 @@ export default {
         cookies: {
             intro: "Questo sito utilizza i cookie - per maggiori informazioni al riguardo, consultare la nostra informativa sulla privacy. Fare clic su 'Accetta tutti' per accettare tutti i cookie o regolare le impostazioni dei cookie facendo clic qui.",
             settings: "Impostazioni Cookie",
-            acceptAll: "Accetta Tutto",
+            acceptAll: "Accetta Tutti",
             acceptSelection: "Accetta la selezione",
             technical: "Salva i dati rilevanti per la gestione del sito",
             tracking: "Salva i dati per l'analisi anonima delle interazioni degli utenti con questo sito web",
@@ -452,7 +452,7 @@ export default {
         // general strings
         points: 'Punti',
         player: 'Giocatore',
-        treeTypeCount: 'Amounts of tree types',
+        treeTypeCount: 'Quantità di tipologie di alberi',
         startNewGame: 'Nuova Partita',
         resetPlayers: 'Resetta i giocatori',
         alpineExpansion: 'Espansione Alpine',
@@ -464,7 +464,7 @@ export default {
         bottoms: "In Basso",
         sides: "Laterali",
         birds: "Uccelli",
-        butterflies: "Farballe",
+        butterflies: "Farfalle",
         others: "Altro",
         plants: "Piante",
         mushrooms: "Funghi",

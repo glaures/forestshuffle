@@ -29,6 +29,7 @@ library.add(faCaretUp)
 library.add(faCaretLeft)
 library.add(faBars)
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+
 import './registerServiceWorker'
 
 const app = createApp(App)

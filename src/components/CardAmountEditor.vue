@@ -1,6 +1,7 @@
 <script>
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {useForestsStore} from "@/stores/forests-store.js";
+import {event} from "vue-gtag"
 
 export default {
   name: "CardAmountEditor",
@@ -17,6 +18,7 @@ export default {
   methods: {
     addCard() {
       useForestsStore().addCard(this.playerName, this.card.name)
+      event('addCard', {card: card.name})
     },
     removeCard() {
       useForestsStore().removeCard(this.playerName, this.card.name)

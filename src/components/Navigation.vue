@@ -20,6 +20,12 @@
           <img src="/img/symbols/alps.png" alt="alps" height="24"/>{{ $t('alpineExpansion') }}
         </div>
       </div>
+      <div class="d-flex justify-content-center w-100 mt-5">
+        <span class="flag-icon flag-icon-gb-eng cursor-pointer" @click="$i18n.locale = 'en'"/>
+        <span class="ms-2 flag-icon flag-icon-de cursor-pointer" @click="$i18n.locale = 'de'"/>
+        <span class="ms-2 flag-icon flag-icon-fr cursor-pointer" @click="$i18n.locale = 'fr'"/>
+        <span class="ms-2 flag-icon flag-icon-it cursor-pointer" @click="$i18n.locale = 'it'"/>
+      </div>
     </div>
   </div>
 </template>
@@ -60,9 +66,9 @@ export default {
 
 <style scoped>
 #navigation {
-  height: 30vh;
-  max-height: 30vh;
-  top: 40vh;
+  height: 40vh;
+  max-height: 40vh;
+  top: 30vh;
 }
 
 .burger-menu {

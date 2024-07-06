@@ -18,7 +18,8 @@ export default {
   methods: {
     addCard() {
       useForestsStore().addCard(this.playerName, this.card.name)
-      event('addCard', {card: card.name})
+      const cardNameEnglish = this.$t(this.card.name, 'en')
+      event('cardAdded', {card: cardNameEnglish})
     },
     removeCard() {
       useForestsStore().removeCard(this.playerName, this.card.name)

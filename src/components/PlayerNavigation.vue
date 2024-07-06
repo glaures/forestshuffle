@@ -1,6 +1,7 @@
 <script>
 import {useGameStore} from "@/stores/game-store.js";
 import {useForestsStore} from "@/stores/forests-store.js";
+import {event} from "vue-gtag";
 
 export default {
   name: "PlayerNavigation",
@@ -31,6 +32,7 @@ export default {
       useForestsStore().addForest(playerName)
       useGameStore().addPlayer(playerName)
       useGameStore().selectPlayer(playerName)
+      event('playerAdded', {totalPlayers: useGameStore().players.length})
     },
     selectPlayer(playerName) {
       useGameStore().selectPlayer(playerName)
@@ -41,6 +43,7 @@ export default {
       const currentName = useGameStore().currentPlayer.name
       useForestsStore().getForestByPlayerName(currentName).playerName = newName
       useGameStore().currentPlayer.name = newName
+      event('playerNameUpdated', {name:newName})
     }
   }
 }

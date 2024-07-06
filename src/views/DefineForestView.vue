@@ -99,6 +99,7 @@ import CardAmountEditorList from "@/components/CardAmountEditorList.vue";
 import {useGameStore} from "@/stores/game-store.js";
 import PlayerNavigation from "@/components/PlayerNavigation.vue";
 import Navigation from "@/components/Navigation.vue";
+import {event} from "vue-gtag";
 
 export default {
   components: {Navigation, PlayerNavigation, CardAmountEditorList, CardAmountEditor},
@@ -180,6 +181,9 @@ export default {
       },
       immediate: true
     }
+  },
+  mounted() {
+    event('newGameStarted')
   }
 }
 </script>

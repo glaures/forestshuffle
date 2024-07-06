@@ -11,12 +11,12 @@
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <div class="d-block btn btn-primary" @click="startNewGame">{{ $t('startNewGame') }}</div>
+      <div class="d-block btn btn-primary cursor-pointer" @click="startNewGame">{{ $t('startNewGame') }}</div>
       <div class="mt-2 d-block btn btn-warning" @click="resetPlayers">{{ $t('resetPlayers') }}</div>
-      <div class="d-flex mt-3 w-100 justify-content-center">
-        <input class="form-check form-check-input alpine-checkbox" type="checkbox" :checked="alpineExpansion"
+      <div class="d-flex mt-3 w-100 justify-content-center" @click="toggleAlpineExpansion">
+        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="alpineExpansion"
                @input="toggleAlpineExpansion"/>
-        <div class="form-check-label ms-2">
+        <div class="form-check-label ms-2 user-select-none">
           <img src="/img/symbols/alps.png" alt="alps" height="24"/>{{ $t('alpineExpansion') }}
         </div>
       </div>
@@ -34,6 +34,7 @@
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {useGameStore} from "@/stores/game-store.js";
 import {useForestsStore} from "@/stores/forests-store.js";
+import {event} from "vue-gtag";
 import {Offcanvas} from 'bootstrap'
 
 export default {
@@ -51,14 +52,17 @@ export default {
     startNewGame() {
       useForestsStore().reset()
       this.closeMenu()
+      event('newGameStarted')
     },
     resetPlayers() {
       useGameStore().resetPlayers()
       this.startNewGame()
       this.closeMenu()
+      event('playerReset')
     },
     toggleAlpineExpansion() {
       useGameStore().toggleAlpineExpansion()
+      event('alpineExpansionToggled', {newState: this.alpineExpansion})
     }
   }
 }
@@ -79,7 +83,4 @@ export default {
   min-height: 40px;
 }
 
-.alpine-checkbox {
-  background-color: #8476b2;
-}
 </style>

@@ -8,6 +8,7 @@
     <script>
         const lang = (navigator.language || navigator.userLanguage).split('-')[0];
         function setTitle() {
+            const test = "";
             const title = document.createElement('title');
             title.text = lang === 'de' ? "Mischwald Punkte Rechner - Scoring App" : "Forest Shuffle Scoring App"
             document.head.appendChild(title);

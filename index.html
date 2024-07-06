@@ -6,25 +6,24 @@
     <link rel="apple-touch-icon" href="./iconx/apple-touch-icon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        const lang = (navigator.language || navigator.userLanguage).split('-')[0];
+        let langSetting = (navigator.language || navigator.userLanguage).split('-')[0];
+        const lang = ['de', 'en', 'fr', 'it'].indexOf(langSetting) > 0 ? langSetting : 'en'
         function setTitle() {
-            const test = "";
             const title = document.createElement('title');
-            title.text = lang === 'de' ? "Mischwald Punkte Rechner - Scoring App" : "Forest Shuffle Scoring App"
+            const titles = {
+                de: 'Mischwald Punkte Rechner - Scoring App',
+                en: 'Forest Shuffle - Scoring App',
+                fr: 'Forêt Mixte - Application de notation - Scoring App',
+                it: 'Foresta Mista - App di punteggio - Scoring App'
+            }
+            title.text = titles[lang]
             document.head.appendChild(title);
         }
 
         function loadManifest() {
-            let manifestUrl = './manifest-en.json';
-            if (lang === 'de') {
-                manifestUrl = './manifest-de.json';
-            }
-            if (lang === 'fr') {
-                manifestUrl = './manifest-fre.json';
-            }
             const link = document.createElement('link');
             link.rel = 'manifest';
-            link.href = manifestUrl;
+            link.href = `./manifest-${lang}.json`;
             document.head.appendChild(link);
         }
         setTitle();
@@ -52,7 +51,6 @@
         document.addEventListener('dblclick', function(event) {
             event.preventDefault();
         });
-
     </script>
 </head>
 <body>

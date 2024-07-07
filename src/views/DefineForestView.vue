@@ -1,6 +1,7 @@
 <template>
-  <PlayerNavigation/>
-  <Navigation/>
+  <NavigationAndButtons @toggle-standings="toggleRankingsModal"
+                        @start-new-game="startNewGame"
+                        @reset-players="resetPlayers"/>
   <div v-if="forest" class="container">
     <div class="distance-keeper position-relative"></div>
     <CardAmountEditorList :cards="trees"
@@ -90,6 +91,32 @@
       </div>
     </div>
   </div>
+  <div id="standingsModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="fs-1">{{ $t('ranking') }}</div>
+          <button type="button" class="btn-close" aria-label="Close" @click="toggleRankingsModal(true)"></button>
+        </div>
+        <div class="modal-body">
+          <Ranking @toggle-standings="toggleRankingsModal"/>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <div>
+            <button class="d-block btn btn-danger btn-sm" @click="startNewGame">
+              {{ $t('startNewGame') }}
+            </button>
+            <button class="mt-1 btn btn-danger btn-sm" @click="resetPlayers">
+              {{ $t('resetPlayers') }}
+            </button>
+          </div>
+          <div class="flex-grow-1 text-end">
+            <button class="btn btn-primary" @click="toggleRankingsModal(true)">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -97,12 +124,14 @@ import CardAmountEditor from "@/components/CardAmountEditor.vue";
 import {useForestsStore} from "@/stores/forests-store.js";
 import CardAmountEditorList from "@/components/CardAmountEditorList.vue";
 import {useGameStore} from "@/stores/game-store.js";
-import PlayerNavigation from "@/components/PlayerNavigation.vue";
-import Navigation from "@/components/Navigation.vue";
 import {event} from "vue-gtag";
+import NavigationAndButtons from "@/components/NavigationAndButtons.vue";
+import FloatingButtons from "@/components/FloatingButtons.vue";
+import Ranking from "@/components/Ranking.vue";
+import {Modal} from "bootstrap"
 
 export default {
-  components: {Navigation, PlayerNavigation, CardAmountEditorList, CardAmountEditor},
+  components: {Ranking, FloatingButtons, NavigationAndButtons, CardAmountEditorList, CardAmountEditor},
   computed: {
     playerName() {
       return useGameStore().currentPlayer?.name
@@ -162,7 +191,30 @@ export default {
   methods: {
     setCaveCount(caveCount) {
       useForestsStore().setCaveCount(this.playerName, caveCount)
-    }
+    },
+    toggleRankingsModal(closeOny) {
+      const standingsModalElement = document.getElementById("standingsModal")
+      if (standingsModalElement) {
+        const open = standingsModalElement.classList.contains('show')
+        if (open)
+          Modal.getOrCreateInstance(standingsModalElement).hide()
+        else if (!closeOny)
+          Modal.getOrCreateInstance(standingsModalElement).show()
+      }
+    },
+    startNewGame() {
+      useForestsStore().reset()
+      useGameStore().selectPlayer(useGameStore().players[0].name)
+      this.toggleRankingsModal(true)
+      event('newGameStarted')
+    },
+    resetPlayers() {
+      useGameStore().resetPlayers()
+      useGameStore().addPlayer(`${this.$t('player')} 1`)
+      useForestsStore().reinit()
+      this.startNewGame()
+      event('playerReset')
+    },
   },
   watch: {
     playerName: {
@@ -190,7 +242,7 @@ export default {
 
 <style scoped>
 .distance-keeper {
-  min-height: 13vh;
+  min-height: 10vh;
 }
 
 .narrow-input-wrapper {

@@ -1,6 +1,7 @@
 import {defineStore} from "pinia";
 import {reactive} from 'vue';
 import {Forest} from "@/model/Forest.js";
+import {useGameStore} from "@/stores/game-store.js";
 
 export const useForestsStore = defineStore('forests', {
     state: () => ({
@@ -59,6 +60,12 @@ export const useForestsStore = defineStore('forests', {
         },
         reset() {
             this.forests.forEach(f => f.reset())
+        },
+        reinit(){
+            this.forests = []
+            for(let player of useGameStore().players){
+                this.addForest(player.name)
+            }
         }
     }
 })

@@ -27,6 +27,7 @@ export default {
         startNewGame: 'Start new game',
         resetPlayers: 'Reset players',
         alpineExpansion: 'Alpine Expansion',
+        ranking: 'Ranking',
         // error messages
         "error.nameTaken": "The name {0} is already taken.",
         // symbols
@@ -178,6 +179,7 @@ export default {
         startNewGame: 'Neues Spiel starten',
         resetPlayers: 'Spieler zurücksetzen',
         alpineExpansion: 'Alpin Erweiterung',
+        ranking: 'Rangliste',
         // error messages
         "error.nameTaken": "Der Name {0} ist bereits vergeben.",
         // symbols
@@ -328,6 +330,7 @@ export default {
         startNewGame: "Commencer une nouvelle partie",
         resetPlayers: "Réinitialiser les joueurs",
         alpineExpansion: 'Extension Alps',
+        ranking: 'Classement',
         "error.nameTaken": "Le nom {0} est déjà pris.",
         trees: "Arbres",
         tops: "Hauts",
@@ -476,6 +479,7 @@ export default {
         startNewGame: 'Nuova Partita',
         resetPlayers: 'Resetta i giocatori',
         alpineExpansion: 'Espansione Alpine',
+        ranking: 'Classifica',
         // error messages
         "error.nameTaken": "Il nome {0} è già stato usato.",
         // symbols

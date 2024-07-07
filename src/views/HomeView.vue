@@ -3,8 +3,8 @@
     <img src="/img/splash.png" class="w-100" alt="splash">
   </div>
   <div class="container text-center">
-    <div class="mt-5 fs-1 fw-bold">{{ $t('forrestShuffle') }}</div>
-    <div class="fs-5">{{ $t('scoringApp') }}</div>
+    <h1 class="mt-5 fs-1 fw-bold">{{ $t('forestShuffle') }}</h1>
+    <h2 class="fs-5">{{ $t('scoringApp') }}</h2>
     <router-link :to="{name: 'defineForest'}">
       <button class="mt-3 btn btn-primary btn-sm">{{ $t('letsGo') }}</button>
     </router-link>

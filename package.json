@@ -1,6 +1,6 @@
 {
   "name": "vue-project",
-  "version": "1.0.14",
+  "version": "1.0.18",
   "private": true,
   "type": "module",
   "scripts": {
@@ -20,12 +20,14 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@popperjs/core": "^2.11.8",
+    "@unhead/vue": "^1.9.15",
     "bootstrap": "^5.3.3",
     "flag-icon-css": "^4.1.7",
     "gh-pages": "^6.1.1",
     "pinia": "^2.1.7",
     "register-service-worker": "^1.7.2",
     "sass": "^1.77.6",
+    "sitemap": "^8.0.0",
     "vue": "^3.4.29",
     "vue-gtag": "^2.0.1",
     "vue-i18n": "^9.13.1",

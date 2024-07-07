@@ -23,7 +23,7 @@ export class Forest {
 
     constructor(playerName, allForests) {
         this.playerName = playerName
-        this.allForrests = allForests
+        this.allForests = allForests
         this.reset()
     }
 
@@ -134,7 +134,7 @@ export class Forest {
     hasMostOfName(cardName) {
         const inThisForest = this.countByName(cardName)
         let noOtherForestHasMore = true
-        const otherForests = this.allForrests.filter(f => f.playerName !== this.playerName)
+        const otherForests = this.allForests.filter(f => f.playerName !== this.playerName)
         for (let otherForest of otherForests) {
             if (otherForest.countByName(cardName) > inThisForest)
                 noOtherForestHasMore = false
@@ -145,7 +145,7 @@ export class Forest {
     hasMostOfSymbol(symbolName) {
         let inThisForest = this.countBySymbol(symbolName)
         let noOtherForestHasMore = true
-        const otherForests = this.allForrests.filter(f => f.playerName !== this.playerName)
+        const otherForests = this.allForests.filter(f => f.playerName !== this.playerName)
         for (let otherForest of otherForests) {
             let inOtherForest = otherForest.countBySymbol(symbolName)
             if (inOtherForest > inThisForest)

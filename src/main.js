@@ -7,6 +7,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import i18n from "@/i18n/i18n.js";
+import { createHead, VueHeadMixin } from '@unhead/vue'
 
 import App from './App.vue'
 import router from './router'
@@ -35,6 +36,9 @@ import './registerServiceWorker'
 const app = createApp(App)
 
 app.use(i18n)
+const head = createHead()
+app.use(head)
+app.mixin(VueHeadMixin)
 app.use(createPinia())
 app.use(router)
 app.use(VueGtag, {
@@ -44,3 +48,4 @@ app.use(VueGtag, {
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.mount('#app')
+

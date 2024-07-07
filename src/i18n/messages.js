@@ -1,5 +1,10 @@
 export default {
     en: {
+        meta: {
+            title: "Forest Shuffle Scoring App",
+            keywords: "forest shuffle, forest, shuffle, board game, game, card, scoring, app, alpine",
+            description: "Score your Forest Shuffle board game in under 90 seconds this simple user-friendly app.",
+        },
         cookies: {
             intro: "This site uses Cookies - for more information on this check our data privacy policy. Click on \"Accept all\", to accept all cookies or fine tune your cookie settings by clicking here",
             settings: "Cookie settings",
@@ -10,7 +15,7 @@ export default {
             social: "Store data for social media integrations on this website",
             consentRequired: "Please consent to cookies first"
         },
-        forrestShuffle: "Forest Shuffle",
+        forestShuffle: "Forest Shuffle",
         scoringApp: "Scoring App",
         letsGo: "Let's go",
         imprint: "Imprint",
@@ -146,18 +151,23 @@ export default {
         commonRaven: "Common Raven",
     },
     de: {
-        "cookies": {
-            "intro": "Diese Website verwendet Cookies - nähere Information dazu und zu Deinen Rechten als Benutzer findest Du in unserer Datenschutzerklärung. Klicke auf \"Alle annehmen\", um Cookies zu akzeptieren und direkt unsere Website benutzen zu können, oder verwalte Deine Cookies indem Du hier klickst",
-            "settings": "Cookie Einstellungen",
-            "acceptAll": "Alle annehmen",
-            "acceptSelection": "Auswahl bestätigen",
-            "technical": "Für Speicherung von für die   Funktion der Website essentiellen Daten",
-            "tracking": "Für die anonymisierte Analyse des Nutzerverhalten notwendige Daten speichern",
-            "social": "Social Media auf der Website ermöglichen",
-            "consentRequired": "Please consent to cookies first"
+        meta: {
+            title: "Mischwald Wertungs-App - Forest Shuffle Scoring App",
+            keywords: "mischwald, brettspiel, spiel, wertung, scoring, punkte, alpin, erweiterung",
+            description: "Ermittle die Punkte Deiner Mischwald Auslage in weniger als 90 Sekunden mit dieser nutzerfreundlichen App.",
+        },
+        cookies: {
+            intro: "Diese Website verwendet Cookies - nähere Information dazu und zu Deinen Rechten als Benutzer findest Du in unserer Datenschutzerklärung. Klicke auf \"Alle annehmen\", um Cookies zu akzeptieren und direkt unsere Website benutzen zu können, oder verwalte Deine Cookies indem Du hier klickst",
+            settings: "Cookie Einstellungen",
+            acceptAll: "Alle annehmen",
+            acceptSelection: "Auswahl bestätigen",
+            technical: "Für Speicherung von für die   Funktion der Website essentiellen Daten",
+            tracking: "Für die anonymisierte Analyse des Nutzerverhalten notwendige Daten speichern",
+            social: "Social Media auf der Website ermöglichen",
+            consentRequired: "Please consent to cookies first"
         },
         // general strings
-        forrestShuffle: "Mischwald",
+        forestShuffle: "Mischwald",
         scoringApp: "Wertungs-App",
         imprint: "Impressum",
         dataProtection: "Datenschutz",
@@ -292,6 +302,11 @@ export default {
         commonRaven: "Kolkrabe"
     },
     fr: {
+        meta: {
+            title: "Forêt Mixte - Application de score",
+            keywords: "Forêt Mixte, forêt, jeu de société, jeu, carte, score, application, alps",
+            description: "Scorez votre jeu de société Forest Shuffle en moins de 90 secondes avec cette application simple et conviviale.",
+        },
         cookies: {
             intro: "Ce site utilise des cookies - pour plus d'informations, consultez notre politique de confidentialité des données. Cliquez sur \"Accepter tout\", pour accepter tous les cookies ou ajustez vos paramètres de cookies en cliquant ici",
             settings: "Paramètres des cookies",
@@ -302,7 +317,7 @@ export default {
             social: "Stocker les données pour les intégrations de médias sociaux sur ce site",
             consentRequired: "Veuillez d'abord consentir aux cookies"
         },
-        forrestShuffle: "Forêt Mixte",
+        forestShuffle: "Forêt Mixte",
         scoringApp: "Application de Score",
         letsGo: "Allons-y",
         imprint: "Empreinte",
@@ -434,6 +449,11 @@ export default {
         commonRaven: "Grand corbeau"
     },
 	it: {
+        meta: {
+            title: "Forest Shuffle - App Punteggio",
+            keywords: "forest shuffle, punti, shuffle, gioco da tavolo, gioco, carta, punteggio, app, alpino",
+            description: "Segna il tuo gioco da tavolo Forest Shuffle in meno di 90 secondi con questa app semplice e facile da usare.",
+        },
         cookies: {
             intro: "Questo sito utilizza i cookie - per maggiori informazioni al riguardo, consultare la nostra informativa sulla privacy. Fare clic su 'Accetta tutti' per accettare tutti i cookie o regolare le impostazioni dei cookie facendo clic qui.",
             settings: "Impostazioni Cookie",
@@ -444,7 +464,7 @@ export default {
             social: "Salva i dati per le integrazioni dei social media su questo sito web",
             consentRequired: "Accetta i Cookie prima di tutto"
         },
-        forrestShuffle: "Forest Shuffle",
+        forestShuffle: "Forest Shuffle",
         scoringApp: "App Punteggio",
         letsGo: "Iniziamo!",
         imprint: "Imprint",

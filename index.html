@@ -8,25 +8,12 @@
     <script>
         let langSetting = (navigator.language || navigator.userLanguage).split('-')[0];
         const lang = ['de', 'en', 'fr', 'it'].indexOf(langSetting) > 0 ? langSetting : 'en'
-        function setTitle() {
-            const title = document.createElement('title');
-            const titles = {
-                de: 'Mischwald Punkte Rechner - Scoring App',
-                en: 'Forest Shuffle - Scoring App',
-                fr: 'Forêt Mixte - Application de notation - Scoring App',
-                it: 'Foresta Mista - App di punteggio - Scoring App'
-            }
-            title.text = titles[lang]
-            document.head.appendChild(title);
-        }
-
         function loadManifest() {
             const link = document.createElement('link');
             link.rel = 'manifest';
             link.href = `./manifest-${lang}.json`;
             document.head.appendChild(link);
         }
-        setTitle();
         loadManifest();
 
         let touchStartY = 0;

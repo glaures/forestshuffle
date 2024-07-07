@@ -122,10 +122,10 @@ export const wildBoar = {
     }
 }
 
-export const chamois = {
-    name: 'chamois',
+export const chamoisStonePine = {
+    name: 'chamoisStonePine',
     position: 'side',
-    symbols: ['clovenHoofedAnimal', 'alps'],
+    symbols: ['clovenHoofedAnimal', 'alps', 'stonePine'],
     params: [{
         name: 'stonePineCount',
         type: 'type',
@@ -135,6 +135,38 @@ export const chamois = {
     }],
     recalculatePoints(forest) {
         this.points = this.count * forest.stonePineCount * 3
+    }
+}
+
+export const chamoisEuropeanLarch = {
+    name: 'chamoisEuropeanLarch',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal', 'alps', 'europeanLarch'],
+    params: [{
+        name: 'europeanLarchCount',
+        type: 'type',
+        symbol: 'europeanLarch',
+        value: 0,
+        unrestricted: true
+    }],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.europeanLarchCount * 3
+    }
+}
+
+export const chamoisDouglasFir = {
+    name: 'chamoisDouglasFir',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal', 'alps', 'douglasFir'],
+    params: [{
+        name: 'douglasFirCount',
+        type: 'type',
+        symbol: 'douglasFir',
+        value: 0,
+        unrestricted: true
+    }],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.douglasFirCount * 3
     }
 }
 
@@ -148,4 +180,4 @@ export const steinbock = {
 }
 
 
-export const allDeers = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, wildBoar, chamois, steinbock]
+export const allDeers = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, wildBoar, chamoisDouglasFir, chamoisEuropeanLarch, chamoisStonePine, steinbock]

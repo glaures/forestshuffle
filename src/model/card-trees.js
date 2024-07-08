@@ -1,7 +1,7 @@
 export const beech = {
     name: 'beech',
     type: 'beech',
-    symbols: ['tree'],
+    symbols: ['tree', 'beech'],
     recalculatePoints(forest) {
         const count = this.count
         const violetCarpenterBee = forest.cards.find(c => c.name === 'violetCarpenterBee')
@@ -16,7 +16,7 @@ export const beech = {
 export const birch = {
     name: 'birch',
     type: 'birch',
-    symbols: ['tree'],
+    symbols: ['tree', 'birch'],
     recalculatePoints(forest) {
         this.points = this.count
     }
@@ -25,7 +25,7 @@ export const birch = {
 export const douglasFir = {
     name: 'douglasFir',
     type: 'douglasFir',
-    symbols: ['tree'],
+    symbols: ['tree', 'douglasFir'],
     recalculatePoints(forest) {
         this.points = this.count * 5
     }
@@ -34,7 +34,7 @@ export const douglasFir = {
 export const horseChestnut = {
     name: 'horseChestnut',
     type: 'horseChestnut',
-    symbols: ['tree'],
+    symbols: ['tree', 'horseChestnut'],
     recalculatePoints(forest) {
         let count = Math.min(this.count, 7)
         const violetCarpenterBee = forest.cards.find(c => c.name === 'violetCarpenterBee')
@@ -46,7 +46,7 @@ export const horseChestnut = {
 export const linden = {
     name: 'linden',
     type: 'linden',
-    symbols: ['tree'],
+    symbols: ['tree', 'linden'],
     recalculatePoints(forest) {
         this.points = this.count * (forest.hasMostOfName("linden") ? 3 : 1)
     }
@@ -55,7 +55,7 @@ export const linden = {
 export const oak = {
     name: 'oak',
     type: 'oak',
-    symbols: ['tree'],
+    symbols: ['tree', 'oak'],
     recalculatePoints(forest) {
         const differentTreeTypes = forest.cards.filter(c => c.symbols.indexOf('tree') >= 0 && c.name !== 'treeSaplings' && c.count > 0).length
         if (differentTreeTypes === 8)
@@ -67,7 +67,7 @@ export const oak = {
 export const silverFir = {
     name: 'silverFir',
     type: 'silverFir',
-    symbols: ['tree'],
+    symbols: ['tree', 'silverFir'],
     params: [{
         name: 'cardsAttachedToSilverFirs',
         type: 'number',
@@ -82,7 +82,7 @@ export const silverFir = {
 export const sycamore = {
     name: 'sycamore',
     type: 'sycamore',
-    symbols: ['tree'],
+    symbols: ['tree', 'sycamore'],
     recalculatePoints(forest) {
         this.points = forest.countByName('sycamore') * forest.countBySymbol('tree')
     }
@@ -99,7 +99,7 @@ export const treeSaplings = {
 export const europeanLarch = {
     name: 'europeanLarch',
     type: 'alpineLarch',
-    symbols: ['tree', 'alps'],
+    symbols: ['tree', 'europeanLarch', 'alps'],
     recalculatePoints(forest) {
         this.points = this.count * 3
     }
@@ -108,13 +108,13 @@ export const europeanLarch = {
 export const stonePine = {
     name: 'stonePine',
     type: 'stonePine',
-    symbols: ['tree', 'alps'],
+    symbols: ['tree', 'stonePine', 'alps'],
     recalculatePoints(forest) {
         this.points = this.count * forest.countBySymbol('alps')
     }
 }
 
-export const allTrees = [beech, birch, douglasFir, horseChestnut, linden, oak, silverFir, sycamore, treeSaplings, europeanLarch, stonePine]
+export const allTrees = [beech, birch, douglasFir, horseChestnut, linden, oak, silverFir, sycamore, europeanLarch, stonePine, treeSaplings]
 
 
 

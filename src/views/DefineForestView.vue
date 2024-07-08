@@ -178,9 +178,6 @@ export default {
     deerAndCloven() {
       return this.cards.filter(c => (c.symbols.indexOf('deer') >= 0 || c.symbols.indexOf('clovenHoofedAnimal') >= 0))
     },
-    roeDeerPresent() {
-      return this.forest.roeDeerPresent()
-    },
     pawedSide() {
       return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'side')
     },

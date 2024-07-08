@@ -11,9 +11,13 @@ export const useGameStore = defineStore('game', {
     },
     actions: {
         addPlayer(name) {
-            if(this.players.find(p => p.name === name))
-                throw new Error(i18n.t('error.nameTaken', [name]))
             this.players.push({name})
+        },
+        updatePlayerName(oldName, newName){
+            if(this.players.find(p => p.name !== oldName && p.name === newName))
+                throw new Error(i18n.t('error.nameTaken', [name]))
+            const idx = this.players.findIndex(p => p.name === oldName)
+            this.players[idx] = newName
         },
         selectPlayer(name) {
             this.currentPlayer = this.players.find(p => p.name === name)

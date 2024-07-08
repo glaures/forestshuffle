@@ -128,10 +128,10 @@ export default {
     },
     updatePlayerName() {
       this.editing = false
+      const currentName = this.currentPlayer.name
       const newName = document.getElementById("playerNameInput").value
-      const currentName = useGameStore().currentPlayer.name
+      useGameStore().updatePlayerName(currentName, newName)
       useForestsStore().getForestByPlayerName(currentName).playerName = newName
-      useGameStore().currentPlayer.name = newName
       event('playerNameUpdated', {name: newName})
     },
     startNewGame() {

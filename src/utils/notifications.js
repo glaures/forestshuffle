@@ -29,7 +29,7 @@ function showInfo(message) {
 
 function showError(message) {
     toast(message, {
-        type: 'danger'
+        type: 'error'
     })
 }
 

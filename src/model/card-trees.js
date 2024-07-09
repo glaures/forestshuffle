@@ -36,10 +36,9 @@ export const horseChestnut = {
     type: 'horseChestnut',
     symbols: ['tree', 'horseChestnut'],
     recalculatePoints(forest) {
-        let count = Math.min(this.count, 7)
         const violetCarpenterBee = forest.cards.find(c => c.name === 'violetCarpenterBee')
-        count += violetCarpenterBee.params[1].value
-        this.points = count * count
+        const count = this.count + violetCarpenterBee.params[1].value
+        this.points = Math.min(count * count, 49)
     }
 }
 

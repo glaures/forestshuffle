@@ -57,7 +57,7 @@ export const oak = {
     symbols: ['tree', 'oak'],
     recalculatePoints(forest) {
         const differentTreeTypes = forest.cards.filter(c => c.symbols.indexOf('tree') >= 0 && c.name !== 'treeSaplings' && c.count > 0).length
-        if (differentTreeTypes === 8)
+        if (differentTreeTypes >= 8)
             this.points = this.count * 10
         else this.points = 0
     }

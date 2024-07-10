@@ -200,6 +200,11 @@ export default {
       }
     },
     startNewGame() {
+      if(useGameStore().players.length > 1 && useForestsStore().forests.reduce((total, f) => total += f.points, 0) >= 50)
+        event('gameFinished', {
+          playerCount: useGameStore().players.length,
+          maxPoints: useForestsStore().forests.reduce((max, f) => max = f.points > max ? f.points : max, 0)
+        })
       useForestsStore().reset()
       useGameStore().selectPlayer(useGameStore().players[0].name)
       this.toggleRankingsModal(true)

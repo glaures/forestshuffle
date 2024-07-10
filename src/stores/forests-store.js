@@ -10,6 +10,9 @@ export const useForestsStore = defineStore('forests', {
     getters: {
         getForestByPlayerName: (state) => (playerName) => {
             return state.forests.find(forest => forest.playerName === playerName)
+        },
+        totalPoints: (state) => () => {
+            return state.forests.reduce((total, f) => total += f.points, 0)
         }
     },
     actions: {

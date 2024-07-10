@@ -17,7 +17,7 @@ export const useGameStore = defineStore('game', {
             if(this.players.find(p => p.name !== oldName && p.name === newName))
                 throw new Error(i18n.t('error.nameTaken', [name]))
             const idx = this.players.findIndex(p => p.name === oldName)
-            this.players[idx] = newName
+            this.players[idx].name = newName
         },
         selectPlayer(name) {
             this.currentPlayer = this.players.find(p => p.name === name)

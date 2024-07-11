@@ -21,6 +21,8 @@ import {calculateButterflyPoints} from "@/model/card-butterflies.js";
 
 export class Forest {
 
+    distributedScoring = false
+
     constructor(playerName, allForests) {
         this.playerName = playerName
         this.allForests = allForests
@@ -91,6 +93,12 @@ export class Forest {
         param.value = Math.max(0, param.value - 1)
     }
 
+    toggleParam(cardName, paramName) {
+        const card = this.findCard(cardName)
+        const param = card.params.find(p => p.name === paramName)
+        param.value = !param.value
+    }
+
     updatePoints() {
         let points = 0
         for (let card of this.cards.filter(c => c.count > 0)) {
@@ -154,12 +162,4 @@ export class Forest {
         return noOtherForestHasMore
     }
 
-    roeDeerPresent() {
-        return this.countByName('roeDeerBeech')
-            + this.countByName('roeDeerBirch')
-            + this.countByName('roeDeerHorseChestnut')
-            + this.countByName('roeDeerLinden')
-            + this.countByName('roeDeerSilverFir')
-            > 0
-    }
 }

@@ -1,12 +1,11 @@
 <script>
 import CardAmountEditor from "@/components/CardAmountEditor.vue";
 import {Forest} from "@/model/Forest.js";
-import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
 import {useGameStore} from "@/stores/game-store.js";
 
 export default {
   name: "CardAmountEditorList",
-  components: {SymbolAmountEditor, CardAmountEditor},
+  components: {CardAmountEditor},
   props: {
     cards: Array,
     forest: Forest,

@@ -670,6 +670,8 @@ export default {
         resetPlayers: 'Zrestartuj graczy',
         alpineExpansion: 'Dodatek Alpy',
         ranking: 'Ranking',
+        distributedScoring: 'Rozproszona ocena (wiele urządzeń)',
+        summary: 'Podsumowanie',
         // error messages
         "error.nameTaken": "Nazwa {0} jest zajęta.",
         // symbols

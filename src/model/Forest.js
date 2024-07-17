@@ -21,6 +21,8 @@ import {calculateButterflyPoints} from "@/model/card-butterflies.js";
 
 export class Forest {
 
+    distributedScoring = false
+
     constructor(playerName, allForests) {
         this.playerName = playerName
         this.allForests = allForests
@@ -91,6 +93,12 @@ export class Forest {
         param.value = Math.max(0, param.value - 1)
     }
 
+    toggleParam(cardName, paramName) {
+        const card = this.findCard(cardName)
+        const param = card.params.find(p => p.name === paramName)
+        param.value = !param.value
+    }
+
     updatePoints() {
         let points = 0
         for (let card of this.cards.filter(c => c.count > 0)) {
@@ -154,12 +162,43 @@ export class Forest {
         return noOtherForestHasMore
     }
 
-    roeDeerPresent() {
-        return this.countByName('roeDeerBeech')
-            + this.countByName('roeDeerBirch')
-            + this.countByName('roeDeerHorseChestnut')
-            + this.countByName('roeDeerLinden')
-            + this.countByName('roeDeerSilverFir')
-            > 0
+    treeCount() {
+        return this.countBySymbol('tree')
+    }
+
+    topCount() {
+        return this.countByPosition('top')
+    }
+
+    bottomCount() {
+        return this.countByPosition('bottom')
+    }
+
+    sideCount() {
+        return this.countByPosition('side')
+    }
+
+    treePoints() {
+        return this.cards.filter(c => c.symbols.indexOf('tree') >= 0)
+            .map(c => c.points)
+            .reduce((p, sum) => sum += p)
+    }
+
+    bottomPoints() {
+        return this.cards.filter(c => c.position === 'bottom')
+            .map(c => c.points)
+            .reduce((p, sum) => sum += p)
+    }
+
+    topPoints() {
+        return this.cards.filter(c => c.position === 'top')
+            .map(c => c.points)
+            .reduce((p, sum) => sum += p)
+    }
+
+    sidePoints() {
+        return this.cards.filter(c => c.position === 'side')
+            .map(c => c.points)
+            .reduce((p, sum) => sum += p)
     }
 }

@@ -46,8 +46,17 @@ export const linden = {
     name: 'linden',
     type: 'linden',
     symbols: ['tree', 'linden'],
+    params: [
+        {
+            name: 'hasMostLindens',
+            type: 'boolean',
+            distributed: true,
+            value: false
+        }
+    ],
     recalculatePoints(forest) {
-        this.points = this.count * (forest.hasMostOfName("linden") ? 3 : 1)
+        const hasMostLindens = forest.distributedScoring ? this.params[0].value : forest.hasMostOfName("linden")
+        this.points = this.count * (hasMostLindens ? 3 : 1)
     }
 }
 

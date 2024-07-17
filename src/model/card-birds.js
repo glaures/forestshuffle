@@ -43,8 +43,17 @@ export const greatSpottedWoodpecker = {
     name: 'greatSpottedWoodpecker',
     position: 'top',
     symbols: ['bird'],
+    params: [
+        {
+            name: 'hasMostTrees',
+            type: 'boolean',
+            distributed: true,
+            value: false
+        }
+    ],
     recalculatePoints(forest) {
-        this.points = forest.hasMostOfSymbol("tree")
+        const hasMostTrees = forest.distributedScoring ? this.params[0].value : forest.hasMostOfSymbol("tree")
+        this.points = hasMostTrees
             ? this.count * 10
             : 0
     }
@@ -61,7 +70,7 @@ export const tawnyOwl = {
 
 export const capercaillie = {
     name: 'capercaillie',
-    position: 'top',
+    position: 'side',
     symbols: ['bird', 'alps'],
     recalculatePoints(forest) {
         this.points = this.count * forest.countBySymbol('plant')

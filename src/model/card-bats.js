@@ -50,4 +50,14 @@ export const savisPipistrelle = {
     }
 }
 
-export const allBats = [barbastelleBat, bechsteinsBat, brownLongEaredBat, greaterHorseshoeBat, savisPipistrelle]
+export const duererBat = {
+    name: 'duererBat',
+    position: 'side',
+    symbols: ['bat'],
+    hide: (gameStore) => !gameStore.duererExpansion,
+    recalculatePoints(forest) {
+        this.points = defaultBatCalculatePoints(forest, this.name)
+    }
+}
+
+export const allBats = [barbastelleBat, bechsteinsBat, brownLongEaredBat, greaterHorseshoeBat, savisPipistrelle, duererBat]

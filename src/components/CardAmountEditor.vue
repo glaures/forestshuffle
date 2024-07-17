@@ -2,6 +2,7 @@
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {useForestsStore} from "@/stores/forests-store.js";
 import {event} from "vue-gtag"
+import {useGameStore} from "@/stores/game-store.js";
 
 export default {
   name: "CardAmountEditor",
@@ -13,6 +14,9 @@ export default {
   computed: {
     playerName() {
       return this.forest.playerName
+    },
+    distributedScoring() {
+      return useGameStore().distributedScoring
     }
   },
   methods: {
@@ -29,6 +33,8 @@ export default {
         useForestsStore().addParam(this.playerName, this.card.name, param.name)
       else if (param.type === 'type')
         useForestsStore().addSymbolCount(this.playerName, param.symbol)
+      else if (param.type === 'boolean')
+        useForestsStore().toggleParam(this.playerName, this.card.name, param.name)
     },
     paramSub(param) {
       if (param.type === 'number')
@@ -61,22 +67,31 @@ export default {
       <span v-if="card.count > 0 && card.symbols.indexOf('butterfly') < 0 ">{{ card.points }}</span>
     </div>
   </div>
-  <div class="mt-1 row" v-for="(param, idx) in card.params" :key="param.name"
-       :class="{'mb-3': card.params.length === idx+1}">
-    <div class="fw-bold offset-1 col-1">
-      <span v-if="card.count > 0 && param.type === 'number'">{{ param.value }}</span>
-      <span v-if="card.count > 0 && param.type === 'type'">{{ forest[param.symbol + 'Count'] }}</span>
-    </div>
-    <div class="col-8 text-nowrap pe-0">
-      <button @click="paramAdd(param)" :class="'btn-' + card.symbols[0]"
-              class="btn btn-sm btn-primary text-start w-100">
-        <img v-if="param.type === 'type'" :src="'./img/symbols/' + param.symbol + '.png'" :alt="$t(param.symbol)"
-             height="20"/>
-        <span class="ps-2">{{ $t(param.name) }}</span>
-      </button>
-    </div>
-    <div class="col-1 ps-0">
-      <button class="ms-1 btn btn-outline-danger btn-sm" @click="paramSub(param)">&times;</button>
+  <div v-for="(param, idx) in card.params" :key="param.name">
+    <div v-if="!param.distributed || distributedScoring"
+         class="mt-1 row"
+         :class="{'mb-3': card.params.length === idx+1}">
+      <div class="fw-bold offset-1 col-1 d-flex align-items-center">
+        <span v-if="card.count > 0 && param.type === 'number'">{{ param.value }}</span>
+        <span v-if="card.count > 0 && param.type === 'type'">{{ forest[param.symbol + 'Count'] }}</span>
+        <span v-if="card.count > 0 && param.type === 'boolean'">
+          <span v-if='param.value' class="text-success"><font-awesome-icon icon="check" size="lg"/></span>
+         <span v-else class="text-danger"><font-awesome-icon icon="xmark" size="lg"/></span>
+        </span>
+      </div>
+      <div class="col-8 text-nowrap pe-0">
+        <button @click="paramAdd(param)" :class="'btn-' + card.symbols[0]"
+                class="btn btn-sm btn-primary text-start w-100">
+          <img v-if="param.type === 'type'" :src="'./img/symbols/' + param.symbol + '.png'" :alt="$t(param.symbol)"
+               height="20"/>
+          <span class="ps-2">{{ $t(param.name) }}</span>
+        </button>
+      </div>
+      <div class="col-1 ps-0">
+        <button v-if="param.type !== 'boolean'" class="ms-1 btn btn-outline-danger btn-sm" @click="paramSub(param)">
+          &times;
+        </button>
+      </div>
     </div>
   </div>
 </template>

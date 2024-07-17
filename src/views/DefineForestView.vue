@@ -2,7 +2,7 @@
   <NavigationAndButtons @toggle-standings="toggleRankingsModal"
                         @start-new-game="startNewGame"
                         @reset-players="resetPlayers"/>
-  <div v-if="forest" class="container">
+  <div v-if="forest" class="container mb-5">
     <div class="distance-keeper position-relative"></div>
     <CardAmountEditorList :cards="trees"
                           :forest="forest"
@@ -10,7 +10,13 @@
                           heading="trees">
     </CardAmountEditorList>
 
-    <div class="mt-4 fs-2 border-primary border-bottom">{{ $t('tops') }}</div>
+    <div class="d-flex align-items-center mt-4 border-primary border-bottom">
+      <div
+          class="border border-2 bg-secondary text-light border-light rounded justify-content-center align-items-center d-flex me-1 position-icon">
+        <font-awesome-icon icon="arrow-up"/>
+      </div>
+      <span class="ms-2 fs-2">{{ $t('tops') }}</span>
+    </div>
     <CardAmountEditorList class="mt-1"
                           :cards="birds"
                           :forest="forest"
@@ -27,7 +33,14 @@
                           symbol="pawedAnimal"
                           heading="pawedAnimals"/>
 
-    <div class="mt-4 fs-2 border-primary border-bottom">{{ $t('bottoms') }}</div>
+    <div class="d-flex align-items-center mt-4 border-primary border-bottom">
+      <div
+          class="border border-2 bg-warning text-light border-light rounded justify-content-center align-items-center d-flex me-1 position-icon">
+        <font-awesome-icon icon="arrow-down"/>
+      </div>
+      <span class="ms-2 fs-2">{{ $t('bottoms') }}</span>
+    </div>
+
     <CardAmountEditorList class="mt-1"
                           :cards="plants"
                           :forest="forest"
@@ -54,7 +67,19 @@
                           symbol="pawedAnimal"
                           heading="pawedAnimals"/>
 
-    <div class="mt-4 fs-2 border-primary border-bottom">{{ $t("sides") }}</div>
+    <div class="d-flex align-items-center mt-4 border-primary border-bottom">
+      <div
+          class="border border-2 bg-info text-light border-light rounded justify-content-center align-items-center d-flex me-1 position-icon">
+        <font-awesome-icon icon="arrows-left-right"/>
+      </div>
+      <span class="ms-2 fs-2">{{ $t('sides') }}</span>
+    </div>
+    <CardAmountEditorList v-if="birdsSide.length > 0"
+                          class="mt-2"
+                          :cards="birdsSide"
+                          :forest="forest"
+                          symbol="bird"
+                          heading="birds"/>
     <CardAmountEditorList class="mt-2"
                           :cards="insectsSide"
                           :forest="forest"
@@ -76,7 +101,7 @@
                           :forest="forest"
                           symbol="pawedAnimal"
                           heading="pawedAnimals"/>
-    <div class="mt-4 mb-5">
+    <div class="mt-4">
       <div class="text-center">
         <img :src="'./img/cave.png'" :alt="$t('cave')" @click="setCaveCount(forest.caveCount + 1)"/>
       </div>
@@ -89,6 +114,9 @@
                onfocus="this.select();"
                onclick="this.select();">
       </div>
+    </div>
+    <div class="px-4 mt-3">
+      <ForestSummary :forest="forest"/>
     </div>
   </div>
   <div id="standingsModal" class="modal fade" tabindex="-1">
@@ -129,9 +157,10 @@ import NavigationAndButtons from "@/components/NavigationAndButtons.vue";
 import FloatingButtons from "@/components/FloatingButtons.vue";
 import Ranking from "@/components/Ranking.vue";
 import {Modal} from "bootstrap"
+import ForestSummary from "@/components/ForestSummary.vue";
 
 export default {
-  components: {Ranking, FloatingButtons, NavigationAndButtons, CardAmountEditorList, CardAmountEditor},
+  components: {ForestSummary, Ranking, FloatingButtons, NavigationAndButtons, CardAmountEditorList, CardAmountEditor},
   computed: {
     playerName() {
       return useGameStore().currentPlayer?.name
@@ -146,7 +175,7 @@ export default {
       return this.cards.filter(c => c.symbols.indexOf('tree') >= 0)
     },
     birds() {
-      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0)
+      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'top')
     },
     butterflies() {
       return this.cards.filter(c => c.symbols.indexOf('butterfly') >= 0)
@@ -169,11 +198,14 @@ export default {
     pawedBottom() {
       return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'bottom')
     },
+    birdsSide() {
+      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'side')
+    },
     insectsSide() {
       return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'side')
     },
     bats() {
-      return this.cards.filter(c => c.symbols.indexOf('bat') >= 0)
+      return this.cards.filter(c => c.symbols.indexOf('bat') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     deerAndCloven() {
       return this.cards.filter(c => (c.symbols.indexOf('deer') >= 0 || c.symbols.indexOf('clovenHoofedAnimal') >= 0))
@@ -200,7 +232,7 @@ export default {
       }
     },
     startNewGame() {
-      if(useGameStore().players.length > 1 && useForestsStore().forests.reduce((total, f) => total += f.points, 0) >= 50)
+      if (useGameStore().players.length > 1 && useForestsStore().forests.reduce((total, f) => total += f.points, 0) >= 50)
         event('gameFinished', {
           playerCount: useGameStore().players.length,
           maxPoints: useForestsStore().forests.reduce((max, f) => max = f.points > max ? f.points : max, 0)
@@ -250,5 +282,14 @@ export default {
 .narrow-input-wrapper {
   max-width: 4rem;
   width: 4rem;
+}
+
+.position-icon {
+  min-width: 30px;
+  width: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  height: 30px;
+  max-height: 30px;
 }
 </style>

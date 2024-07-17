@@ -1,12 +1,11 @@
 <script>
 import CardAmountEditor from "@/components/CardAmountEditor.vue";
 import {Forest} from "@/model/Forest.js";
-import SymbolAmountEditor from "@/components/SymbolAmountEditor.vue";
 import {useGameStore} from "@/stores/game-store.js";
 
 export default {
   name: "CardAmountEditorList",
-  components: {SymbolAmountEditor, CardAmountEditor},
+  components: {CardAmountEditor},
   props: {
     cards: Array,
     forest: Forest,
@@ -31,19 +30,21 @@ export default {
 </script>
 
 <template>
-  <div v-bind="$attrs" class="d-flex align-items-center">
-    <img :src="'./img/symbols/' + symbol + '.png'" height="24" :alt="$t(heading)"/>
-    <img v-if="symbol2" :src="'./img/symbols/' + symbol2 + '.png'" height="24" :alt="$t(heading)"/>
-    <div class="ms-1 fs-5 flex-grow-1">{{ $t(heading) }}</div>
-    <div class="fs-5">{{ totalPoints }}</div>
-  </div>
-  <div v-for="card in filteredCards"
-       :key="'cae_' + card.name"
-       class="d-block">
-    <CardAmountEditor
-        :card="card"
-        :forest="forest">
-    </CardAmountEditor>
+  <div v-if="filteredCards.length > 0">
+    <div v-bind="$attrs" class="d-flex align-items-center">
+      <img :src="'./img/symbols/' + symbol + '.png'" height="24" :alt="$t(heading)"/>
+      <img v-if="symbol2" :src="'./img/symbols/' + symbol2 + '.png'" height="24" :alt="$t(heading)"/>
+      <div class="ms-1 fs-5 flex-grow-1">{{ $t(heading) }}</div>
+      <div class="fs-5 fw-bold"><img src="/img/points.png" alt="points" height="28"/>&nbsp;{{ totalPoints }}</div>
+    </div>
+    <div v-for="card in filteredCards"
+         :key="'cae_' + card.name"
+         class="d-block">
+      <CardAmountEditor
+          :card="card"
+          :forest="forest">
+      </CardAmountEditor>
+    </div>
   </div>
 </template>
 

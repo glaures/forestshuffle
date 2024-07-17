@@ -16,8 +16,14 @@ export const useForestsStore = defineStore('forests', {
         }
     },
     actions: {
+        toggleDistributedScoring() {
+            useGameStore().toggleDistributedScoring()
+            this.forests.forEach(f => f.distributedScoring = useGameStore().distributedScoring)
+            this.updatePointsInAllForests()
+        },
         addForest(playerName) {
             const f = reactive(new Forest(playerName, this.forests))
+            f.distributedScoring = useGameStore().distributedScoring
             this.forests.push(f)
             this.updatePointsInAllForests()
             return f
@@ -53,6 +59,10 @@ export const useForestsStore = defineStore('forests', {
             forest.setSymbolCount(symbol, Math.max(0, forest.getSymbolCount(symbol) - 1))
             this.updatePointsInAllForests()
         },
+        toggleParam(playerName, cardName, paramName) {
+            this.getForestByPlayerName(playerName).toggleParam(cardName, paramName)
+            this.updatePointsInAllForests()
+        },
         setCaveCount(playerName, caveCount) {
             this.getForestByPlayerName(playerName).caveCount = caveCount
             this.updatePointsInAllForests()
@@ -63,12 +73,14 @@ export const useForestsStore = defineStore('forests', {
         },
         reset() {
             this.forests.forEach(f => f.reset())
+            useGameStore().newGameStarted()
         },
         reinit(){
             this.forests = []
             for(let player of useGameStore().players){
                 this.addForest(player.name)
             }
+            useGameStore().newGameStarted()
         }
     }
 })

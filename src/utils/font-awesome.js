@@ -1,5 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
+    faArrowDown, faArrowsLeftRight,
+    faArrowUp,
     faBars,
     faCaretLeft,
     faCaretUp, faCheck,
@@ -19,6 +21,9 @@ library.add(faUserPlus)
 library.add(faListOl)
 library.add(faCheck)
 library.add(faXmark)
+library.add(faArrowUp)
+library.add(faArrowDown)
+library.add(faArrowsLeftRight)
 
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 

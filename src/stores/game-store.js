@@ -1,12 +1,16 @@
 import {defineStore} from "pinia";
 import {i18n} from "/src/i18n/i18n.js"
+import {useLocalStorage} from "@vueuse/core";
 
 export const useGameStore = defineStore('game', {
     state() {
         return {
             players: [],
             currentPlayer: null,
-            alpineExpansion: true,
+            alpineExpansion: useLocalStorage("alpineExpansion", true),
+            distributedScoring: useLocalStorage("distributedScoring", false),
+            duererExpansion: useLocalStorage("duererExpansion", false),
+            startTime: new Date()
         }
     },
     actions: {
@@ -28,6 +32,15 @@ export const useGameStore = defineStore('game', {
         },
         toggleAlpineExpansion() {
             this.alpineExpansion = !this.alpineExpansion
+        },
+        toggleDuererExpansion() {
+            this.duererExpansion = !this.duererExpansion
+        },
+        toggleDistributedScoring() {
+            this.distributedScoring = !this.distributedScoring
+        },
+        newGameStarted(){
+            this.startTime = new Date()
         }
     }
 })

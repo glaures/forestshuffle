@@ -1,6 +1,6 @@
 <template>
-  <div class="header d-flex align-items-center py-2">
-    <div class="px-2 mx-auto"
+  <div class="header d-flex align-items-center py-2 px-3">
+    <div class="pe-2 mx-auto d-flex align-items-center"
          data-bs-toggle="offcanvas" data-bs-target="#navigation"
          @click="openMenu">
       <font-awesome-icon icon="bars" class="text-light p-1 border border-light rounded-1"/>
@@ -23,8 +23,8 @@
                @keydown.enter="updatePlayerName"/>
         <button class="btn btn-outline-light btn-sm ms-1" @click="updatePlayerName">OK</button>
       </div>
-      <div class="current-player-text fs-1">
-        {{ points }}
+      <div class="current-player-text fs-1 d-flex align-items-center">
+        <img src="/img/points.png" alt="points" height="34"/>&nbsp;{{ points }}
       </div>
     </div>
   </div>
@@ -34,19 +34,28 @@
     </div>
     <div class="offcanvas-body">
       <div class="list-group">
-        <div v-for="(forest, idx) of forests" class="list-group-item d-flex"
+        <div v-for="(forest, idx) of forests" class="list-group-item d-flex align-items-center"
              :class="{'active': forest.playerName === currentPlayer.name}"
              @click="selectPlayer(forest.playerName)">
           <span>{{ forest.playerName }}</span>
-          <span class="ms-2 flex-grow-1 text-end fw-bold text-decoration-none">{{ forest.points }}</span>
+          <span class="ms-2 flex-grow-1 text-end fw-bold text-decoration-none">
+            <img src="/img/points.png" alt="points" height="28"/>&nbsp;{{ forest.points }}
+          </span>
         </div>
       </div>
-      <div class="mt-2 mb-5 text-center">
+      <div class="mt-2 mb-2 text-center">
         <button v-if="players.length < 5" class="btn btn-sm btn-primary" @click="addPlayer">
           <font-awesome-icon icon="user-plus"/>
         </button>
       </div>
-      <div class="d-flex mt-3 w-100 justify-content-left align-items-center px-5">
+      <div class="d-flex w-100 justify-content-start align-items-center px-5">
+        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="distributedScoring"
+               @input="toggleDistributedScoring"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleDistributedScoring">
+          {{ $t('distributedScoring') }}
+        </div>
+      </div>
+      <div class="d-flex mt-5 w-100 justify-content-left align-items-center px-5">
         <input class="form-check form-check-input bg-primary" type="checkbox" :checked="alpineExpansion"
                @input="toggleAlpineExpansion"/>
         <div class="form-check-label ms-2 user-select-none" @click="toggleAlpineExpansion">
@@ -54,10 +63,10 @@
         </div>
       </div>
       <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="distributedScoring"
-               @input="toggleDistributedScoring"/>
-        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleDistributedScoring">
-          {{ $t('distributedScoring') }}
+        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="duererExpansion"
+               @input="toggleDuererExpansion"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleDuererExpansion">
+          {{ $t('duererExpansion') }}
         </div>
       </div>
       <div class="d-flex justify-content-center w-100 mt-5">
@@ -93,10 +102,13 @@ export default {
   },
   computed: {
     distributedScoring() {
-      return useForestsStore().distributedScoring
+      return useGameStore().distributedScoring
     },
     alpineExpansion() {
       return useGameStore().alpineExpansion
+    },
+    duererExpansion(){
+      return useGameStore().duererExpansion
     },
     forests() {
       return useForestsStore().forests
@@ -158,6 +170,10 @@ export default {
     toggleAlpineExpansion() {
       useGameStore().toggleAlpineExpansion()
       event('alpineExpansionToggled', {newState: this.alpineExpansion})
+    },
+    toggleDuererExpansion() {
+      useGameStore().toggleDuererExpansion()
+      event('duererExpansionToggled', {newState: this.duererExpansion})
     },
     changeLanguage(newLang) {
       this.$i18n.locale = newLang

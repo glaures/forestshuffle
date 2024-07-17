@@ -1,6 +1,6 @@
 {
   "name": "forestshuffle-scoring",
-  "version": "1.2.0",
+  "version": "1.4.5",
   "private": true,
   "type": "module",
   "scripts": {
@@ -21,6 +21,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@popperjs/core": "^2.11.8",
     "@unhead/vue": "^1.9.15",
+    "@vueuse/core": "^10.11.0",
     "bootstrap": "^5.3.3",
     "flag-icon-css": "^4.1.7",
     "gh-pages": "^6.1.1",

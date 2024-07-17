@@ -2,6 +2,7 @@
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {useForestsStore} from "@/stores/forests-store.js";
 import {event} from "vue-gtag"
+import {useGameStore} from "@/stores/game-store.js";
 
 export default {
   name: "CardAmountEditor",
@@ -15,7 +16,7 @@ export default {
       return this.forest.playerName
     },
     distributedScoring() {
-      return useForestsStore().distributedScoring
+      return useGameStore().distributedScoring
     }
   },
   methods: {

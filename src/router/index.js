@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import {useGameStore} from "@/stores/game-store.js";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +32,15 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
+});
+
+router.beforeEach((to, from, next) => {
+  console.log('checking query ' + JSON.stringify(to.query))
+  if (to.query.distributed && !useGameStore().distributedScoring) {
+    console.log('toggle distributed')
+    useGameStore().toggleDistributedScoring()
+  }
+  next();
 });
 
 export default router

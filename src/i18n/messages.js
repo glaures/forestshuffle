@@ -27,8 +27,10 @@ export default {
         startNewGame: 'Start new game',
         resetPlayers: 'Reset players',
         alpineExpansion: 'Alpine Expansion',
+        duererExpansion: 'Dürer Promo',
         ranking: 'Ranking',
         distributedScoring: 'Distributed scoring (multiple devices)',
+        summary: 'Summary',
         // error messages
         "error.nameTaken": "The name {0} is already taken.",
         // symbols
@@ -156,6 +158,8 @@ export default {
         beardedVulture: "Bearded Vulture",
         gentian: "Gentian",
         commonRaven: "Common Raven",
+        // duerer
+        duererBat: "Dürer Bat"
     },
     de: {
         meta: {
@@ -185,8 +189,10 @@ export default {
         startNewGame: 'Neues Spiel starten',
         resetPlayers: 'Spieler zurücksetzen',
         alpineExpansion: 'Alpin Erweiterung',
+        duererExpansion: 'Dürer Promo-Karte',
         ranking: 'Rangliste',
         distributedScoring: 'Verteilte Punktezählung (mehrere Geräte)',
+        summary: 'Zusammenfassung',
         // error messages
         "error.nameTaken": "Der Name {0} ist bereits vergeben.",
         // symbols
@@ -262,9 +268,9 @@ export default {
         mole: "Maulwurf",
         stagBeetle: "Hirschkäfer",
         violetCarpenterBee: "Holzbiene",
-        onABeech: "auf einer Buche",
-        onAHorseChestnut: "auf einer Kastanie",
-        onALinden: "auf einer Linde",
+        onABeech: "an einer Buche",
+        onAHorseChestnut: "an einer Kastanie",
+        onALinden: "an einer Linde",
         gnat: "Stechmücke",
         barbastelleBat: "Mops-Fledermaus",
         bechsteinsBat: "Bechstein-Fledermaus",
@@ -313,7 +319,9 @@ export default {
         goldenEagle: "Steinadler",
         beardedVulture: "Bartgeier",
         gentian: "Enzian",
-        commonRaven: "Kolkrabe"
+        commonRaven: "Kolkrabe",
+        // duerer
+        duererBat: "Dürer-Fledermaus"
     },
     fr: {
         meta: {
@@ -342,8 +350,10 @@ export default {
         startNewGame: "Commencer une nouvelle partie",
         resetPlayers: "Réinitialiser les joueurs",
         alpineExpansion: 'Extension Alps',
+        duererExpansion: 'Dürer Promo',
         ranking: 'Classement',
         distributedScoring: 'Évaluation distribuée (plusieurs appareils)',
+        summary: 'Résumé',
         "error.nameTaken": "Le nom {0} est déjà pris.",
         trees: "Arbres",
         tops: "Hauts",
@@ -467,7 +477,9 @@ export default {
         goldenEagle: "Aigle royal",
         beardedVulture: "Gypaète barbu",
         gentian: "Gentiane",
-        commonRaven: "Grand corbeau"
+        commonRaven: "Grand corbeau",
+        // duerer
+        duererBat: "Pipistrelle de Dürer"
     },
 	it: {
         meta: {
@@ -497,8 +509,10 @@ export default {
         startNewGame: 'Nuova Partita',
         resetPlayers: 'Resetta i giocatori',
         alpineExpansion: 'Espansione Alpine',
+        duererExpansion: 'Dürer Promo',
         ranking: 'Classifica',
         distributedScoring: 'Valutazione distribuita (più dispositivi)',
+        summary: 'Riassunto',
         // error messages
         "error.nameTaken": "Il nome {0} è già stato usato.",
         // symbols
@@ -625,6 +639,8 @@ export default {
         goldenEagle: "Aquila Reale",
         beardedVulture: "Gipeto",
         gentian: "Genziana",
-        commonRaven: "Corvo Imperiale"
+        commonRaven: "Corvo Imperiale",
+        // duerer
+        duererBat: "Dürer Pipistrello"
     }
 }

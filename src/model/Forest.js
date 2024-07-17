@@ -162,4 +162,43 @@ export class Forest {
         return noOtherForestHasMore
     }
 
+    treeCount() {
+        return this.countBySymbol('tree')
+    }
+
+    topCount() {
+        return this.countByPosition('top')
+    }
+
+    bottomCount() {
+        return this.countByPosition('bottom')
+    }
+
+    sideCount() {
+        return this.countByPosition('side')
+    }
+
+    treePoints() {
+        return this.cards.filter(c => c.symbols.indexOf('tree') >= 0)
+            .map(c => c.points)
+            .reduce((p, sum) => sum += p)
+    }
+
+    bottomPoints() {
+        return this.cards.filter(c => c.position === 'bottom')
+            .map(c => c.points)
+            .reduce((p, sum) => sum += p)
+    }
+
+    topPoints() {
+        return this.cards.filter(c => c.position === 'top')
+            .map(c => c.points)
+            .reduce((p, sum) => sum += p)
+    }
+
+    sidePoints() {
+        return this.cards.filter(c => c.position === 'side')
+            .map(c => c.points)
+            .reduce((p, sum) => sum += p)
+    }
 }

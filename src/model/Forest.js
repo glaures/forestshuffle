@@ -166,6 +166,11 @@ export class Forest {
         return this.countBySymbol('tree')
     }
 
+    treeCardsCount(){
+        return this.cards.filter(c => c.symbols.filter(s => s === 'tree').length > 0)
+            .reduce((sum, c) => sum += c.count, 0)
+    }
+
     topCount() {
         return this.countByPosition('top')
     }
@@ -191,9 +196,10 @@ export class Forest {
     }
 
     topPoints() {
-        return this.cards.filter(c => c.position === 'top')
+        let scoreWithoutButterflies = this.cards.filter(c => c.position === 'top')
             .map(c => c.points)
             .reduce((p, sum) => sum += p)
+        return scoreWithoutButterflies + this.butterflyPoints
     }
 
     sidePoints() {

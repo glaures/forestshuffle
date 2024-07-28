@@ -1,5 +1,3 @@
-import cards from "@/model/cards.js";
-
 const CACHE_NAME = 'my-app-cache-v1';
 const urlsToCache = [
   '/',
@@ -16,8 +14,6 @@ const urlsToCache = [
   '/img/splash.png',
   '/img/top-forest.png',
 ];
-
-urlsToCache.push(...cards.map(c => `/img/symbols/${c.name}.png`))
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

@@ -3,9 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
 import './assets/custom.scss';
 
-// service worker
-import './registerServiceWorker'
-
 // create the app
 import { createApp } from 'vue'
 import App from './App.vue'

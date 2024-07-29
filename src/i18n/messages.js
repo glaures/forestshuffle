@@ -237,7 +237,7 @@ export default {
         bullfinch: "Gimpel",
         chaffinch: "Buchfink",
         chaffinchesAtopABeech: "auf einer Buche",
-        eurasianJay: "Eichelhäher,",
+        eurasianJay: "Eichelhäher",
         goshawk: "Habicht",
         greatSpottedWoodpecker: "Buntspecht",
         hasMostTrees: "Wald hat die meisten Bäume",

@@ -52,7 +52,7 @@ export const greatSpottedWoodpecker = {
         }
     ],
     recalculatePoints(forest) {
-        const hasMostTrees = forest.distributedScoring ? this.params[0].value : forest.hasMostOfSymbol("tree")
+        const hasMostTrees = forest.distributedScoring ? this.params[0].value : forest.hasMostTrees()
         this.points = hasMostTrees
             ? this.count * 10
             : 0

@@ -12,7 +12,7 @@ export const moss = {
     position: 'bottom',
     symbols: ['plant'],
     recalculatePoints(forest) {
-        if(forest.countBySymbol('tree') >= 10)
+        if(forest.countTreesIncludingVioletCarpenterBee() >= 10)
             this.points = this.count * 10
         else
             this.points = 0

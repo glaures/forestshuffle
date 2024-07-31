@@ -47,7 +47,9 @@ export class Forest {
         for (let card of cards) {
             const clonedCard = {...card}
             if (card.params)
-                clonedCard.params = card.params.map(param => {return {...param}})
+                clonedCard.params = card.params.map(param => {
+                    return {...param}
+                })
             this.cards.push({
                 ...clonedCard,
                 count: 0,
@@ -76,7 +78,7 @@ export class Forest {
     removeCard(cardName) {
         const c = this.findCard(cardName)
         c.count = Math.max(0, --c.count)
-        if(c.count === 0 && c.params){
+        if (c.count === 0 && c.params) {
             c.params.forEach(p => p.value = 0)
         }
     }
@@ -118,14 +120,16 @@ export class Forest {
     }
 
     countBySymbol(symbolName) {
-        let count = this.cards.filter(c => c.symbols.filter(s => s === symbolName).length > 0)
+        return this.cards.filter(c => c.symbols.filter(s => s === symbolName).length > 0)
             .reduce((sum, c) => sum += c.count, 0)
-        if (symbolName === 'tree') {
-            const violetCarpenterBee = this.cards.find(c => c.name === 'violetCarpenterBee')
-            for (let param of violetCarpenterBee.params)
-                count += param.value
-        }
-        return count
+    }
+
+    countTreesIncludingVioletCarpenterBee() {
+        let count = this.countBySymbol('tree')
+        const violetCarpenterBee = this.cards.find(c => c.name === 'violetCarpenterBee')
+        for (let param of violetCarpenterBee.params)
+            count += param.value
+        return count;
     }
 
     countByPosition(position) {
@@ -162,11 +166,23 @@ export class Forest {
         return noOtherForestHasMore
     }
 
+    hasMostTrees(){
+        let inThisForest = this.countTreesIncludingVioletCarpenterBee()
+        let noOtherForestHasMore = true
+        const otherForests = this.allForests.filter(f => f.playerName !== this.playerName)
+        for (let otherForest of otherForests) {
+            let inOtherForest = otherForest.countTreesIncludingVioletCarpenterBee()
+            if (inOtherForest > inThisForest)
+                noOtherForestHasMore = false
+        }
+        return noOtherForestHasMore
+    }
+
     treeCount() {
         return this.countBySymbol('tree')
     }
 
-    treeCardsCount(){
+    treeCardsCount() {
         return this.cards.filter(c => c.symbols.filter(s => s === 'tree').length > 0)
             .reduce((sum, c) => sum += c.count, 0)
     }

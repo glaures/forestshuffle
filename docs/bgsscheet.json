@@ -1,0 +1,98 @@
+{
+  "players": [
+    {
+      "uuid": "0fd701e5-3561-4f47-af8a-992acbd5dce2",
+      "id": 4,
+      "name": "Guido ",
+      "isAnonymous": false,
+      "modificationDate": "2024-07-27 11:03:28",
+      "bggUsername": "",
+      "metaData": "{\"isNpc\":0}"
+    },
+    {
+      "uuid": "38284873-69f3-4d80-90e7-8a1e31034c4c",
+      "id": 5,
+      "name": "Jenny ",
+      "isAnonymous": false,
+      "modificationDate": "2024-07-26 20:27:40"
+    }
+  ],
+  "locations": [
+    {
+      "uuid": "2177c9ce-bc5e-48c7-a8ae-ba7e920bb8e4",
+      "id": 1,
+      "name": "Guido Markkleeberg ",
+      "modificationDate": "2024-07-27 10:58:02"
+    }
+  ],
+  "games": [
+    {
+      "uuid": "c4fb8bb1-fb6b-4942-9525-d9e67bd00bab",
+      "id": 22,
+      "name": "Forest Shuffle",
+      "modificationDate": "2024-07-27 11:00:29",
+      "cooperative": false,
+      "highestWins": true,
+      "noPoints": false,
+      "usesTeams": false,
+      "urlThumb": "https://cf.geekdo-images.com/08bC8NviSTNc4Zvur4pueA__thumb/img/Xq8TNBmMl3Z7DoynvbUXchFAztc=/fit-in/200x150/filters:strip_icc()/pic7578350.jpg",
+      "urlImage": "https://cf.geekdo-images.com/08bC8NviSTNc4Zvur4pueA__original/img/GcBtTHjdPXagHE-IOCpQ0he6rN4=/0x0/filters:format(jpeg)/pic7578350.jpg",
+      "bggName": "Forest Shuffle",
+      "bggYear": 2023,
+      "bggId": 391163,
+      "designers": "Kosch",
+      "isBaseGame": 1,
+      "isExpansion": 0,
+      "rating": 76,
+      "minPlayerCount": 2,
+      "maxPlayerCount": 5,
+      "minPlayTime": 40,
+      "maxPlayTime": 60,
+      "minAge": 10
+    }
+  ],
+  "plays": [
+    {
+      "uuid": "dde3858d-59f9-40b0-bbb5-14052d2ad1d6",
+      "modificationDate": "2024-07-27 11:02:32",
+      "entryDate": "2024-07-26 21:32:09",
+      "playDate": "2024-07-26 21:31:33",
+      "usesTeams": false,
+      "durationMin": 63,
+      "ignored": false,
+      "manualWinner": false,
+      "rounds": 0,
+      "scoresheet": "{\"bggId\":391163,\"version\":2,\"langCode\":\"de\",\"defaultLanguage\":\"de\",\"variantId\":\"detailed\",\"variantLabel\":\"Forest Shuffle - detailed\",\"scoreType\":\"bestTotalWins\",\"groups\":[{\"templateId\":\"1\",\"maxRepeat\":-1,\"repetition\":1,\"hasSubTotal\":false,\"hideSingleGroupLabel\":false,\"isExtra\":false,\"rows\":[{\"templateId\":\"trees\",\"label\":\"Trees\",\"label-de\":\"Bäume\",\"repetition\":1,\"repeatable\":false,\"negative\":false,\"isExtra\":false,\"scores\":{\"0fd701e5-3561-4f47-af8a-992acbd5dce2\":\"360\",\"38284873-69f3-4d80-90e7-8a1e31034c4c\":\"299\"}}]},{\"templateId\":\"2\",\"maxRepeat\":-1,\"repetition\":1,\"hasSubTotal\":true,\"hideSingleGroupLabel\":false,\"isExtra\":false,\"rows\":[{\"templateId\":\"top\",\"label\":\"Top\",\"label-de\":\"Oben\",\"repetition\":1,\"repeatable\":false,\"negative\":false,\"isExtra\":false,\"scores\":{\"0fd701e5-3561-4f47-af8a-992acbd5dce2\":\"1\"}},{\"templateId\":\"bottom\",\"label\":\"Bottom\",\"label-de\":\"Unten\",\"repetition\":1,\"repeatable\":false,\"negative\":false,\"isExtra\":false,\"scores\":{\"0fd701e5-3561-4f47-af8a-992acbd5dce2\":\"2\"}}]},{\"templateId\":\"3\",\"maxRepeat\":-1,\"repetition\":1,\"hasSubTotal\":true,\"hideSingleGroupLabel\":false,\"isExtra\":false,\"rows\":[{\"templateId\":\"left\",\"label\":\"Left\",\"label-de\":\"Links\",\"repetition\":1,\"repeatable\":false,\"negative\":false,\"isExtra\":false,\"scores\":{\"0fd701e5-3561-4f47-af8a-992acbd5dce2\":\"3\"}},{\"templateId\":\"right\",\"label\":\"Right\",\"label-de\":\"Rechts\",\"repetition\":1,\"repeatable\":false,\"negative\":false,\"isExtra\":false,\"scores\":{\"0fd701e5-3561-4f47-af8a-992acbd5dce2\":\"4\"}}]},{\"templateId\":\"4\",\"maxRepeat\":-1,\"repetition\":1,\"hasSubTotal\":false,\"hideSingleGroupLabel\":false,\"isExtra\":false,\"rows\":[{\"templateId\":\"cave\",\"label\":\"Cave\",\"label-de\":\"Höhle\",\"repetition\":1,\"repeatable\":false,\"negative\":false,\"isExtra\":false,\"scores\":{\"0fd701e5-3561-4f47-af8a-992acbd5dce2\":\"5\"}}]},{\"templateId\":\"extraRound\",\"maxRepeat\":-1,\"repetition\":1,\"hasSubTotal\":false,\"hideSingleGroupLabel\":false,\"isExtra\":true,\"label\":\"Zusatzpunkte\",\"rows\":[{\"templateId\":\"extraRow\",\"label\":\"{row}.\",\"repetition\":1,\"repeatable\":true,\"negative\":false,\"isExtra\":true,\"scores\":{\"0fd701e5-3561-4f47-af8a-992acbd5dce2\":\"6\"}}]}]}",
+      "locationRefId": 1,
+      "gameRefId": 22,
+      "board": "",
+      "scoringSetting": 0,
+      "playerScores": [
+        {
+          "score": "381",
+          "winner": true,
+          "newPlayer": false,
+          "startPlayer": false,
+          "playerRefId": 4,
+          "rank": 0,
+          "seatOrder": 0,
+          "metaData": "{\"scoreUuid\":\"0fd701e5-3561-4f47-af8a-992acbd5dce2\"}"
+        },
+        {
+          "score": "299",
+          "winner": false,
+          "newPlayer": false,
+          "startPlayer": true,
+          "playerRefId": 5,
+          "rank": 0,
+          "seatOrder": 0,
+          "metaData": "{\"scoreUuid\":\"38284873-69f3-4d80-90e7-8a1e31034c4c\"}"
+        }
+      ],
+      "expansionPlays": []
+    }
+  ],
+  "userInfo": {
+    "meRefId": 4
+  }
+}

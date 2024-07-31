@@ -1,0 +1,146 @@
+{
+  "bggId": 391163,
+  "version": 2,
+  "langCode": "de",
+  "defaultLanguage": "de",
+  "variantId": "detailed",
+  "variantLabel": "Forest Shuffle - detailed",
+  "scoreType": "bestTotalWins",
+  "groups": [
+    {
+      "templateId": "1",
+      "maxRepeat": -1,
+      "repetition": 1,
+      "hasSubTotal": false,
+      "hideSingleGroupLabel": false,
+      "isExtra": false,
+      "rows": [
+        {
+          "templateId": "trees",
+          "label": "Trees",
+          "label-de": "Bäume",
+          "repetition": 1,
+          "repeatable": false,
+          "negative": false,
+          "isExtra": false,
+          "scores": {
+            "0fd701e5-3561-4f47-af8a-992acbd5dce2": "360",
+            "38284873-69f3-4d80-90e7-8a1e31034c4c": "299"
+          }
+        }
+      ]
+    },
+    {
+      "templateId": "2",
+      "maxRepeat": -1,
+      "repetition": 1,
+      "hasSubTotal": true,
+      "hideSingleGroupLabel": false,
+      "isExtra": false,
+      "rows": [
+        {
+          "templateId": "top",
+          "label": "Top",
+          "label-de": "Oben",
+          "repetition": 1,
+          "repeatable": false,
+          "negative": false,
+          "isExtra": false,
+          "scores": {
+            "0fd701e5-3561-4f47-af8a-992acbd5dce2": "1"
+          }
+        },
+        {
+          "templateId": "bottom",
+          "label": "Bottom",
+          "label-de": "Unten",
+          "repetition": 1,
+          "repeatable": false,
+          "negative": false,
+          "isExtra": false,
+          "scores": {
+            "0fd701e5-3561-4f47-af8a-992acbd5dce2": "2"
+          }
+        }
+      ]
+    },
+    {
+      "templateId": "3",
+      "maxRepeat": -1,
+      "repetition": 1,
+      "hasSubTotal": true,
+      "hideSingleGroupLabel": false,
+      "isExtra": false,
+      "rows": [
+        {
+          "templateId": "left",
+          "label": "Left",
+          "label-de": "Links",
+          "repetition": 1,
+          "repeatable": false,
+          "negative": false,
+          "isExtra": false,
+          "scores": {
+            "0fd701e5-3561-4f47-af8a-992acbd5dce2": "3"
+          }
+        },
+        {
+          "templateId": "right",
+          "label": "Right",
+          "label-de": "Rechts",
+          "repetition": 1,
+          "repeatable": false,
+          "negative": false,
+          "isExtra": false,
+          "scores": {
+            "0fd701e5-3561-4f47-af8a-992acbd5dce2": "4"
+          }
+        }
+      ]
+    },
+    {
+      "templateId": "4",
+      "maxRepeat": -1,
+      "repetition": 1,
+      "hasSubTotal": false,
+      "hideSingleGroupLabel": false,
+      "isExtra": false,
+      "rows": [
+        {
+          "templateId": "cave",
+          "label": "Cave",
+          "label-de": "Höhle",
+          "repetition": 1,
+          "repeatable": false,
+          "negative": false,
+          "isExtra": false,
+          "scores": {
+            "0fd701e5-3561-4f47-af8a-992acbd5dce2": "5"
+          }
+        }
+      ]
+    },
+    {
+      "templateId": "extraRound",
+      "maxRepeat": -1,
+      "repetition": 1,
+      "hasSubTotal": false,
+      "hideSingleGroupLabel": false,
+      "isExtra": true,
+      "label": "Zusatzpunkte",
+      "rows": [
+        {
+          "templateId": "extraRow",
+          "label": "{row}.",
+          "repetition": 1,
+          "repeatable": true,
+          "negative": false,
+          "isExtra": true,
+          "scores": {
+            "0fd701e5-3561-4f47-af8a-992acbd5dce2": "6"
+          }
+        }
+      ]
+    }
+  ]
+}

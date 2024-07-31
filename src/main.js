@@ -39,6 +39,7 @@ app.mixin(VueHeadMixin)
 // Toastification
 import Toast, {POSITION} from "vue-toastification";
 import "vue-toastification/dist/index.css";
+import './registerServiceWorker'
 const toastOptions = {
     position: POSITION.BOTTOM_RIGHT
 };

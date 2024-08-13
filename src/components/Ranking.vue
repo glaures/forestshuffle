@@ -10,17 +10,18 @@
           </div>
           <div class="d-flex align-items-center justify-content-center ps-2 text-end">
             <img src="/img/points.png" height="20"/>&nbsp;
-            {{ forest.points}}
+            {{ forest.points }}
           </div>
         </div>
       </div>
     </div>
     <div class="text-center mt-2">
       <a :href="'https://app.bgstatsapp.com/createPlay.html?data=' + bgStatsData" target="_bgStats">
-        <img src="https://i0.wp.com/www.bgstatsapp.com/wp-content/uploads/2020/11/Post-to-BG-Stats.png?resize=133%2C34&amp;ssl=1"
-             alt="" width="133" height="34"
-             srcset="https://i0.wp.com/www.bgstatsapp.com/wp-content/uploads/2020/11/Post-to-BG-Stats.png?w=548&amp;ssl=1 548w, https://i0.wp.com/www.bgstatsapp.com/wp-content/uploads/2020/11/Post-to-BG-Stats.png?resize=300%2C77&amp;ssl=1 300w"
-             sizes="(max-width: 133px) 100vw, 133px">
+        <img
+            src="https://i0.wp.com/www.bgstatsapp.com/wp-content/uploads/2020/11/Post-to-BG-Stats.png?resize=133%2C34&amp;ssl=1"
+            alt="" width="133" height="34"
+            srcset="https://i0.wp.com/www.bgstatsapp.com/wp-content/uploads/2020/11/Post-to-BG-Stats.png?w=548&amp;ssl=1 548w, https://i0.wp.com/www.bgstatsapp.com/wp-content/uploads/2020/11/Post-to-BG-Stats.png?resize=300%2C77&amp;ssl=1 300w"
+            sizes="(max-width: 133px) 100vw, 133px">
       </a>
     </div>
   </div>

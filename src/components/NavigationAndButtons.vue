@@ -75,6 +75,7 @@
         <span class="ms-2 flag-icon flag-icon-fr cursor-pointer" @click="changeLanguage('fr')"/>
         <span class="ms-2 flag-icon flag-icon-it cursor-pointer" @click="changeLanguage('it')"/>
         <span class="ms-2 flag-icon flag-icon-pl cursor-pointer" @click="changeLanguage('pl')"/>
+        <span class="ms-2 flag-icon flag-icon-ru cursor-pointer" @click="changeLanguage('ru')"/>
       </div>
       <div class="mt-5 d-block btn btn-danger cursor-pointer" @click="startNewGame">{{ $t('startNewGame') }}</div>
       <div class="mt-2 d-block btn btn-danger" @click="resetPlayers">{{ $t('resetPlayers') }}</div>

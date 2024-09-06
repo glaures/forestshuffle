@@ -159,7 +159,29 @@ export default {
         gentian: "Gentian",
         commonRaven: "Common Raven",
         // duerer
-        duererBat: "Dürer Bat"
+        duererBat: "Dürer Bat",
+        // woodland edge
+        woodlandEdgeExpansion: "Woodland Edge Expansion (beta)",
+        shrubs: "Shrubs",
+        commonHazel: "Common Hazel",
+        blackthorn: "Blackthorn",
+        eurasianMagpie: "Eurasian Magpie",
+        nightingale: "Nightingale",
+        nightingalesAtopAShrub: "atop a shrub",
+        barnOwl: "Barn Owl",
+        mapButterfly: "Map Butterfly",
+        digitalis: "Digitalis",
+        stingingNettle: "Stinging Nettle",
+        greatGreenBushCricket: "Great Green Bush Cricket",
+        beeSwarm: "Bee Swarm",
+        craneFly: "Crane Fly",
+        commonPipistrelle: "Common Pipistrelle",
+        wildBoarFemale: "Wild Boar ♀",
+        europeanBison: "European Bison",
+        waterVole: "Water Vole",
+        europeanWildcat: "European Wildcat",
+        europeanPolecat: "European Polecat",
+        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub"
     },
     de: {
         meta: {

@@ -140,4 +140,8 @@ export default {
 .btn-clovenHoofedAnimal {
   background-color: #6a4332;
 }
+
+.btn-shrub {
+  background-color: #6e884e;
+}
 </style>

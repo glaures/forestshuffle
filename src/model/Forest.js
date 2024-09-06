@@ -183,7 +183,7 @@ export class Forest {
     }
 
     treeCardsCount() {
-        return this.cards.filter(c => c.symbols.filter(s => s === 'tree').length > 0)
+        return this.cards.filter(c => (c.symbols.filter(s => s === 'tree').length > 0 || c.symbols.filter(s => s === 'shrub').length > 0))
             .reduce((sum, c) => sum += c.count, 0)
     }
 
@@ -200,7 +200,7 @@ export class Forest {
     }
 
     treePoints() {
-        return this.cards.filter(c => c.symbols.indexOf('tree') >= 0)
+        return this.cards.filter(c => c.symbols.indexOf('tree') >= 0 || c.symbols.indexOf('shrub'))
             .map(c => c.points)
             .reduce((p, sum) => sum += p)
     }

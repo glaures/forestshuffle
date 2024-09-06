@@ -104,5 +104,37 @@ export const commonRaven = {
     }
 }
 
-export const allBirds = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl, capercaillie, goldenEagle, beardedVulture, commonRaven]
+export const eurasianMagpie = {
+    name: 'eurasianMagpie',
+    position: 'top',
+    symbols: ['bird', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = this.count * 3
+    }
+}
+
+export const nightingale = {
+    name: 'nightingale',
+    position: 'top',
+    symbols: ['bird', 'woodlandEdge'],
+    params: [{
+        name: 'nightingalesAtopAShrub',
+        type: 'number',
+        value: 0
+    }],
+    recalculatePoints(forest) {
+        this.points = this.params[0].value * 5
+    }
+}
+
+export const barnOwl = {
+    name: 'barnOwl',
+    position: 'top',
+    symbols: ['bird', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = 3 * this.count * forest.countBySymbol('bat')
+    }
+}
+
+export const allBirds = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl, capercaillie, goldenEagle, beardedVulture, commonRaven, eurasianMagpie, nightingale, barnOwl]
 

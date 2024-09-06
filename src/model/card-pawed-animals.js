@@ -134,4 +134,37 @@ export const mountainHare = {
     }
 }
 
-export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare]
+export const waterVole = {
+    name: 'waterVole',
+    position: 'side',
+    symbols: ['pawedAnimal', 'woodlandEdge'],
+    recalculatePoints(forest) {
+    }
+}
+
+export const europeanWildcat = {
+    name: 'europeanWildcat',
+    position: 'side',
+    symbols: ['pawedAnimal', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('woodlandEdge')
+    }
+}
+
+export const europeanPolecat = {
+    name: 'europeanPolecat',
+    position: 'side',
+    symbols: ['pawedAnimal', 'woodlandEdge'],
+    params: [
+        {
+            name: 'europeanPolecatAloneOnTreeOrShrub',
+            type: 'number',
+            value: 0
+        }
+    ],
+    recalculatePoints() {
+        this.points = 10 * this.params[0].value
+    }
+}
+
+export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare, waterVole, europeanWildcat, europeanPolecat]

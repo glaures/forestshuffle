@@ -8,7 +8,7 @@ export const useGameStore = defineStore('game', {
             players: [],
             currentPlayer: null,
             alpineExpansion: useLocalStorage("alpineExpansion", true),
-            woodlandEdgeExpansion: useLocalStorage("woodlandEdgeExpansion", true),
+            woodlandEdgeExpansion: useLocalStorage("woodlandEdgeExpansion", false),
             distributedScoring: useLocalStorage("distributedScoring", false),
             duererExpansion: useLocalStorage("duererExpansion", false),
             startTime: new Date()

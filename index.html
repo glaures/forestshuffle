@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         let langSetting = (navigator.language || navigator.userLanguage).split('-')[0];
-        const lang = ['de', 'en', 'fr', 'it', 'pl', 'ru'].indexOf(langSetting) >= 0 ? langSetting : 'en'
+        const lang = ['de', 'en', 'fr', 'it', 'pl', 'ru', 'cn'].indexOf(langSetting) >= 0 ? langSetting : 'en'
         function loadManifest() {
             const link = document.createElement('link');
             link.rel = 'manifest';

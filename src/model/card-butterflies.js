@@ -1,4 +1,4 @@
-const pointsForSetCount = [0, 0, 3, 6, 12, 20, 35]
+const pointsForSetCount = [0, 0, 3, 6, 12, 20, 35, 55]
 
 export function calculateButterflyPoints(forest) {
     let butterflies = forest.cards
@@ -62,4 +62,12 @@ export const phoebusApollo = {
     }
 }
 
-export const allButterflies = [camberwellBeauty, peacockButterfly, silverWashedFritillary, purpleEmperor, largeTortoiseshell, phoebusApollo]
+export const mapButterfly = {
+    name: 'mapButterfly',
+    position: 'top',
+    symbols: ['butterfly', 'insect', 'woodlandEdge'],
+    recalculatePoints(forest) {
+    }
+}
+
+export const allButterflies = [camberwellBeauty, peacockButterfly, silverWashedFritillary, purpleEmperor, largeTortoiseshell, phoebusApollo, mapButterfly]

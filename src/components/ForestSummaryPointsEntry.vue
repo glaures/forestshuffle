@@ -1,4 +1,6 @@
 <script>
+import {useGameStore} from "@/stores/game-store.js";
+
 export default {
   name: "ForestSummaryPointsEntry",
   props: {
@@ -13,8 +15,14 @@ export default {
     iconUrl() {
       return import.meta.env.VITE_BASE_URL + 'img/symbols/tree.png'
     },
+    shrubIconUrl() {
+      return import.meta.env.VITE_BASE_URL + 'img/symbols/shrub.png'
+    },
     bgColorClass() {
       return 'bg-' + this.bgColor
+    },
+    woodlandExpansion() {
+      return useGameStore().woodlandEdgeExpansion
     }
   }
 }
@@ -22,18 +30,22 @@ export default {
 
 <template>
   <div class="d-block"
-  :class="{'pe-3 border-end border-light': border}">
+       :class="{'pe-3 border-end border-light': border}">
     <div class="d-flex align-items-center">
-      <img v-if="!isFas" :src="iconUrl" :alt="$t(icon)" height="24" class="me-2"/>
+      <div v-if="!isFas">
+        <img :src="iconUrl" :alt="$t(icon)" height="24"/>
+        <img v-if="icon === 'tree' && woodlandExpansion" :src="shrubIconUrl" :alt="$t(icon)" height="24"/>
+      </div>
       <div v-else
-           :class="bgColorClass + ' border border-2 text-light border-light rounded justify-content-center align-items-center d-flex me-2'"
+           class="ms-2"
+           :class="bgColorClass + ' border border-2 text-ligh t border-light rounded justify-content-center align-items-center d-flex me-2'"
            style="min-width: 24px; min-height: 24px;">
         <font-awesome-icon :icon="icon"/>
       </div>
       {{ count }}
     </div>
     <div class="d-flex justify-content-center mt-2">
-      <img src="/img/points.png" height="22">&nbsp;{{points}}
+      <img src="/img/points.png" height="22">&nbsp;{{ points }}
     </div>
   </div>
 </template>

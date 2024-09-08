@@ -67,5 +67,24 @@ export const gentian = {
     }
 }
 
-export const allPlants = [blackberries, treeFerns, wildStrawberries, moss, edelweiss, blueberry, gentian]
+export const digitalis = {
+    name: 'digitalis',
+    position: 'bottom',
+    symbols: ['plant', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        const pointsByDistinctPlants = [0, 1, 3, 6, 10, 15]
+        this.points = this.count * pointsByDistinctPlants[(Math.min(5, forest.countDistinctBySymbol('plant')))]
+    }
+}
+
+export const stingingNettle = {
+    name: 'stingingNettle',
+    position: 'bottom',
+    symbols: ['plant', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = 2 * this.count * forest.countBySymbol('butterfly')
+    }
+}
+
+export const allPlants = [blackberries, treeFerns, wildStrawberries, moss, edelweiss, blueberry, gentian, digitalis, stingingNettle]
 

@@ -9,6 +9,12 @@
                           symbol="tree"
                           heading="trees">
     </CardAmountEditorList>
+    <CardAmountEditorList :cards="shrubs"
+                          :forest="forest"
+                          symbol="shrub"
+                          heading="shrubs"
+                          class="mt-4">
+    </CardAmountEditorList>
 
     <div class="d-flex align-items-center mt-4 border-primary border-bottom">
       <div
@@ -173,6 +179,9 @@ export default {
     },
     trees() {
       return this.cards.filter(c => c.symbols.indexOf('tree') >= 0)
+    },
+    shrubs() {
+      return this.cards.filter(c => c.symbols.indexOf('shrub') >= 0)
     },
     birds() {
       return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'top')

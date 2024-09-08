@@ -8,6 +8,7 @@ export const useGameStore = defineStore('game', {
             players: [],
             currentPlayer: null,
             alpineExpansion: useLocalStorage("alpineExpansion", true),
+            woodlandEdgeExpansion: useLocalStorage("woodlandEdgeExpansion", true),
             distributedScoring: useLocalStorage("distributedScoring", false),
             duererExpansion: useLocalStorage("duererExpansion", false),
             startTime: new Date()
@@ -32,6 +33,9 @@ export const useGameStore = defineStore('game', {
         },
         toggleAlpineExpansion() {
             this.alpineExpansion = !this.alpineExpansion
+        },
+        toggleWoodlandEdgeExpansion() {
+            this.woodlandEdgeExpansion = !this.woodlandEdgeExpansion
         },
         toggleDuererExpansion() {
             this.duererExpansion = !this.duererExpansion

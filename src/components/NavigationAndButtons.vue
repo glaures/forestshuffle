@@ -59,7 +59,14 @@
         <input class="form-check form-check-input bg-primary" type="checkbox" :checked="alpineExpansion"
                @input="toggleAlpineExpansion"/>
         <div class="form-check-label ms-2 user-select-none" @click="toggleAlpineExpansion">
-          <img src="/img/symbols/alps.png" alt="alps" height="24"/>{{ $t('alpineExpansion') }}
+          <img src="/img/symbols/alps.png" alt="alps" height="24"/>&nbsp;{{ $t('alpineExpansion') }}
+        </div>
+      </div>
+      <div class="d-flex mt-3 w-100 justify-content-left align-items-center px-5">
+        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="woodlandEdgeExpansion"
+               @input="toggleWoodlandEdgeExpansion"/>
+        <div class="form-check-label ms-2 user-select-none" @click="toggleWoodlandEdgeExpansion">
+          <img src="/img/symbols/woodlandEdge.png" alt="woodlandEdge" height="24"/>&nbsp;{{ $t('woodlandEdgeExpansion') }}
         </div>
       </div>
       <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
@@ -108,6 +115,9 @@ export default {
     },
     alpineExpansion() {
       return useGameStore().alpineExpansion
+    },
+    woodlandEdgeExpansion() {
+      return useGameStore().woodlandEdgeExpansion
     },
     duererExpansion(){
       return useGameStore().duererExpansion
@@ -172,6 +182,10 @@ export default {
     toggleAlpineExpansion() {
       useGameStore().toggleAlpineExpansion()
       event('alpineExpansionToggled', {newState: this.alpineExpansion})
+    },
+    toggleWoodlandEdgeExpansion() {
+      useGameStore().toggleWoodlandEdgeExpansion()
+      event('woodlandEdgeExpansion', {newState: this.woodlandEdgeExpansion})
     },
     toggleDuererExpansion() {
       useGameStore().toggleDuererExpansion()

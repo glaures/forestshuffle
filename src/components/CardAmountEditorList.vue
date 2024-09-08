@@ -21,9 +21,12 @@ export default {
           .reduce((p, sum) => sum += p, 0)
     },
     filteredCards() {
+      let res = this.cards
       if (!useGameStore().alpineExpansion)
-        return this.cards.filter(c => c.symbols.indexOf('alps') < 0)
-      else return this.cards
+        res = res.filter(c => c.symbols.indexOf('alps') < 0)
+      if (!useGameStore().woodlandEdgeExpansion)
+        res = res.filter(c => c.symbols.indexOf('woodlandEdge') < 0)
+      return res
     }
   }
 }

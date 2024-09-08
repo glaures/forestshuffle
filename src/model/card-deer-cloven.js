@@ -110,15 +110,30 @@ export const squeaker = {
     }
 }
 
+export const squeakerWE = {
+    name: 'squeakerWE',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = this.count
+    }
+}
+
 export const wildBoar = {
     name: 'wildBoar',
     position: 'side',
     symbols: ['clovenHoofedAnimal'],
     recalculatePoints(forest) {
-        if (forest.countByName('squeaker') > 0)
-            this.points = this.count * 10
-        else
-            this.points = 0
+        this.points = this.count * 10 * (forest.countByName('squeaker') + forest.countByName('squeakerWE'))
+    }
+}
+
+export const wildBoarFemale = {
+    name: 'wildBoarFemale',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = this.count * 10 * (forest.countByName('squeaker') + forest.countByName('squeakerWE'))
     }
 }
 
@@ -175,9 +190,31 @@ export const steinbock = {
     position: 'side',
     symbols: ['clovenHoofedAnimal', 'alps'],
     recalculatePoints(forest) {
-            this.points = this.count * 10
+        this.points = this.count * 10
+    }
+}
+
+export const europeanBison = {
+    name: 'europeanBison',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal', 'woodlandEdge'],
+    params: [{
+        name: 'beechCount',
+        type: 'type',
+        symbol: 'beech',
+        value: 0,
+        unrestricted: true
+    }, {
+        name: 'oakCount',
+        type: 'type',
+        symbol: 'oak',
+        value: 0,
+        unrestricted: true
+    }],
+    recalculatePoints(forest) {
+        this.points = 2 * this.count * (forest.beechCount + forest.oakCount)
     }
 }
 
 
-export const allDeers = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, wildBoar, chamoisDouglasFir, chamoisEuropeanLarch, chamoisStonePine, steinbock]
+export const allDeers = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, squeakerWE, wildBoar, wildBoarFemale, chamoisDouglasFir, chamoisEuropeanLarch, chamoisStonePine, steinbock, europeanBison]

@@ -60,4 +60,13 @@ export const duererBat = {
     }
 }
 
-export const allBats = [barbastelleBat, bechsteinsBat, brownLongEaredBat, greaterHorseshoeBat, savisPipistrelle, duererBat]
+export const commonPipistrelle = {
+    name: 'commonPipistrelle',
+    position: 'side',
+    symbols: ['bat', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = defaultBatCalculatePoints(forest, this.name)
+    }
+}
+
+export const allBats = [barbastelleBat, bechsteinsBat, brownLongEaredBat, greaterHorseshoeBat, savisPipistrelle, duererBat, commonPipistrelle]

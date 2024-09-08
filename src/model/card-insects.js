@@ -59,6 +59,33 @@ export const violetCarpenterBee = {
     }
 }
 
+export const greatGreenBushCricket = {
+    name: 'greatGreenBushCricket',
+    position: 'bottom',
+    symbols: ['insect', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('insect')
+    }
+}
 
-export const allInsects = [gnat, fireflies, woodAnt, stagBeetle, violetCarpenterBee]
+export const beeSwarm = {
+    name: 'beeSwarm',
+    position: 'side',
+    symbols: ['insect', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('plant')
+    }
+}
+
+export const craneFly = {
+    name: 'craneFly',
+    position: 'side',
+    symbols: ['insect', 'woodlandEdge'],
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('bet')
+    }
+}
+
+
+export const allInsects = [gnat, fireflies, woodAnt, stagBeetle, violetCarpenterBee, greatGreenBushCricket, beeSwarm, craneFly]
 

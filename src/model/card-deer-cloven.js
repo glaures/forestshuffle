@@ -124,7 +124,8 @@ export const wildBoar = {
     position: 'side',
     symbols: ['clovenHoofedAnimal'],
     recalculatePoints(forest) {
-        this.points = this.count * 10 * (forest.countByName('squeaker') + forest.countByName('squeakerWE'))
+        const squeakerPresent = (forest.countByName('squeaker') + forest.countByName('squeakerWE')) > 0
+        this.points = this.count * 10 * (squeakerPresent  ? 1 : 0)
     }
 }
 

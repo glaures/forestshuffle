@@ -111,7 +111,7 @@ export const squeaker = {
 }
 
 export const squeakerWE = {
-    name: 'squeaker',
+    name: 'squeakerWE',
     position: 'side',
     symbols: ['clovenHoofedAnimal', 'woodlandEdge'],
     recalculatePoints(forest) {

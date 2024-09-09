@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base: '/forestshuffle/',
+  base: '/',
   define: {
     'process.env': {
       VITE_BASE_URL: process.env.VITE_BASE_URL

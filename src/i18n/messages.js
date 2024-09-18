@@ -161,7 +161,7 @@ export default {
         // duerer
         duererBat: "Dürer Bat",
         // woodland edge
-        woodlandEdgeExpansion: "Woodland Edge Expansion (beta)",
+        woodlandEdgeExpansion: "Woodland Edge Expansion",
         shrubs: "Shrubs",
         commonHazel: "Common Hazel",
         blackthorn: "Blackthorn",
@@ -345,7 +345,7 @@ export default {
         // duerer
         duererBat: "Dürer-Fledermaus",
         // woodland edge
-        woodlandEdgeExpansion: "Waldrand Erweiterung (beta)",
+        woodlandEdgeExpansion: "Waldrand Erweiterung",
         shrubs: "Sträucher",
         commonHazel: "Common Hazel",
         blackthorn: "Schlehdorn",
@@ -1034,7 +1034,7 @@ export default {
         distributedScoring: 'Verdeelde puntentelling (meerdere apparaten)',
         summary: 'Samenvatting',
         // error messages
-        error.nameTaken: "De naam {0} is al in gebruik.",
+        "error.nameTaken": "De naam {0} is al in gebruik.",
         // symbols
         trees: "Bomen",
         tops: "Bovenkanten",
@@ -1163,7 +1163,7 @@ export default {
         // duerer
         duererBat: "Dürer Bat",
         // woodland edge
-        woodlandEdgeExpansion: "Woodland Edge Uitbreiding (beta)",
+        woodlandEdgeExpansion: "Woodland Edge Uitbreiding",
         shrubs: "Shrubs",
         commonHazel: "Common Hazel",
         blackthorn: "Blackthorn",
@@ -1184,7 +1184,7 @@ export default {
         europeanWildcat: "European Wildcat",
         europeanPolecat: "European Polecat",
         europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub"
-    }
+    },
     cn: {
         meta: {
           title: "森森不息记分程序",

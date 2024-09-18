@@ -136,7 +136,7 @@ export const mountainHare = {
 
 export const waterVole = {
     name: 'waterVole',
-    position: 'side',
+    position: 'bottom',
     symbols: ['pawedAnimal', 'woodlandEdge'],
     recalculatePoints(forest) {
     }

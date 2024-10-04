@@ -1057,7 +1057,7 @@ export default {
         distributedScoring: 'Verdeelde puntentelling (meerdere apparaten)',
         summary: 'Samenvatting',
         // error messages
-        error.nameTaken: "De naam {0} is al in gebruik.",
+        "error.nameTaken": "De naam {0} is al in gebruik.",
         // symbols
         trees: "Bomen",
         tops: "Bovenkanten",

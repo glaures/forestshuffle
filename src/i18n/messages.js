@@ -530,7 +530,7 @@ export default {
         meta: {
             title: "Forest Shuffle - App Punteggio",
             keywords: "forest shuffle, punti, shuffle, gioco da tavolo, gioco, carta, punteggio, app, alpino",
-            description: "Segna il tuo gioco da tavolo Forest Shuffle in meno di 90 secondi con questa app semplice e facile da usare.",
+            description: "Segna i punti di Forest Shuffle in meno di 90 secondi con questa semplice e intuitiva app",
         },
         cookies: {
             intro: "Questo sito utilizza i cookie - per maggiori informazioni al riguardo, consultare la nostra informativa sulla privacy. Fare clic su 'Accetta tutti' per accettare tutti i cookie o regolare le impostazioni dei cookie facendo clic qui.",
@@ -685,6 +685,29 @@ export default {
         beardedVulture: "Gipeto",
         gentian: "Genziana",
         commonRaven: "Corvo Imperiale"
+        // woodland edge
+        woodlandEdgeExpansion: "Espansione Woodland Edge",
+        shrubs: "Arbusti",
+        commonHazel: "Nocciòlo",
+        blackthorn: "Pruno Selvatico",
+        commonElderberry: "Sambuco Comune",
+        eurasianMagpie: "Gazza",
+        nightingale: "Usignolo Comune",
+        nightingalesAtopAShrub: "su un arbusto",
+        barnOwl: "Barbagianni Comune",
+        mapButterfly: "Vanessa Levana",
+        digitalis: "Digitale Rossa",
+        stingingNettle: "Ortica Comune",
+        greatGreenBushCricket: "Cavalletta Verde",
+        beeSwarm: "Ape Europea (sciame)",
+        craneFly: "Tipula",
+        commonPipistrelle: "Pipistrello Nano",
+        wildBoarFemale: "Cinghiale (femmina)",
+        europeanBison: "Bisonte Europeo",
+        waterVole: "Arvicola Terrestre",
+        europeanWildcat: "Gatto Selvatico Europeo",
+        europeanPolecat: "Puzzola Europea",
+        europeanPolecatAloneOnTreeOrShrub: "se da sola su un albero o arbusto"
     },
     pl: {
         meta: {

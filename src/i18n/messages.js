@@ -684,7 +684,7 @@ export default {
         goldenEagle: "Aquila Reale",
         beardedVulture: "Gipeto",
         gentian: "Genziana",
-        commonRaven: "Corvo Imperiale"
+        commonRaven: "Corvo Imperiale",
         // woodland edge
         woodlandEdgeExpansion: "Espansione Woodland Edge",
         shrubs: "Arbusti",
@@ -1554,7 +1554,7 @@ export default {
         // duerer
         duererBat: "Dürer Bat",
         // woodland edge
-        woodlandEdgeExpansion: "Woodland Edge Expansion (beta)",
+        woodlandEdgeExpansion: "Woodland Edge Expansion",
         shrubs: "Shrubs",
         commonHazel: "Common Hazel",
         blackthorn: "Blackthorn",

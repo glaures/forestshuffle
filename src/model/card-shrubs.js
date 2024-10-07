@@ -1,7 +1,7 @@
 export const elderberry = {
     name: 'elderberry',
     position: 'tree',
-    symbols: ['shrubs', 'woodlandEdge'],
+    symbols: ['shrub', 'woodlandEdge'],
     recalculatePoints(forest) {
     }
 }

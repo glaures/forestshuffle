@@ -1,11 +1,11 @@
 {
   "name": "forestshuffle-scoring",
-  "version": "1.6.3",
+  "version": "1.6.5",
   "private": true,
   "scripts": {
     "build": "npm run bump-version && vite build",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --cname forestshuffle.app",
     "bump-version": "node bump-version.js",
     "dev": "vite",
     "format": "prettier --write src/",

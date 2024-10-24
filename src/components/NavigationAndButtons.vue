@@ -71,7 +71,7 @@
       </div>
       <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
         <input class="form-check form-check-input bg-primary" type="checkbox" :checked="spiel24Promo"
-               @input="spiel24Promo"/>
+               @input="toggleSpiel24Promo"/>
         <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleSpiel24Promo">
           {{ $t('spiel24Promo') }}
         </div>

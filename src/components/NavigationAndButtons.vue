@@ -70,6 +70,13 @@
         </div>
       </div>
       <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
+        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="spiel24Promo"
+               @input="spiel24Promo"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleSpiel24Promo">
+          {{ $t('spiel24Promo') }}
+        </div>
+      </div>
+      <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
         <input class="form-check form-check-input bg-primary" type="checkbox" :checked="duererExpansion"
                @input="toggleDuererExpansion"/>
         <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleDuererExpansion">
@@ -124,6 +131,9 @@ export default {
     },
     duererExpansion(){
       return useGameStore().duererExpansion
+    },
+    spiel24Promo(){
+      return useGameStore().spiel24Promo
     },
     forests() {
       return useForestsStore().forests
@@ -193,6 +203,10 @@ export default {
     toggleDuererExpansion() {
       useGameStore().toggleDuererExpansion()
       event('duererExpansionToggled', {newState: this.duererExpansion})
+    },
+    toggleSpiel24Promo() {
+      useGameStore().toggleSpiel24Promo()
+      event('spiel24Toggled', {newState: this.spiel24Promo})
     },
     changeLanguage(newLang) {
       this.$i18n.locale = newLang

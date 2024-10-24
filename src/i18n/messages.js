@@ -160,6 +160,9 @@ export default {
         commonRaven: "Common Raven",
         // duerer
         duererBat: "Dürer Bat",
+        // spiel 24
+        spiel24Promo: "Spiel 24 Promo",
+        meeps: "Meeps",
         // woodland edge
         woodlandEdgeExpansion: "Woodland Edge Expansion",
         shrubs: "Shrubs",

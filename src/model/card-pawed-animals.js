@@ -167,4 +167,14 @@ export const europeanPolecat = {
     }
 }
 
-export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare, waterVole, europeanWildcat, europeanPolecat]
+export const meeps = {
+    name: 'meeps',
+    position: 'side',
+    symbols: ['pawedAnimal', 'woodlandEdge'],
+    hide: (gameStore) => !gameStore.spiel24Promo,
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('woodlandEdge')
+    }
+}
+
+export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare, waterVole, europeanWildcat, europeanPolecat, meeps]

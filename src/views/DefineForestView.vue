@@ -178,49 +178,49 @@ export default {
       return useForestsStore().getForestByPlayerName(this.playerName).cards
     },
     trees() {
-      return this.cards.filter(c => c.symbols.indexOf('tree') >= 0)
+      return this.cards.filter(c => c.symbols.indexOf('tree') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     shrubs() {
-      return this.cards.filter(c => c.symbols.indexOf('shrub') >= 0)
+      return this.cards.filter(c => c.symbols.indexOf('shrub') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     birds() {
-      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'top')
+      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     butterflies() {
-      return this.cards.filter(c => c.symbols.indexOf('butterfly') >= 0)
+      return this.cards.filter(c => c.symbols.indexOf('butterfly') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     others() {
-      return this.forest.cards.filter(c => c.name === 'redSquirrel')
+      return this.forest.cards.filter(c => c.name === 'redSquirrel' && !(c.hide && c.hide(useGameStore())))
     },
     plants() {
-      return this.cards.filter(c => c.symbols.indexOf('plant') >= 0)
+      return this.cards.filter(c => c.symbols.indexOf('plant') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     mushrooms() {
-      return this.cards.filter(c => c.symbols.indexOf('mushroom') >= 0)
+      return this.cards.filter(c => c.symbols.indexOf('mushroom') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     amphibians() {
-      return this.cards.filter(c => c.symbols.indexOf('amphibian') >= 0)
+      return this.cards.filter(c => c.symbols.indexOf('amphibian') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     insectsBottom() {
-      return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'bottom')
+      return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
     },
     pawedBottom() {
-      return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'bottom')
+      return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
     },
     birdsSide() {
-      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'side')
+      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
     },
     insectsSide() {
-      return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'side')
+      return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
     },
     bats() {
       return this.cards.filter(c => c.symbols.indexOf('bat') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
     deerAndCloven() {
-      return this.cards.filter(c => (c.symbols.indexOf('deer') >= 0 || c.symbols.indexOf('clovenHoofedAnimal') >= 0))
+      return this.cards.filter(c => (c.symbols.indexOf('deer') >= 0 || c.symbols.indexOf('clovenHoofedAnimal') >= 0) && !(c.hide && c.hide(useGameStore())))
     },
     pawedSide() {
-      return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'side')
+      return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
     },
     points() {
       return useForestsStore().getForestByPlayerName(this.playerName).points

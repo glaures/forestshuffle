@@ -400,7 +400,7 @@ export default {
         treeTypeCount: "Nombre de types d'arbres",
         startNewGame: "Commencer une nouvelle partie",
         resetPlayers: "Réinitialiser les joueurs",
-        alpineExpansion: 'Extension Alps',
+        alpineExpansion: 'Extension Alpes',
         duererExpansion: 'Dürer Promo',
         ranking: 'Classement',
         distributedScoring: 'Évaluation distribuée (plusieurs appareils)',

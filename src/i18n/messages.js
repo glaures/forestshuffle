@@ -537,7 +537,7 @@ export default {
         shrubs: "Shrubs",
         commonHazel: "Common Hazel",
         blackthorn: "Blackthorn",
-        elderberry: "Sureau",
+        elderberry: "Sureau noir",
         eurasianMagpie: "Eurasian Magpie",
         nightingale: "Nightingale",
         nightingalesAtopAShrub: "atop a shrub",

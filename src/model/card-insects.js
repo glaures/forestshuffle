@@ -82,7 +82,7 @@ export const craneFly = {
     position: 'side',
     symbols: ['insect', 'woodlandEdge'],
     recalculatePoints(forest) {
-        this.points = this.count * forest.countBySymbol('bet')
+        this.points = this.count * forest.countBySymbol('bat')
     }
 }
 

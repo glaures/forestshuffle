@@ -537,7 +537,7 @@ export default {
         shrubs: "Arbustes",
         commonHazel: "Noisetier commun",
         blackthorn: "Prunellier",
-        elderberry: "Sureau",
+        elderberry: "Sureau noir",
         eurasianMagpie: "Pie bavarde",
         nightingale: "Rossignol philomèle",
         nightingalesAtopAShrub: "rattaché à un arbuste",

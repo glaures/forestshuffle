@@ -122,7 +122,16 @@ export const stonePine = {
     }
 }
 
-export const allTrees = [beech, birch, douglasFir, horseChestnut, linden, oak, silverFir, sycamore, europeanLarch, stonePine, treeSaplings]
+export const downyBirch = {
+    name: 'downyBirch',
+    symbols: ['tree'],
+    hide: (gameStore) => !gameStore.hobbyPromo,
+    recalculatePoints(forest) {
+        this.points = this.count
+    }
+}
+
+export const allTrees = [beech, birch, douglasFir, horseChestnut, linden, oak, silverFir, sycamore, europeanLarch, stonePine, treeSaplings, downyBirch]
 
 
 

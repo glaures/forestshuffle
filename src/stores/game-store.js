@@ -11,6 +11,7 @@ export const useGameStore = defineStore('game', {
             woodlandEdgeExpansion: useLocalStorage("woodlandEdgeExpansion", false),
             distributedScoring: useLocalStorage("distributedScoring", false),
             duererExpansion: useLocalStorage("duererExpansion", false),
+            hobbyPromo: useLocalStorage("hobbyPromo", false),
             spiel24Promo: useLocalStorage("spiel24Promo", false),
             startTime: new Date()
         }
@@ -40,6 +41,9 @@ export const useGameStore = defineStore('game', {
         },
         toggleDuererExpansion() {
             this.duererExpansion = !this.duererExpansion
+        },
+        toggleHobbyPromo() {
+            this.hobbyPromo = !this.hobbyPromo
         },
         toggleSpiel24Promo() {
             this.spiel24Promo = !this.spiel24Promo

@@ -136,5 +136,15 @@ export const barnOwl = {
     }
 }
 
-export const allBirds = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl, capercaillie, goldenEagle, beardedVulture, commonRaven, eurasianMagpie, nightingale, barnOwl]
+export const whinchat = {
+    name: 'whinchat',
+    symbols: ['bird'],
+    hide: (gameStore) => !gameStore.hobbyPromo,
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('plant')
+    }
+}
+
+
+export const allBirds = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl, capercaillie, goldenEagle, beardedVulture, commonRaven, eurasianMagpie, nightingale, barnOwl, whinchat]
 

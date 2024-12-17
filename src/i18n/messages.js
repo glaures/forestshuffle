@@ -28,6 +28,7 @@ export default {
         resetPlayers: 'Reset players',
         alpineExpansion: 'Alpine Expansion',
         duererExpansion: 'Dürer Promo',
+        hobbyPromo: 'Hobby Next Promo',
         ranking: 'Ranking',
         distributedScoring: 'Distributed scoring (multiple devices)',
         summary: 'Summary',
@@ -163,6 +164,9 @@ export default {
         // spiel 24
         spiel24Promo: "Spiel 24 Promo",
         meeps: "Meeps",
+        // hobby promo
+        whinchat: "Whinchat",
+        downyBirch: "Downy Birch",
         // woodland edge
         woodlandEdgeExpansion: "Woodland Edge Expansion",
         shrubs: "Shrubs",
@@ -349,6 +353,9 @@ export default {
         commonRaven: "Kolkrabe",
         // duerer
         duererBat: "Dürer-Fledermaus",
+        // hobby promo
+        whinchat: "Braunkehlchen",
+        downyBirch: "Moorbirke",
         // woodland edge
         woodlandEdgeExpansion: "Waldrand Erweiterung",
         shrubs: "Sträucher",
@@ -531,6 +538,9 @@ export default {
         commonRaven: "Grand corbeau",
         // duerer
         duererBat: "Pipistrelle de Dürer",
+        // hobby promo
+        whinchat: "Tarier des Près",
+        downyBirch: "Bouleau pubescent",
         // woodland edge
         // woodland edge
         woodlandEdgeExpansion: "Extension Lisière de forêt",
@@ -694,6 +704,9 @@ export default {
         wolf: "Lupo",
         cave: "Caverna",
         cardsInCave: "Carte nella caverna",
+        // hobby promo
+        whinchat: "Stiaccino",
+        downyBirch: "Betulla pubescente",
         // alpine extension
         europeanLarch: "Larice Comune",
         stonePine: "Pino Cembro",
@@ -898,6 +911,9 @@ export default {
         commonRaven: "Kruk zwyczajny",
         // duerer
         duererBat: "Dürer Pipistrello",
+        // hobby promo
+        whinchat: "Pokląskwa",
+        downyBirch: "Brzoza omszona",
         // woodland edge
         woodlandEdgeExpansion: "Woodland Edge Uitbreiding",
         shrubs: "Shrubs",

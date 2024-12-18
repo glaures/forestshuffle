@@ -86,5 +86,25 @@ export const stingingNettle = {
     }
 }
 
-export const allPlants = [blackberries, treeFerns, wildStrawberries, moss, edelweiss, blueberry, gentian, digitalis, stingingNettle]
+export const maretak = {
+    name: 'maretak',
+    position: 'top',
+    symbols: ['plant', 'woodlandEdge'],
+    hide: (gameStore) => !gameStore.maretakPromo,
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('plant')
+    }
+}
+
+export const bostulp = {
+    name: 'bostulp',
+    position: 'bottom',
+    symbols: ['plant', 'woodlandEdge'],
+    hide: (gameStore) => !gameStore.maretakPromo,
+    recalculatePoints(forest) {
+        this.points = 3 * this.count
+    }
+}
+
+export const allPlants = [blackberries, treeFerns, wildStrawberries, moss, edelweiss, blueberry, gentian, digitalis, stingingNettle, maretak, bostulp]
 

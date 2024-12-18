@@ -38,6 +38,11 @@
                           :forest="forest"
                           symbol="pawedAnimal"
                           heading="pawedAnimals"/>
+    <CardAmountEditorList class="mt-4"
+                          :cards="plantsTop"
+                          :forest="forest"
+                          symbol="plant"
+                          heading="plants"/>
 
     <div class="d-flex align-items-center mt-4 border-primary border-bottom">
       <div
@@ -193,7 +198,10 @@ export default {
       return this.forest.cards.filter(c => c.name === 'redSquirrel' && !(c.hide && c.hide(useGameStore())))
     },
     plants() {
-      return this.cards.filter(c => c.symbols.indexOf('plant') >= 0 && !(c.hide && c.hide(useGameStore())))
+      return this.cards.filter(c => c.symbols.indexOf('plant') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
+    },
+    plantsTop(){
+      return this.cards.filter(c => c.symbols.indexOf('plant') >= 0 && c.position === 'top' && !(c.hide && c.hide(useGameStore())))
     },
     mushrooms() {
       return this.cards.filter(c => c.symbols.indexOf('mushroom') >= 0 && !(c.hide && c.hide(useGameStore())))

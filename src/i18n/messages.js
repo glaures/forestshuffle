@@ -29,6 +29,7 @@ export default {
         alpineExpansion: 'Alpine Expansion',
         duererExpansion: 'Dürer Promo',
         hobbyPromo: 'Hobby Next Promo',
+        maretakPromo: "Maretak / Bostulp Promo",
         ranking: 'Ranking',
         distributedScoring: 'Distributed scoring (multiple devices)',
         summary: 'Summary',
@@ -167,6 +168,9 @@ export default {
         // hobby promo
         whinchat: "Whinchat",
         downyBirch: "Downy Birch",
+        // maretakPromo
+        maretak: "Maretak",
+        bostulp: "Bostulp",
         // woodland edge
         woodlandEdgeExpansion: "Woodland Edge Expansion",
         shrubs: "Shrubs",

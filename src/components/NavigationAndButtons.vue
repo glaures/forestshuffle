@@ -84,6 +84,13 @@
         </div>
       </div>
       <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
+        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="maretakPromo"
+               @input="toggleMaretakPromo"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleMaretakPromo">
+          {{ $t('maretakPromo') }}
+        </div>
+      </div>
+      <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
         <input class="form-check form-check-input bg-primary" type="checkbox" :checked="duererExpansion"
                @input="toggleDuererExpansion"/>
         <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleDuererExpansion">
@@ -144,6 +151,9 @@ export default {
     },
     spiel24Promo(){
       return useGameStore().spiel24Promo
+    },
+    maretakPromo(){
+      return useGameStore().maretakPromo
     },
     forests() {
       return useForestsStore().forests
@@ -221,6 +231,10 @@ export default {
     toggleSpiel24Promo() {
       useGameStore().toggleSpiel24Promo()
       event('spiel24Toggled', {newState: this.spiel24Promo})
+    },
+    toggleMaretakPromo() {
+      useGameStore().toggleMaretakPromo()
+      event('maretakToggled', {newState: this.maretakPromo})
     },
     changeLanguage(newLang) {
       this.$i18n.locale = newLang

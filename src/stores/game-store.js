@@ -12,6 +12,7 @@ export const useGameStore = defineStore('game', {
             distributedScoring: useLocalStorage("distributedScoring", false),
             duererExpansion: useLocalStorage("duererExpansion", false),
             hobbyPromo: useLocalStorage("hobbyPromo", false),
+            maretakPromo: useLocalStorage("maretakPromo", false),
             spiel24Promo: useLocalStorage("spiel24Promo", false),
             startTime: new Date()
         }
@@ -44,6 +45,9 @@ export const useGameStore = defineStore('game', {
         },
         toggleHobbyPromo() {
             this.hobbyPromo = !this.hobbyPromo
+        },
+        toggleMaretakPromo() {
+            this.maretakPromo = !this.maretakPromo
         },
         toggleSpiel24Promo() {
             this.spiel24Promo = !this.spiel24Promo

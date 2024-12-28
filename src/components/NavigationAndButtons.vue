@@ -238,6 +238,7 @@ export default {
     },
     changeLanguage(newLang) {
       this.$i18n.locale = newLang
+      localStorage.setItem('preferredLanguage', newLang)
       event('languageChanged', {language: newLang})
     }
   }

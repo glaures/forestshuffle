@@ -102,16 +102,16 @@
                           symbol="bat"
                           heading="bats"/>
     <CardAmountEditorList class="mt-4"
+                          :cards="pawedSide"
+                          :forest="forest"
+                          symbol="pawedAnimal"
+                          heading="pawedAnimals"/>
+    <CardAmountEditorList class="mt-4"
                           :cards="deerAndCloven"
                           :forest="forest"
                           symbol="deer"
                           symbol2="clovenHoofedAnimal"
                           heading="deerAndCloven"/>
-    <CardAmountEditorList class="mt-4"
-                          :cards="pawedSide"
-                          :forest="forest"
-                          symbol="pawedAnimal"
-                          heading="pawedAnimals"/>
     <div class="mt-4">
       <div class="text-center">
         <img :src="'./img/cave.png'" :alt="$t('cave')" @click="setCaveCount(forest.caveCount + 1)"/>

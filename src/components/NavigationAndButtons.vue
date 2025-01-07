@@ -101,6 +101,7 @@
         <span class="flag-icon flag-icon-gb-eng cursor-pointer" @click="changeLanguage('en')"/>
         <span class="ms-2 flag-icon flag-icon-de cursor-pointer" @click="changeLanguage('de')"/>
         <span class="ms-2 flag-icon flag-icon-fr cursor-pointer" @click="changeLanguage('fr')"/>
+        <span class="ms-2 flag-icon flag-icon-es cursor-pointer" @click="changeLanguage('es')"/>
         <span class="ms-2 flag-icon flag-icon-it cursor-pointer" @click="changeLanguage('it')"/>
         <span class="ms-2 flag-icon flag-icon-pl cursor-pointer" @click="changeLanguage('pl')"/>
         <span class="ms-2 flag-icon flag-icon-ru cursor-pointer" @click="changeLanguage('ru')"/>

@@ -1,5 +1,10 @@
 
 export default function getBrowserLocale(options = {}) {
+    const preferredLanguage = localStorage.getItem('preferredLanguage')
+    if (preferredLanguage) {
+        return preferredLanguage
+    }
+
     const defaultOptions = { countryCodeOnly: false }
     const opt = { ...defaultOptions, ...options }
     const navigatorLocale =

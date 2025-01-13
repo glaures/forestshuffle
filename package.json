@@ -1,6 +1,6 @@
 {
   "name": "forestshuffle-scoring",
-  "version": "1.6.14",
+  "version": "1.6.16",
   "private": true,
   "scripts": {
     "build": "npm run bump-version && vite build",

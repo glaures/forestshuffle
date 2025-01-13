@@ -1711,7 +1711,7 @@ export default {
         duererExpansion: 'Dürer Promo',
         ranking: 'Clasificación',
         distributedScoring: 'Puntuación Distribuida (varios dispositivos)',
-        summary: 'Resuen',
+        summary: 'Resumen',
         "error.nameTaken": "El nombre {0} ya está siendo usado.",
         trees: "Árboles",
         tops: "Arriba",

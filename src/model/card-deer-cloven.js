@@ -125,7 +125,7 @@ export const wildBoar = {
     symbols: ['clovenHoofedAnimal'],
     recalculatePoints(forest) {
         const squeakerPresent = (forest.countByName('squeaker') + forest.countByName('squeakerWE')) > 0
-        this.points = this.count * 10 * (squeakerPresent  ? 1 : 0)
+        this.points = this.count * 10 * (squeakerPresent ? 1 : 0)
     }
 }
 
@@ -217,5 +217,30 @@ export const europeanBison = {
     }
 }
 
+export const elk = {
+    name: 'elk',
+    position: 'side',
+    symbols: ['clovenHoofedAnimal', 'deer'],
+    hide: (gameStore) => !gameStore.elkPromo,
+    params: [{
+        name: 'douglasFirCount',
+        type: 'type',
+        symbol: 'douglasFir',
+        value: 0,
+        unrestricted: true
+    }, {
+        name: 'birchCount',
+        type: 'type',
+        symbol: 'birch',
+        value: 0,
+        unrestricted: true
+    }],
+    recalculatePoints(forest) {
+        this.points = this.count *
+            (forest.countBySymbol('shrub')
+                + forest.birchCount + forest.douglasFirCount)
+    }
+}
 
-export const allDeers = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, squeakerWE, wildBoar, wildBoarFemale, chamoisDouglasFir, chamoisEuropeanLarch, chamoisStonePine, steinbock, europeanBison]
+
+export const allDeers = [fallowDeer, redDeer, roeDeerBeech, roeDeerLinden, roeDeerSilverFir, roeDeerHorseChestnut, roeDeerBirch, squeaker, squeakerWE, wildBoar, wildBoarFemale, chamoisDouglasFir, chamoisEuropeanLarch, chamoisStonePine, steinbock, europeanBison, elk]

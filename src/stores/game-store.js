@@ -14,6 +14,7 @@ export const useGameStore = defineStore('game', {
             hobbyPromo: useLocalStorage("hobbyPromo", false),
             maretakPromo: useLocalStorage("maretakPromo", false),
             spiel24Promo: useLocalStorage("spiel24Promo", false),
+            elkPromo: useLocalStorage("elkPromo", false),
             startTime: new Date()
         }
     },
@@ -51,6 +52,9 @@ export const useGameStore = defineStore('game', {
         },
         toggleSpiel24Promo() {
             this.spiel24Promo = !this.spiel24Promo
+        },
+        toggleElkPromo() {
+            this.elkPromo = !this.elkPromo
         },
         toggleDistributedScoring() {
             this.distributedScoring = !this.distributedScoring

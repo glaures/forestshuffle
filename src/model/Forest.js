@@ -58,6 +58,10 @@ export class Forest {
         }
     }
 
+    totalCards(){
+        return this.cards.reduce((totalCards, card) => totalCards + card.count, 0) + this.caveCount;
+    }
+
     getSymbolCount(symbol) {
         return this[symbol + 'Count']
     }

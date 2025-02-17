@@ -11,6 +11,9 @@ export default {
     forest: Forest
   },
   computed: {
+    totalCards(){
+      return this.forest.totalCards()
+    }
   }
 }
 </script>
@@ -35,6 +38,9 @@ export default {
                                   :count="forest.sideCount()"
                                   :border="false"/>
       </div>
+    </div>
+    <div class="card-footer">
+      {{ $t('totalCards') }}: {{totalCards}}
     </div>
   </div>
 </template>

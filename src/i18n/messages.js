@@ -22,6 +22,7 @@ export default {
         dataProtection: "Data Security",
         // general strings
         points: 'Points',
+        totalCards: 'Cards played',
         player: 'Player',
         treeTypeCount: 'Amounts of tree types',
         startNewGame: 'Start new game',
@@ -194,7 +195,11 @@ export default {
         waterVole: "Water Vole",
         europeanWildcat: "European Wildcat",
         europeanPolecat: "European Polecat",
-        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub"
+        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub",
+        // elk/troll promo
+        elkPromo: "Elk / Troll Promo",
+        elk: "Elk",
+        troll: "Troll"
     },
     de: {
         meta: {
@@ -219,6 +224,7 @@ export default {
         dataProtection: "Datenschutz",
         letsGo: "Los geht's",
         points: 'Punkte',
+        totalCards: 'Gespielte Karten',
         player: 'Spieler',
         treeTypeCount: 'Anzahl Baumtypen-Symbole',
         startNewGame: 'Neues Spiel starten',
@@ -383,7 +389,11 @@ export default {
         waterVole: "Schermaus",
         europeanWildcat: "Wildkatze",
         europeanPolecat: "Waldiltis",
-        europeanPolecatAloneOnTreeOrShrub: "allein an einem Baum oder Strauch"
+        europeanPolecatAloneOnTreeOrShrub: "allein an einem Baum oder Strauch",
+        // elk/troll promo
+        elkPromo: "Elch / Troll Promo",
+        elk: "Elch",
+        troll: "Troll"
     },
     fr: {
         meta: {
@@ -407,6 +417,7 @@ export default {
         imprint: "Empreinte",
         dataProtection: "Sécurité des Données",
         points: "Points",
+        totalCards: "Cartes jouées",
         player: "Joueur",
         treeTypeCount: "Nombre de types d'arbres",
         startNewGame: "Commencer une nouvelle partie",
@@ -568,7 +579,11 @@ export default {
         waterVole: "Campagnol terrestre",
         europeanWildcat: "Chat forestier",
         europeanPolecat: "Putois d'Europe",
-        europeanPolecatAloneOnTreeOrShrub: "attaché seul à un arbre ou arbuste"
+        europeanPolecatAloneOnTreeOrShrub: "attaché seul à un arbre ou arbuste",
+        // elk/troll promo
+        elkPromo: "Élan / Troll Promo",
+        elk: "Élan",
+        troll: "Troll"
     },
     it: {
         meta: {
@@ -593,6 +608,7 @@ export default {
         dataProtection: "Sicurezza dei dati",
         // general strings
         points: 'Punti',
+        totalCards: "Carte giocate",
         player: 'Giocatore',
         treeTypeCount: 'Quantità di tipologie di alberi',
         startNewGame: 'Nuova Partita',
@@ -755,7 +771,11 @@ export default {
         waterVole: "Arvicola Terrestre",
         europeanWildcat: "Gatto Selvatico Europeo",
         europeanPolecat: "Puzzola Europea",
-        europeanPolecatAloneOnTreeOrShrub: "se da sola su un albero o arbusto"
+        europeanPolecatAloneOnTreeOrShrub: "se da sola su un albero o arbusto",
+        // elk/troll promo
+        elkPromo: "Alche / Troll Promo",
+        elk: "Alche",
+        troll: "Troll"
     },
     pl: {
         meta: {
@@ -780,6 +800,7 @@ export default {
         dataProtection: "Bezpieczeństwo danych",
         // general strings
         points: 'Punkty',
+        totalCards: "Zagrane karty",
         player: 'Gracz',
         treeTypeCount: 'Liczba gatunków drzew',
         startNewGame: 'Nowa gra',
@@ -941,7 +962,11 @@ export default {
         waterVole: "Water Vole",
         europeanWildcat: "European Wildcat",
         europeanPolecat: "European Polecat",
-        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub"
+        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub",
+        // elk/troll promo
+        elkPromo: "Łoś / Troll Promo",
+        elk: "Łoś",
+        troll: "Troll"
     },
     ru: {
         meta: {
@@ -965,6 +990,7 @@ export default {
         imprint: "Imprint",
         dataProtection: "защита данных",
         points: 'Очки',
+        totalCards: "Сыгранные карты",
         player: 'Игрок',
         treeTypeCount: 'Количесво типов деревьев',
         startNewGame: 'Начать новую игру',
@@ -1121,7 +1147,11 @@ export default {
         waterVole: "Water Vole",
         europeanWildcat: "European Wildcat",
         europeanPolecat: "European Polecat",
-        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub"
+        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub",
+        // elk/troll promo
+        elkPromo: "Лось / Тролль Promo",
+        elk: "Лось",
+        troll: "Тролль"
     },
     nl: {
         meta: {
@@ -1146,6 +1176,7 @@ export default {
         dataProtection: "Data Security",
         // general strings
         points: 'Punten',
+        totalCards: "Gespeelde kaarten",
         player: 'Speler',
         treeTypeCount: 'Aantal boomsoorten',
         startNewGame: 'Start nieuw spel',
@@ -1307,7 +1338,11 @@ export default {
         waterVole: "Woelrat",
         europeanWildcat: "Wilde kat",
         europeanPolecat: "Bunzing",
-        europeanPolecatAloneOnTreeOrShrub: "indien als enige bij een struik of boom"
+        europeanPolecatAloneOnTreeOrShrub: "indien als enige bij een struik of boom",
+        // elk/troll promo
+        elkPromo: "Eland / Troll Promo",
+        elk: "Eland",
+        troll: "Troll"
     },
     cn: {
         meta: {
@@ -1332,6 +1367,7 @@ export default {
         dataProtection: "数据安全",
         // general strings
         points: '分',
+        totalCards: "打出的卡片",
         player: '玩家',
         treeTypeCount: '树类型的数量',
         startNewGame: '开始新游戏',
@@ -1493,7 +1529,11 @@ export default {
         waterVole: "水䶄",
         europeanWildcat: "斑猫",
         europeanPolecat: "欧洲鼬",
-        europeanPolecatAloneOnTreeOrShrub: "独占在树木或灌木上"
+        europeanPolecatAloneOnTreeOrShrub: "独占在树木或灌木上",
+        // elk/troll promo
+        elkPromo: "驼鹿 / 巨魔 促销",
+        elk: "驼鹿",
+        troll: "巨魔"
     },
     bg: {
         meta: {
@@ -1518,6 +1558,7 @@ export default {
         dataProtection: "Сигурност на данните",
         // general strings
         points: 'Точки',
+        totalCards: "Изиграни карт",
         player: 'Играч',
         treeTypeCount: 'Брой на видовете дървета',
         startNewGame: 'Започни нова игра',
@@ -1679,7 +1720,11 @@ export default {
         waterVole: "Water Vole",
         europeanWildcat: "European Wildcat",
         europeanPolecat: "European Polecat",
-        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub"
+        europeanPolecatAloneOnTreeOrShrub: "alone on tree or shrub",
+        // elk/troll promo
+        elkPromo: "Лос / Трол Промо",
+        elk: "Лос",
+        troll: "Трол"
     },
     es: {
         meta: {
@@ -1703,6 +1748,7 @@ export default {
         imprint: "Imprimir",
         dataProtection: "Datos de Seguridad",
         points: "Puntos",
+        totalCards: "Cartas jugadas",
         player: "Jugador",
         treeTypeCount: "Cantidad de tipos de árboles",
         startNewGame: "Comenzar una nueva partida",
@@ -1863,6 +1909,10 @@ export default {
         waterVole: "Rata topera",
         europeanWildcat: "Gato montés",
         europeanPolecat: "Turón europeo",
-        europeanPolecatAloneOnTreeOrShrub: "está solo en un arbusto o árbol"
+        europeanPolecatAloneOnTreeOrShrub: "está solo en un arbusto o árbol",
+        // elk/troll promo
+        elkPromo: "Alce / Troll Promoción",
+        elk: "Alce",
+        troll: "Troll"
     },
 }

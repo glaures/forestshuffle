@@ -97,6 +97,13 @@
           {{ $t('duererExpansion') }}
         </div>
       </div>
+      <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
+        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="elkPromo"
+               @input="toggleElkPromo"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleElkPromo">
+          {{ $t('elkPromo') }}
+        </div>
+      </div>
       <div class="d-flex justify-content-center w-100 mt-5">
         <span class="flag-icon flag-icon-gb-eng cursor-pointer" @click="changeLanguage('en')"/>
         <span class="ms-2 flag-icon flag-icon-de cursor-pointer" @click="changeLanguage('de')"/>
@@ -155,6 +162,9 @@ export default {
     },
     maretakPromo(){
       return useGameStore().maretakPromo
+    },
+    elkPromo(){
+      return useGameStore().elkPromo
     },
     forests() {
       return useForestsStore().forests
@@ -236,6 +246,10 @@ export default {
     toggleMaretakPromo() {
       useGameStore().toggleMaretakPromo()
       event('maretakToggled', {newState: this.maretakPromo})
+    },
+    toggleElkPromo() {
+      useGameStore().toggleElkPromo()
+      event('elkToggled', {newState: this.elkPromo})
     },
     changeLanguage(newLang) {
       this.$i18n.locale = newLang

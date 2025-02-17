@@ -177,4 +177,14 @@ export const meeps = {
     }
 }
 
-export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare, waterVole, europeanWildcat, europeanPolecat, meeps]
+export const troll = {
+    name: 'troll',
+    position: 'side',
+    symbols: ['pawedAnimal'],
+    hide: (gameStore) => !gameStore.elkPromo,
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('tree')
+    }
+}
+
+export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare, waterVole, europeanWildcat, europeanPolecat, meeps, troll]

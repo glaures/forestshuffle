@@ -41,6 +41,7 @@ export class Forest {
         this.oakCount = 0
         this.europeanLarchCount = 0
         this.stonePineCount = 0
+        this.saplingCount = 0
         this.caveCount = 0
         this.points = 0
         this.cards = []

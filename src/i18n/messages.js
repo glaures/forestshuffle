@@ -64,6 +64,7 @@ export default {
         oakCount: "Oak symbols",
         europeanLarchCount: "European Larch symbols",
         stonePineCount: "Stone Pine symbols",
+        saplingCount: "Sapling symbols",
         // cards
         beech: "Beech",
         birch: "Birch",
@@ -263,6 +264,7 @@ export default {
         oakCount: "Eichen-Symbole",
         europeanLarchCount: "Europäische Lärchen-Symbole",
         stonePineCount: "Zirbelkiefer-Symbole",
+        saplingCount: "Setzling-Symbole",
         // cards
         beech: "Buche",
         birch: "Birke",

@@ -223,6 +223,12 @@ export const elk = {
     symbols: ['clovenHoofedAnimal', 'deer'],
     hide: (gameStore) => !gameStore.elkPromo,
     params: [{
+        name: 'saplingCount',
+        type: 'type',
+        symbol: 'sapling',
+        value: 0,
+        unrestricted: true
+    }, {
         name: 'douglasFirCount',
         type: 'type',
         symbol: 'douglasFir',
@@ -236,9 +242,8 @@ export const elk = {
         unrestricted: true
     }],
     recalculatePoints(forest) {
-        this.points = this.count *
-            (forest.countBySymbol('shrub')
-                + forest.birchCount + forest.douglasFirCount)
+        this.points = 2 * this.count *
+            (forest.saplingCount + forest.birchCount + forest.douglasFirCount)
     }
 }
 

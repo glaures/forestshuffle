@@ -1565,7 +1565,7 @@ export default {
         treeTypeCount: "Брой на видовете дървета",
         startNewGame: "Започни нова игра",
         resetPlayers: "Рестартиране на играчите",
-        alpineExpansion: "Алпийско разширение",
+        alpineExpansion: "Алпи",
         duererExpansion: "Дюрър Промо",
         ranking: "Класиране",
         distributedScoring: "Разпределено точкуване (няколко устройства)",
@@ -1700,7 +1700,7 @@ export default {
         // duerer
         duererBat: "Dürer Bat",
         // woodland edge
-        woodlandEdgeExpansion: "Woodland Edge Expansion",
+        woodlandEdgeExpansion: "На края на гората",
         shrubs: "Shrubs",
         commonHazel: "Common Hazel",
         blackthorn: "Blackthorn",

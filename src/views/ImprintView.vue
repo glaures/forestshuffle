@@ -6,10 +6,14 @@
       ist:</p>
     <p>Guido Laures
       <br>Sandbox27
-      <br>Kellerbergstraße 17
-      <br>04416 Markkleeberg
+      <br>Am Bogen 16a
+      <br>04463 Großpösna
       <br><a href="https://sandbox27.de">sandbox27.de</a>
       <br><a href="mailto:mail@sandbox27.de">mail@sandbox27.de</a></p>
+    <h2>Copyright verwendeter Symbole</h2>
+    <p>Die hier verwendeten Symbole aus dem Spiel „Mischwald“ unterliegen dem Urheberrecht.
+      Nutzung mit freundlicher Genehmigung der Lookout GmbH ©2025
+    </p>
     <h2>Ihre Betroffenenrechte</h2>
     <p>Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte
       ausüben:</p>

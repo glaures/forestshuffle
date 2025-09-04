@@ -114,7 +114,7 @@
                           heading="deerAndCloven"/>
     <div class="mt-4">
       <div class="text-center">
-        <img :src="'./img/cave.png'" :alt="$t('cave')" @click="setCaveCount(forest.caveCount + 1)"/>
+        <img :src="'./img/cave.png'" height="128px" :alt="$t('cave')" @click="setCaveCount(forest.caveCount + 1)"/>
       </div>
       <div class="text-center">
         <input :value="forest.caveCount"

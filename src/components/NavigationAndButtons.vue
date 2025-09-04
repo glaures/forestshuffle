@@ -268,7 +268,7 @@ export default {
   min-width: 100vw;
   max-width: 100vw;
   background-image: url("/img/top-forest.png");
-  background-size: 400px;
+  background-size: 150px;
   background-repeat: repeat-x;
   background-position: bottom;
   z-index: 999;

@@ -17,6 +17,7 @@
  * }
  */
 import cards from "@/model/cards.js";
+import caves from "@/model/caves.js"
 import {calculateButterflyPoints} from "@/model/card-butterflies.js";
 
 export class Forest {
@@ -43,6 +44,7 @@ export class Forest {
         this.stonePineCount = 0
         this.saplingCount = 0
         this.caveCount = 0
+        this.caveType = 'cave'
         this.points = 0
         this.cards = []
         for (let card of cards) {
@@ -113,13 +115,31 @@ export class Forest {
             points += card.points
         }
         this.butterflyPoints = calculateButterflyPoints(this)
-        this.points = points + this.butterflyPoints + this.caveCount
+        this.points = points + this.butterflyPoints + this.calculateCavePoints()
+    }
+
+    calculateCavePoints(){
+        if(this.caveType === 'cave')
+            return this.caveCount
+        const cave = caves.find(c => c.name === this.caveType)
+        return cave.getPoints(this)
+    }
+
+    setCaveType(caveType){
+        this.caveType = caveType
+        this.updatePoints()
     }
 
     countByName(cardName) {
         let count = this.cards.find(c => c.name === cardName).count
         if (cardName === 'linden') {
             count += this.cards.find(c => c.name === 'violetCarpenterBee').params[2].value
+        } else if(cardName === 'birch') {
+            count += this.countByName('moorBirch')
+        } else if(cardName === 'oak') {
+            count += this.countByName('turkeyOak')
+        } else if(cardName === 'silverFir') {
+            count += this.countByName('oChristmasTree')
         }
         return count
     }

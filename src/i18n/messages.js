@@ -200,7 +200,34 @@ export default {
         // elk/troll promo
         elkPromo: "Elk / Troll Promo",
         elk: "Elk",
-        troll: "Troll"
+        troll: "Troll",
+        // exploration
+        explorationExpansion: 'Exploration Expansion',
+        moorBirch: 'Moor Birch',
+        turkeyOak: 'Turkey Oak',
+        palmTree: 'Palm Tree',
+        oChristmasTree: 'O Christmas Tree',
+        cardsAttachedToOChristmasTree: "cards attached to this tree",
+        cardinal: 'Cardinal',
+        cuckoo: 'Cuckoo',
+        winchat: 'Whinchat',
+        robin: 'Robin',
+        brimstone: 'Brimstone',
+        mistletoe: 'Mistletoe',
+        marshCinquefoil: 'Marsh Cinquefoil',
+        saysFirefly: 'Say\'s Firefly',
+        wildTulip: 'Wild Tulip',
+        genet: 'Genet',
+        redPanda: 'Red Panda',
+        arcticFox: 'Arctic Fox',
+        sable: 'Sable',
+        whiteStork: 'White Stork',
+        caveType: 'Cave Type',
+        batCave: 'Bat Cave',
+        collectorsCave: 'Collector\'s Cave',
+        supplyCave: 'Supply Cave',
+        lonelyCave: 'Lonely Cave',
+        smugglersCave: 'Smuggler\'s Cave'
     },
     de: {
         meta: {
@@ -395,7 +422,34 @@ export default {
         // elk/troll promo
         elkPromo: "Elch / Troll Promo",
         elk: "Elch",
-        troll: "Troll"
+        troll: "Troll",
+        // exploration
+        explorationExpansion: 'Entdeckungen Erweiterung',
+        moorBirch: 'Moorbirke',
+        turkeyOak: 'Zerr-Eiche',
+        palmTree: 'Palme',
+        oChristmasTree: 'O Tannenbaum',
+        cardsAttachedToOChristmasTree: "Karten an diesem Baum",
+        cardinal: 'Kardinal',
+        cuckoo: 'Kuckuck',
+        winchat: 'Braunkehlchen',
+        robin: 'Rotkehlchen',
+        brimstone: 'Zitronenfalter',
+        mistletoe: 'Mistel',
+        marshCinquefoil: 'Sumpf-Blutauge',
+        saysFirefly: 'Say\'s Glühwürmchen',
+        wildTulip: 'Wilde Tulpe',
+        genet: 'Ginsterkatze',
+        redPanda: 'Roter Panda',
+        arcticFox: 'Arktischer Fuchs',
+        sable: 'Zobel',
+        whiteStork: 'Weißstorch',
+        caveType: 'Höhlenart',
+        batCave: 'Fledermaushöhle',
+        collectorsCave: 'Sammlerhöhle',
+        supplyCave: 'Vorratshöhle',
+        lonelyCave: 'Einsame Höhle',
+        smugglersCave: 'Schmugglerhöhle'
     },
     fr: {
         meta: {

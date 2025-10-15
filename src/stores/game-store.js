@@ -9,6 +9,7 @@ export const useGameStore = defineStore('game', {
             currentPlayer: null,
             alpineExpansion: useLocalStorage("alpineExpansion", true),
             woodlandEdgeExpansion: useLocalStorage("woodlandEdgeExpansion", false),
+            explorationExpansion: useLocalStorage("explorationExpansion", false),
             distributedScoring: useLocalStorage("distributedScoring", false),
             duererExpansion: useLocalStorage("duererExpansion", false),
             hobbyPromo: useLocalStorage("hobbyPromo", false),
@@ -40,6 +41,9 @@ export const useGameStore = defineStore('game', {
         },
         toggleWoodlandEdgeExpansion() {
             this.woodlandEdgeExpansion = !this.woodlandEdgeExpansion
+        },
+        toggleExplorationEdgeExpansion() {
+            this.explorationExpansion = !this.explorationExpansion
         },
         toggleDuererExpansion() {
             this.duererExpansion = !this.duererExpansion

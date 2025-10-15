@@ -13,10 +13,10 @@ export default {
   },
   computed: {
     iconUrl() {
-      return import.meta.env.VITE_BASE_URL + 'img/symbols/tree.png'
+      return './img/symbols/tree.png'
     },
     shrubIconUrl() {
-      return import.meta.env.VITE_BASE_URL + 'img/symbols/shrub.png'
+      return './img/symbols/shrub.png'
     },
     bgColorClass() {
       return 'bg-' + this.bgColor

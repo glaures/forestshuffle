@@ -12,7 +12,7 @@ export const moss = {
     position: 'bottom',
     symbols: ['plant'],
     recalculatePoints(forest) {
-        if(forest.countTreesIncludingVioletCarpenterBee() >= 10)
+        if (forest.countTreesIncludingVioletCarpenterBee() >= 10)
             this.points = this.count * 10
         else
             this.points = 0
@@ -106,5 +106,38 @@ export const bostulp = {
     }
 }
 
-export const allPlants = [blackberries, treeFerns, wildStrawberries, moss, edelweiss, blueberry, gentian, digitalis, stingingNettle, maretak, bostulp]
+export const mistletoe = {
+    name: 'mistletoe',
+    position: 'top',
+    symbols: ['plant'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('plant')
+    }
+}
+
+export const marshCinquefoil = {
+    name: 'marshCinquefoil',
+    position: 'bottom',
+    symbols: ['plant'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        const treeCount = forest.countBySymbol('tree')
+        this.points = this.count * (treeCount < 6 ? 15
+            : (treeCount < 11 ? 7 : 3))
+    }
+}
+
+export const wildTulip = {
+    name: 'wildTulip',
+    position: 'bottom',
+    symbols: ['plant', 'woodlandEdge'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * 3
+    }
+}
+
+export const allPlants = [blackberries, treeFerns, wildStrawberries, moss, edelweiss, blueberry, gentian, digitalis, stingingNettle, maretak, bostulp,
+    mistletoe, marshCinquefoil, wildTulip]
 

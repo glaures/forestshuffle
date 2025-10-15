@@ -131,10 +131,49 @@ export const downyBirch = {
     }
 }
 
-export const allTrees = [beech, birch, douglasFir, horseChestnut, linden, oak, silverFir, sycamore, europeanLarch, stonePine, treeSaplings, downyBirch]
+export const moorBirch = {
+    ...birch,
+    name: 'moorBirch',
+    hide: (gameStore) => !gameStore.explorationExpansion,
+}
 
+export const turkeyOak = {
+    name: 'turkeyOak',
+    symbols: ['tree'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('clovenHoofedAnimal')
+    }
+}
 
+export const palmTree = {
+    name: 'palmTree',
+    symbols: ['tree'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    params: [{
+        name: 'cardsAttachedToOChristmasTree',
+        type: 'number',
+        value: 0,
+        unrestricted: true
+    }],
+    recalculatePoints(forest) {
+        this.points = this.count * 2 * this.params[0].value
+    }
+}
 
+export const oChristmasTree = {
+    name: 'oChristmasTree',
+    symbols: ['tree'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('birds')
+    }
+}
+
+export const allTrees = [beech, birch, douglasFir, horseChestnut, linden, oak, silverFir, sycamore,
+    europeanLarch, stonePine, treeSaplings, downyBirch,
+    moorBirch, turkeyOak, palmTree, oChristmasTree
+]
 
 
 

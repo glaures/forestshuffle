@@ -12,8 +12,14 @@ export const fireflies = {
     position: 'bottom',
     symbols: ['insect'],
     recalculatePoints(forest) {
-        this.points = [0, 0, 10, 15, 20][Math.min(4, this.count)]
+        this.points = [0, 0, 10, 15, 20][Math.min(4, forest.countByName('fireflies') + forest.countByName('saysFirefly'))]
     }
+}
+
+export const saysFirefly = {
+    ...fireflies,
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    name: 'saysFirefly'
 }
 
 export const woodAnt = {
@@ -87,5 +93,6 @@ export const craneFly = {
 }
 
 
-export const allInsects = [gnat, fireflies, woodAnt, stagBeetle, violetCarpenterBee, greatGreenBushCricket, beeSwarm, craneFly]
+export const allInsects = [gnat, fireflies, woodAnt, stagBeetle, violetCarpenterBee, greatGreenBushCricket, beeSwarm, craneFly,
+saysFirefly]
 

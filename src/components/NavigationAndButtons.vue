@@ -6,7 +6,7 @@
       <font-awesome-icon icon="bars" class="text-light p-1 border border-light rounded-1"/>
     </div>
     <div v-if="currentPlayer"
-         class="d-flex justify-content-between align-items-center w-100 pe-2">
+         class="d-flex justify-content-between align-items-center w-100 pe-1">
       <div v-if="!editing">
         <span class="current-player-text fs-1"
               @click="editing = true">
@@ -43,68 +43,19 @@
           </span>
         </div>
       </div>
-      <div class="mt-2 mb-2 text-center">
+      <div class="d-flex w-100 justify-content-start align-items-center px-3 small">
         <button v-if="players.length < 5" class="btn btn-sm btn-primary" @click="addPlayer">
           <font-awesome-icon icon="user-plus"/>
         </button>
-      </div>
-      <div class="d-flex w-100 justify-content-start align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="distributedScoring"
+        <input class="ms-5 form-check form-check-input bg-primary" type="checkbox" :checked="distributedScoring"
                @input="toggleDistributedScoring"/>
         <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleDistributedScoring">
           {{ $t('distributedScoring') }}
         </div>
       </div>
-      <div class="d-flex mt-5 w-100 justify-content-left align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="alpineExpansion"
-               @input="toggleAlpineExpansion"/>
-        <div class="form-check-label ms-2 user-select-none" @click="toggleAlpineExpansion">
-          <img src="/img/symbols/alps.png" alt="alps" height="24"/>&nbsp;{{ $t('alpineExpansion') }}
-        </div>
-      </div>
-      <div class="d-flex mt-3 w-100 justify-content-left align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="woodlandEdgeExpansion"
-               @input="toggleWoodlandEdgeExpansion"/>
-        <div class="form-check-label ms-2 user-select-none" @click="toggleWoodlandEdgeExpansion">
-          <img src="/img/symbols/woodlandEdge.png" alt="woodlandEdge" height="24"/>&nbsp;{{ $t('woodlandEdgeExpansion') }}
-        </div>
-      </div>
-      <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="hobbyPromo"
-               @input="toggleHobbyPromo"/>
-        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleHobbyPromo">
-          {{ $t('hobbyPromo') }}
-        </div>
-      </div>
-      <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="spiel24Promo"
-               @input="toggleSpiel24Promo"/>
-        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleSpiel24Promo">
-          {{ $t('spiel24Promo') }}
-        </div>
-      </div>
-      <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="maretakPromo"
-               @input="toggleMaretakPromo"/>
-        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleMaretakPromo">
-          {{ $t('maretakPromo') }}
-        </div>
-      </div>
-      <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="duererExpansion"
-               @input="toggleDuererExpansion"/>
-        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleDuererExpansion">
-          {{ $t('duererExpansion') }}
-        </div>
-      </div>
-      <div class="d-flex mt-3 w-100 justify-content-start align-items-center px-5">
-        <input class="form-check form-check-input bg-primary" type="checkbox" :checked="elkPromo"
-               @input="toggleElkPromo"/>
-        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleElkPromo">
-          {{ $t('elkPromo') }}
-        </div>
-      </div>
-      <div class="d-flex justify-content-center w-100 mt-5">
+      <div class="mt-3 d-block btn btn-sm btn-primary cursor-pointer" @click="startNewGame">{{ $t('startNewGame') }}</div>
+      <div class="mt-2 d-block btn btn-sm btn-danger" @click="resetPlayers">{{ $t('resetPlayers') }}</div>
+      <div class="d-flex justify-content-center w-100 mt-4">
         <span class="flag-icon flag-icon-gb-eng cursor-pointer" @click="changeLanguage('en')"/>
         <span class="ms-2 flag-icon flag-icon-de cursor-pointer" @click="changeLanguage('de')"/>
         <span class="ms-2 flag-icon flag-icon-fr cursor-pointer" @click="changeLanguage('fr')"/>
@@ -116,8 +67,62 @@
         <span class="ms-2 flag-icon flag-icon-nl cursor-pointer" @click="changeLanguage('nl')"/>
         <span class="ms-2 flag-icon flag-icon-bg cursor-pointer" @click="changeLanguage('bg')"/>
       </div>
-      <div class="mt-5 d-block btn btn-danger cursor-pointer" @click="startNewGame">{{ $t('startNewGame') }}</div>
-      <div class="mt-2 d-block btn btn-danger" @click="resetPlayers">{{ $t('resetPlayers') }}</div>
+      <div class="d-flex mt-3 w-100 justify-content-left align-items-center px-3 small">
+        <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="alpineExpansion"
+               @input="toggleAlpineExpansion"/>
+        <div class="form-check-label ms-2 user-select-none" @click="toggleAlpineExpansion">
+          <img src="/img/symbols/alps.png" alt="alps" height="24"/>&nbsp;{{ $t('alpineExpansion') }}
+        </div>
+      </div>
+      <div class="d-flex mt-2 w-100 justify-content-left align-items-center px-3 small">
+        <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="woodlandEdgeExpansion"
+               @input="toggleWoodlandEdgeExpansion"/>
+        <div class="form-check-label ms-2 user-select-none" @click="toggleWoodlandEdgeExpansion">
+          <img src="/img/symbols/woodlandEdge.png" alt="woodlandEdge" height="24"/>&nbsp;{{ $t('woodlandEdgeExpansion') }}
+        </div>
+      </div>
+      <div class="d-flex mt-2 w-100 justify-content-left align-items-center px-3 small">
+        <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="explorationExpansion"
+               @input="toggleExplorationExpansion"/>
+        <div class="form-check-label ms-2 user-select-none" @click="toggleExplorationExpansion">
+          <img src="/img/symbols/exploration.png" alt="exploration" height="24"/>&nbsp;{{ $t('explorationExpansion') }}
+        </div>
+      </div>
+      <div class="d-flex mt-2 w-100 justify-content-start align-items-center px-3 small">
+        <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="hobbyPromo"
+               @input="toggleHobbyPromo"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleHobbyPromo">
+          {{ $t('hobbyPromo') }}
+        </div>
+      </div>
+      <div class="d-flex mt-2 w-100 justify-content-start align-items-center px-3 small">
+        <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="spiel24Promo"
+               @input="toggleSpiel24Promo"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleSpiel24Promo">
+          {{ $t('spiel24Promo') }}
+        </div>
+      </div>
+      <div class="d-flex mt-2 w-100 justify-content-start align-items-center px-3 small">
+        <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="maretakPromo"
+               @input="toggleMaretakPromo"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleMaretakPromo">
+          {{ $t('maretakPromo') }}
+        </div>
+      </div>
+      <div class="d-flex mt-2 w-100 justify-content-start align-items-center px-3 small">
+        <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="duererExpansion"
+               @input="toggleDuererExpansion"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleDuererExpansion">
+          {{ $t('duererExpansion') }}
+        </div>
+      </div>
+      <div class="d-flex mt-2 w-100 justify-content-start align-items-center px-3 small">
+        <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="elkPromo"
+               @input="toggleElkPromo"/>
+        <div class="form-check-label ms-2 user-select-none text-wrap" @click="toggleElkPromo">
+          {{ $t('elkPromo') }}
+        </div>
+      </div>
     </div>
   </div>
   <FloatingButtons @add-player="addPlayer"
@@ -150,6 +155,9 @@ export default {
     },
     woodlandEdgeExpansion() {
       return useGameStore().woodlandEdgeExpansion
+    },
+    explorationExpansion() {
+      return useGameStore().explorationExpansion
     },
     duererExpansion(){
       return useGameStore().duererExpansion
@@ -230,6 +238,10 @@ export default {
     toggleWoodlandEdgeExpansion() {
       useGameStore().toggleWoodlandEdgeExpansion()
       event('woodlandEdgeExpansion', {newState: this.woodlandEdgeExpansion})
+    },
+    toggleExplorationExpansion() {
+      useGameStore().toggleExplorationEdgeExpansion()
+      event('explorationExpansion', {newState: this.explorationExpansion})
     },
     toggleDuererExpansion() {
       useGameStore().toggleDuererExpansion()

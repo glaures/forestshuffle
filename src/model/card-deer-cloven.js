@@ -199,6 +199,7 @@ export const europeanBison = {
     name: 'europeanBison',
     position: 'side',
     symbols: ['clovenHoofedAnimal', 'woodlandEdge'],
+    hide: (gameStore) => !gameStore.woodlandEdgeExpansion && !gameStore.explorationExpansion,
     params: [{
         name: 'beechCount',
         type: 'type',
@@ -221,7 +222,7 @@ export const elk = {
     name: 'elk',
     position: 'side',
     symbols: ['clovenHoofedAnimal', 'deer'],
-    hide: (gameStore) => !gameStore.elkPromo,
+    hide: (gameStore) => !gameStore.elkPromo && !gameStore.explorationExpansion,
     params: [{
         name: 'saplingCount',
         type: 'type',

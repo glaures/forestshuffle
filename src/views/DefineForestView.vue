@@ -116,7 +116,7 @@
       <div class="text-center">
         <img :src="'./img/cave.png'" height="128px" :alt="$t('cave')" @click="setCaveCount(forest.caveCount + 1)"/>
       </div>
-      <div class="text-center">
+      <div class="text-center d-flex align-items-center">
         <input :value="forest.caveCount"
                @input="setCaveCount(Number($event.target.value))"
                type="number"
@@ -124,38 +124,54 @@
                min="0"
                onfocus="this.select();"
                onclick="this.select();">
+        <div class="ms-3" v-if="explorationExpansion">({{forest.calculateCavePoints()}})</div>
+      </div>
+      <div class="mt-2 mb-3 d-flex align-items-center"
+           v-if="explorationExpansion">
+        <label for="caveType" class="form-label me-3 mb-0">{{ $t('caveType') }}:</label>
+        <select
+            id="caveType"
+            v-model="selectedCaveType"
+            class="form-select">
+          <option
+              v-for="caveType in caveTypes"
+              :key="caveType"
+              :value="caveType">
+            {{ $t(caveType) }}
+          </option>
+        </select>
       </div>
     </div>
-    <div class="px-4 mt-3">
-      <ForestSummary :forest="forest"/>
+      <div class="px-4 mt-3">
+        <ForestSummary :forest="forest"/>
+      </div>
     </div>
-  </div>
-  <div id="standingsModal" class="modal fade" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="fs-1">{{ $t('ranking') }}</div>
-          <button type="button" class="btn-close" aria-label="Close" @click="toggleRankingsModal(true)"></button>
-        </div>
-        <div class="modal-body">
-          <Ranking @toggle-standings="toggleRankingsModal"/>
-        </div>
-        <div class="modal-footer d-flex justify-content-between">
-          <div>
-            <button class="d-block btn btn-danger btn-sm" @click="startNewGame">
-              {{ $t('startNewGame') }}
-            </button>
-            <button class="mt-1 btn btn-danger btn-sm" @click="resetPlayers">
-              {{ $t('resetPlayers') }}
-            </button>
+    <div id="standingsModal" class="modal fade" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-1">{{ $t('ranking') }}</div>
+            <button type="button" class="btn-close" aria-label="Close" @click="toggleRankingsModal(true)"></button>
           </div>
-          <div class="flex-grow-1 text-end">
-            <button class="btn btn-primary" @click="toggleRankingsModal(true)">OK</button>
+          <div class="modal-body">
+            <Ranking @toggle-standings="toggleRankingsModal"/>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <div>
+              <button class="d-block btn btn-danger btn-sm" @click="startNewGame">
+                {{ $t('startNewGame') }}
+              </button>
+              <button class="mt-1 btn btn-danger btn-sm" @click="resetPlayers">
+                {{ $t('resetPlayers') }}
+              </button>
+            </div>
+            <div class="flex-grow-1 text-end">
+              <button class="btn btn-primary" @click="toggleRankingsModal(true)">OK</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -169,6 +185,7 @@ import FloatingButtons from "@/components/FloatingButtons.vue";
 import Ranking from "@/components/Ranking.vue";
 import {Modal} from "bootstrap"
 import ForestSummary from "@/components/ForestSummary.vue";
+import caves from "@/model/caves.js"
 
 export default {
   components: {ForestSummary, Ranking, FloatingButtons, NavigationAndButtons, CardAmountEditorList, CardAmountEditor},
@@ -180,7 +197,21 @@ export default {
       return useForestsStore().getForestByPlayerName(this.playerName)
     },
     cards() {
-      return useForestsStore().getForestByPlayerName(this.playerName).cards
+      return this.forest.cards
+    },
+    caveTypes() {
+      return ['cave', ...(caves.map(c => c.name))]
+    },
+    cavePoints(){
+      return this.forest.calculateCavePoints()
+    },
+    selectedCaveType: {
+      get() {
+        return this.forest.caveType
+      },
+      set(caveType) {
+        this.forest.setCaveType(caveType)
+      }
     },
     trees() {
       return this.cards.filter(c => c.symbols.indexOf('tree') >= 0 && !(c.hide && c.hide(useGameStore())))
@@ -200,7 +231,7 @@ export default {
     plants() {
       return this.cards.filter(c => c.symbols.indexOf('plant') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
     },
-    plantsTop(){
+    plantsTop() {
       return this.cards.filter(c => c.symbols.indexOf('plant') >= 0 && c.position === 'top' && !(c.hide && c.hide(useGameStore())))
     },
     mushrooms() {
@@ -231,7 +262,10 @@ export default {
       return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
     },
     points() {
-      return useForestsStore().getForestByPlayerName(this.playerName).points
+      return this.forest().points
+    },
+    explorationExpansion() {
+      return useGameStore().explorationExpansion
     }
   },
   methods: {

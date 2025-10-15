@@ -138,13 +138,54 @@ export const barnOwl = {
 
 export const whinchat = {
     name: 'whinchat',
+    position: 'top',
     symbols: ['bird'],
-    hide: (gameStore) => !gameStore.hobbyPromo,
+    hide: (gameStore) => !gameStore.hobbyPromo && !gameStore.explorationExpansion,
     recalculatePoints(forest) {
         this.points = this.count * forest.countBySymbol('plant')
     }
 }
 
+export const cardinal = {
+    name: 'cardinal',
+    position: 'top',
+    symbols: ['bird', 'woodlandEdge'],
+    hide: (gameStore) => !gameStore.hobbyPromo && !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * 5
+    }
+}
 
-export const allBirds = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl, capercaillie, goldenEagle, beardedVulture, commonRaven, eurasianMagpie, nightingale, barnOwl, whinchat]
+export const cuckoo = {
+    name: 'cuckoo',
+    position: 'top',
+    symbols: ['bird'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * 7
+    }
+}
+
+export const robin = {
+    name: 'robin',
+    position: 'top',
+    symbols: ['bird', 'woodlandEdge'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * forest.countBySymbol('insect')
+    }
+}
+
+export const whiteStork = {
+    name: 'whiteStork',
+    position: 'side',
+    symbols: ['bird', 'woodlandEdge'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * (forest.countBySymbol('insect') + forest.countBySymbol('amphibians'))
+    }
+}
+
+export const allBirds = [bullfinch, chaffinch, eurasianJay, goshawk, greatSpottedWoodpecker, tawnyOwl, capercaillie, goldenEagle, beardedVulture, commonRaven, eurasianMagpie, nightingale, barnOwl, whinchat,
+    cardinal, cuckoo, robin, whiteStork]
 

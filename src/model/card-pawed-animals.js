@@ -181,10 +181,51 @@ export const troll = {
     name: 'troll',
     position: 'side',
     symbols: ['pawedAnimal'],
-    hide: (gameStore) => !gameStore.elkPromo,
+    hide: (gameStore) => !gameStore.elkPromo && !gameStore.explorationExpansion,
     recalculatePoints(forest) {
         this.points = this.count * forest.countBySymbol('tree')
     }
 }
 
-export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare, waterVole, europeanWildcat, europeanPolecat, meeps, troll]
+export const genet = {
+    name: 'genet',
+    position: 'side',
+    symbols: ['pawedAnimal'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * 5
+    }
+}
+
+export const redPanda = {
+    name: 'redPanda',
+    position: 'side',
+    symbols: ['pawedAnimal'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * 2
+    }
+}
+
+export const arcticFox = {
+    name: 'arcticFox',
+    position: 'side',
+    symbols: ['pawedAnimal'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * 2 * numberOfHare(forest)
+    }
+}
+
+export const sable = {
+    name: 'sable',
+    position: 'side',
+    symbols: ['pawedAnimal'],
+    hide: (gameStore) => !gameStore.explorationExpansion,
+    recalculatePoints(forest) {
+        this.points = this.count * 3 * forest.countBySymbol('pawedAnimal')
+    }
+}
+
+export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare, waterVole, europeanWildcat, europeanPolecat, meeps, troll,
+    genet, redPanda, arcticFox]

@@ -24,7 +24,7 @@
       <span class="ms-2 fs-2">{{ $t('tops') }}</span>
     </div>
     <CardAmountEditorList class="mt-1"
-                          :cards="birds"
+                          :cards="birdsTop"
                           :forest="forest"
                           symbol="bird"
                           heading="birds"/>
@@ -219,8 +219,8 @@ export default {
     shrubs() {
       return this.cards.filter(c => c.symbols.indexOf('shrub') >= 0 && !(c.hide && c.hide(useGameStore())))
     },
-    birds() {
-      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && !(c.hide && c.hide(useGameStore())))
+    birdsTop() {
+      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'top' && !(c.hide && c.hide(useGameStore())))
     },
     butterflies() {
       return this.cards.filter(c => c.symbols.indexOf('butterfly') >= 0 && !(c.hide && c.hide(useGameStore())))

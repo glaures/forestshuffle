@@ -228,4 +228,4 @@ export const sable = {
 }
 
 export const allPawed = [hedgehog, mole, beechMarten, brownBear, europeanBadger, europeanFatDormouse, europeanHare, lynx, raccoon, redFox, wolf, alpineMarmot, mountainHare, waterVole, europeanWildcat, europeanPolecat, meeps, troll,
-    genet, redPanda, arcticFox]
+    genet, redPanda, arcticFox, sable]

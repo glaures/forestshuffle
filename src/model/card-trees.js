@@ -146,8 +146,8 @@ export const turkeyOak = {
     }
 }
 
-export const palmTree = {
-    name: 'palmTree',
+export const oChristmasTree = {
+    name: 'oChristmasTree',
     symbols: ['tree'],
     hide: (gameStore) => !gameStore.explorationExpansion,
     params: [{
@@ -161,12 +161,12 @@ export const palmTree = {
     }
 }
 
-export const oChristmasTree = {
-    name: 'oChristmasTree',
+export const palmTree = {
+    name: 'palmTree',
     symbols: ['tree'],
     hide: (gameStore) => !gameStore.explorationExpansion,
     recalculatePoints(forest) {
-        this.points = this.count * forest.countBySymbol('birds')
+        this.points = this.count * forest.countBySymbol('bird')
     }
 }
 

@@ -1,7 +1,7 @@
 export const batCave = {
     name: 'batCave',
     getPoints(forest){
-        return forest.caveCount + (forest.countBySymbol('bat') * 4)
+        return forest.caveCount + (forest.countBySymbol('bat') * 3)
     }
 }
 

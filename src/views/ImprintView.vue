@@ -14,6 +14,10 @@
     <p>Die hier verwendeten Symbole aus dem Spiel „Mischwald“ unterliegen dem Urheberrecht.
       Nutzung mit freundlicher Genehmigung der Lookout GmbH ©2025
     </p>
+    <h2>Contributors</h2>
+    <ul>
+      <li>Maciej Slosarczyk - Polish translation</li>
+    </ul>
     <h2>Ihre Betroffenenrechte</h2>
     <p>Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte
       ausüben:</p>
@@ -181,21 +185,21 @@
       Telefon: <a href="tel:+49151-22344688">+49 151-22344688</a><br>
       E-Mail: <a href='mailto:mail@sandbox27.de'>mail@sandbox27.de</a><br/></p>
     <strong>Haftungsausschluss: </strong><br><br><strong>Urheberrecht</strong><br><br>
-      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
-      Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen
-      des
-      Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien
-      dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser
-      Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden
-      Inhalte
-      Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden,
-      bitten
-      wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte
-      umgehend entfernen.<br><br>
-      Impressum vom <a href="https://www.impressum-generator.de">Impressum Generator</a> der <a
-          href="https://www.kanzlei-hasselbach.de/">Kanzlei Hasselbach, Rechtsanwälte für Arbeitsrecht und
-        Familienrecht</a>
-      <div style="margin-top: 32px;"></div>
+    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
+    Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen
+    des
+    Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien
+    dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser
+    Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden
+    Inhalte
+    Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden,
+    bitten
+    wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte
+    umgehend entfernen.<br><br>
+    Impressum vom <a href="https://www.impressum-generator.de">Impressum Generator</a> der <a
+      href="https://www.kanzlei-hasselbach.de/">Kanzlei Hasselbach, Rechtsanwälte für Arbeitsrecht und
+    Familienrecht</a>
+    <div style="margin-top: 32px;"></div>
   </div>
 </template>
 

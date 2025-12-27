@@ -17,6 +17,7 @@
     <h2>Contributors</h2>
     <ul>
       <li>Maciej Slosarczyk - Polish translation</li>
+      <li>RusiPapazov - Bularian translation</li>
     </ul>
     <h2>Ihre Betroffenenrechte</h2>
     <p>Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte

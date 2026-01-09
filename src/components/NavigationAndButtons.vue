@@ -66,6 +66,7 @@
         <span class="ms-2 flag-icon flag-icon-cn cursor-pointer" @click="changeLanguage('cn')"/>
         <span class="ms-2 flag-icon flag-icon-nl cursor-pointer" @click="changeLanguage('nl')"/>
         <span class="ms-2 flag-icon flag-icon-bg cursor-pointer" @click="changeLanguage('bg')"/>
+        <span class="ms-2 flag-icon flag-icon-br cursor-pointer" @click="changeLanguage('ptBR')"/>
       </div>
       <div class="d-flex mt-3 w-100 justify-content-left align-items-center px-3 small">
         <input class="form-check form-check-input bg-secondary" type="checkbox" :checked="alpineExpansion"

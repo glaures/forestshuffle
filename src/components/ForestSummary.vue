@@ -38,6 +38,9 @@ export default {
                                   :count="forest.sideCount()"
                                   :border="false"/>
       </div>
+      <div class="mt-2 text-center">
+        {{ $t('cave') }}: {{ forest.caveCount }}
+      </div>
     </div>
     <div class="card-footer">
       {{ $t('totalCards') }}: {{totalCards}}

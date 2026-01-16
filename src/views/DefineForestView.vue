@@ -214,52 +214,84 @@ export default {
       }
     },
     trees() {
-      return this.cards.filter(c => c.symbols.indexOf('tree') >= 0 && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('tree') >= 0 && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     shrubs() {
-      return this.cards.filter(c => c.symbols.indexOf('shrub') >= 0 && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('shrub') >= 0 && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     birdsTop() {
-      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'top' && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'top' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     butterflies() {
-      return this.cards.filter(c => c.symbols.indexOf('butterfly') >= 0 && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('butterfly') >= 0 && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     others() {
-      return this.forest.cards.filter(c => c.name === 'redSquirrel' && !(c.hide && c.hide(useGameStore())))
+      return this.forest.cards
+          .filter(c => c.name === 'redSquirrel' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     plants() {
-      return this.cards.filter(c => c.symbols.indexOf('plant') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('plant') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     plantsTop() {
-      return this.cards.filter(c => c.symbols.indexOf('plant') >= 0 && c.position === 'top' && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('plant') >= 0 && c.position === 'top' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     mushrooms() {
-      return this.cards.filter(c => c.symbols.indexOf('mushroom') >= 0 && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('mushroom') >= 0 && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     amphibians() {
-      return this.cards.filter(c => c.symbols.indexOf('amphibian') >= 0 && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('amphibian') >= 0 && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     insectsBottom() {
-      return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     pawedBottom() {
-      return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'bottom' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     birdsSide() {
-      return this.cards.filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('bird') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     insectsSide() {
-      return this.cards.filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('insect') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     bats() {
-      return this.cards.filter(c => c.symbols.indexOf('bat') >= 0 && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('bat') >= 0 && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     deerAndCloven() {
-      return this.cards.filter(c => (c.symbols.indexOf('deer') >= 0 || c.symbols.indexOf('clovenHoofedAnimal') >= 0) && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => (c.symbols.indexOf('deer') >= 0 || c.symbols.indexOf('clovenHoofedAnimal') >= 0) && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     pawedSide() {
-      return this.cards.filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
+      return this.cards
+          .filter(c => c.symbols.indexOf('pawedAnimal') >= 0 && c.position === 'side' && !(c.hide && c.hide(useGameStore())))
+          .sort((a, b) => this.$t(a.name).localeCompare(this.$t(b.name)))
     },
     points() {
       return this.forest().points

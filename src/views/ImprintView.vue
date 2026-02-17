@@ -18,7 +18,7 @@
     <ul>
       <li>Maciej Slosarczyk - Polish translation</li>
       <li>Rusi Papazov - Bularian translation</li>
-      <li>Fabio Carrella - Brazilian translation</li>
+      <li>Fabio Carrella - Brazilian tDas layout ranslation</li>
     </ul>
     <h2>Ihre Betroffenenrechte</h2>
     <p>Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte

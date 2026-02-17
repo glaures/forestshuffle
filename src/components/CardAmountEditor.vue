@@ -51,7 +51,7 @@ export default {
     <div class="fw-bold col-1">
       <span v-if="card.count > 0">{{ card.count }}&times;</span>
     </div>
-    <div class="col-9 pe-0 text-nowrap overflow-x-hidden">
+    <div class="col pe-0 text-nowrap overflow-x-hidden">
       <button @click="addCard" :class="'btn-' + card.symbols[0]" class="w-100 btn btn-primary btn-sm text-start">
         <img v-for="(symbol, idx) in card.symbols" :src="'./img/symbols/' + symbol + '.png'" height="20"
              :class="{'ms-1': idx > 0}"/>
@@ -60,10 +60,10 @@ export default {
         <span class="ms-2">{{ $t(card.name) }}</span>
       </button>
     </div>
-    <div class="col-1 ps-0">
+    <div class="col-1 ps-0 pe-0">
       <button class="ms-1 btn btn-outline-danger btn-sm" @click="removeCard">&times;</button>
     </div>
-    <div class="col-1 text-start overflow-x-hidden">
+    <div class="col-1 ps-1 text-start text-nowrap">
       <span v-if="card.count > 0 && card.symbols.indexOf('butterfly') < 0 ">{{ card.points }}</span>
     </div>
   </div>
@@ -79,7 +79,7 @@ export default {
          <span v-else class="text-danger"><font-awesome-icon icon="xmark" size="lg"/></span>
         </span>
       </div>
-      <div class="col-8 text-nowrap pe-0">
+      <div class="col text-nowrap pe-0">
         <button @click="paramAdd(param)" :class="'btn-' + card.symbols[0]"
                 class="btn btn-sm btn-primary text-start w-100">
           <img v-if="param.type === 'type'" :src="'./img/symbols/' + param.symbol + '.png'" :alt="$t(param.symbol)"
@@ -87,11 +87,12 @@ export default {
           <span class="ps-2">{{ $t(param.name) }}</span>
         </button>
       </div>
-      <div class="col-1 ps-0">
+      <div class="col-1 ps-0 pe-0">
         <button v-if="param.type !== 'boolean'" class="ms-1 btn btn-outline-danger btn-sm" @click="paramSub(param)">
           &times;
         </button>
       </div>
+      <div class="col-1 ps-1"></div>
     </div>
   </div>
 </template>

@@ -6,13 +6,18 @@ export const gnat = {
         this.points = forest.countByName('gnat') * forest.countBySymbol('bat')
     }
 }
-
 export const fireflies = {
     name: 'fireflies',
     position: 'bottom',
     symbols: ['insect'],
     recalculatePoints(forest) {
-        this.points = [0, 0, 10, 15, 20][Math.min(4, forest.countByName('fireflies') + forest.countByName('saysFirefly'))]
+        const fireflyCount = forest.countByName('fireflies')
+        const saysFireflyCount = forest.countByName('saysFirefly')
+        const total = fireflyCount + saysFireflyCount
+        const totalPoints = [0, 0, 10, 15, 20][Math.min(4, total)]
+        // Anteil dieser Kartenart an den Gesamtpunkten
+        const ownCount = forest.countByName(this.name)
+        this.points = total > 0 ? Math.round(totalPoints * ownCount / total) : 0
     }
 }
 

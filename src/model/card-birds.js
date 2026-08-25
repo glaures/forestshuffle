@@ -182,7 +182,7 @@ export const whiteStork = {
     symbols: ['bird', 'woodlandEdge'],
     hide: (gameStore) => !gameStore.explorationExpansion,
     recalculatePoints(forest) {
-        this.points = this.count * (forest.countBySymbol('insect') + forest.countBySymbol('amphibians'))
+        this.points = this.count * (forest.countBySymbol('insect') + forest.countBySymbol('amphibian'))
     }
 }
 
